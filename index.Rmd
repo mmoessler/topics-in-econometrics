@@ -12,6 +12,10 @@ github-repo: mmoessler/topics-in-statistics-and-econometrics
 description: "This book contains some thoughts on selected topics in statistics and econometrics"
 ---
 
+# Motivation
+
+This book contains some thoughts on selected topics in statistics and econometrics
+
 <!-- # Prerequisites -->
 
 <!-- This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$. -->
@@ -34,7 +38,3 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
-
-# Motivation
-
-This book contains some thoughts on selected topics in statistics and econometrics
