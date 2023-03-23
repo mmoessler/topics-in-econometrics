@@ -1,5 +1,3 @@
 book_filename: "topics-in-statistics-and-econometrics"
 language:
-  ui:
-    chapter_name: "Chapter "
 delete_merged_file: true

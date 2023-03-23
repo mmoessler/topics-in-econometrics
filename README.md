@@ -1,5 +1,15 @@
-[![Build Status](https://travis-ci.com/rstudio/bookdown-demo.svg?branch=master)](https://travis-ci.com/rstudio/bookdown-demo)
+# Content
 
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "[Get Started](https://bookdown.org/yihui/bookdown/get-started.html)" at https://bookdown.org/yihui/bookdown/ for how to compile this example into HTML. You may generate a copy of the book in `bookdown::pdf_book` format by calling `bookdown::render_book('index.Rmd', 'bookdown::pdf_book')`. More detailed instructions are available here https://bookdown.org/yihui/bookdown/build-the-book.html.
+This book contains some thoughts about topics in statistics and econometrics.
 
-You can find the preview of this example at https://bookdown.org/yihui/bookdown-demo/.
+Things (1) I wanted or had to figure out, (2) had to be written down and (3) could be useful for others, too.
+
+# Presentation
+
+The compiled book can be accessed using the following link.
+
+```
+
+https://bookdown.org/markus_moessler/topics-in-statistics-and-econometrics/
+
+```
