@@ -10,6 +10,6 @@ The compiled book can be accessed using the following link.
 
 ```
 
-https://bookdown.org/markus_moessler/topics-in-statistics-and-econometrics/
+https://bookdown.org/markus_moessler/Topics-in-Statistics-and-Econometrics-1679576669014/
 
 ```
