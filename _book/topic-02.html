@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Topic 02 | Topics in Statistics and Econometrics</title>
+  <meta name="description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Topic 02 | Topics in Statistics and Econometrics" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
+  <meta name="github-repo" content="mmoessler/topics-in-statistics-and-econometrics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Topic 02 | Topics in Statistics and Econometrics" />
+  
+  <meta name="twitter:description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
+  
+
+<meta name="author" content="Markus Mößler" />
+
+
+<meta name="date" content="2023-03-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="topic-01.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Topics in Statistics and Econometrics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Motivation</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="topic-01.html"><a href="topic-01.html"><i class="fa fa-check"></i><b>3</b> Topic 01</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="topic-01.html"><a href="topic-01.html#motivation-1"><i class="fa fa-check"></i><b>3.1</b> Motivation</a></li>
+<li class="chapter" data-level="3.2" data-path="topic-01.html"><a href="topic-01.html#probelm"><i class="fa fa-check"></i><b>3.2</b> Probelm</a></li>
+<li class="chapter" data-level="3.3" data-path="topic-01.html"><a href="topic-01.html#analysis"><i class="fa fa-check"></i><b>3.3</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="topic-02.html"><a href="topic-02.html"><i class="fa fa-check"></i><b>4</b> Topic 02</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="topic-02.html"><a href="topic-02.html#statistical-model"><i class="fa fa-check"></i><b>4.1</b> Statistical Model</a></li>
+<li class="chapter" data-level="4.2" data-path="topic-02.html"><a href="topic-02.html#simulation"><i class="fa fa-check"></i><b>4.2</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="topic-02.html"><a href="topic-02.html#set-up"><i class="fa fa-check"></i><b>4.2.1</b> Set up</a></li>
+<li class="chapter" data-level="4.2.2" data-path="topic-02.html"><a href="topic-02.html#data-generating-process"><i class="fa fa-check"></i><b>4.2.2</b> Data Generating Process</a></li>
+<li class="chapter" data-level="4.2.3" data-path="topic-02.html"><a href="topic-02.html#simulation-1"><i class="fa fa-check"></i><b>4.2.3</b> Simulation</a></li>
+<li class="chapter" data-level="4.2.4" data-path="topic-02.html"><a href="topic-02.html#plots"><i class="fa fa-check"></i><b>4.2.4</b> Plots</a></li>
+<li class="chapter" data-level="4.2.5" data-path="topic-02.html"><a href="topic-02.html#reduced-form-parameters"><i class="fa fa-check"></i><b>4.2.5</b> Reduced form parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="topic-02.html"><a href="topic-02.html#least-squares-estimator"><i class="fa fa-check"></i><b>4.3</b> Least-Squares Estimator</a></li>
+<li class="chapter" data-level="4.4" data-path="topic-02.html"><a href="topic-02.html#sample-distribution-of-least-squares-estimator"><i class="fa fa-check"></i><b>4.4</b> Sample Distribution of Least-Squares Estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Topics in Statistics and Econometrics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="topic-02" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Topic 02<a href="topic-02.html#topic-02" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="statistical-model" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Statistical Model<a href="topic-02.html#statistical-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Statistical model for each observations <span class="math inline">\(i\)</span> (using the same <span class="math inline">\(k\)</span> regressors across <span class="math inline">\(m\)</span> equations),</p>
+<p><span class="math display">\[\begin{align*}
+\underset{\left(m \times 1\right)}{y_{i}} &amp;= \underset{\left(m\times mk\right)}{\overline{X}_{i}} \underset{\left(mk \times 1\right)}{\beta} + \underset{\left(m \times 1\right)}{e_{i}}, \\
+
+\begin{bmatrix}
+y_{1i} \\
+y_{2i} \\
+\vdots \\
+y_{mi}
+\end{bmatrix}
+&amp;=
+\begin{bmatrix}
+x_{1i}^{&#39;} &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; x_{2i}^{&#39;} &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; 0 \\
+0 &amp; 0&amp; \cdots &amp; x_{mi}^{&#39;}
+\end{bmatrix}
++
+\begin{bmatrix}
+\beta_{1} \\
+\beta_{2} \\
+\vdots \\
+\beta_{m}
+\end{bmatrix}
++
+\begin{bmatrix}
+u_{1i} \\
+u_{2i} \\
+\vdots \\
+u_{mi}
+\end{bmatrix},
+\end{align*}\]</span></p>
+<p>with,</p>
+<ul>
+<li><span class="math inline">\(y_{ji}\)</span> and <span class="math inline">\(e_{ji}\)</span> are scalars for <span class="math inline">\(j=1,...,m\)</span>.</li>
+<li><span class="math inline">\(x_{ji}\)</span> are <span class="math inline">\(\left(k \times 1\right)\)</span> matrix for <span class="math inline">\(j=1,...,m\)</span>.</li>
+<li><span class="math inline">\(\beta\)</span> are <span class="math inline">\(\left(k \times 1\right)\)</span> matrix for <span class="math inline">\(j=1,...,m\)</span>.</li>
+</ul>
+<p>Using the same <span class="math inline">\(k\)</span> regressors across <span class="math inline">\(m\)</span> equations this could be simplified to,</p>
+<p><span class="math display">\[\begin{align*}
+\underset{\left(m \times 1\right)}{y_{i}} &amp;= \underset{\left(m\times mk\right)}{\left(\underset{\left(m \times m\right)}{I_{m}} \otimes \underset{\left(1\times k\right)}{x_{i}^{&#39;}}\right)} \underset{\left(mk \times 1\right)}{\beta} + \underset{\left(m \times 1\right)}{e_{i}}.
+\end{align*}\]</span></p>
+<p>Statistical model in matrix notation across observations <span class="math inline">\(i\)</span> (using the same <span class="math inline">\(k\)</span> regressors across <span class="math inline">\(m\)</span> equations),</p>
+<p><span class="math display">\[\begin{align*}
+\underset{\left(n \times m\right)}{Y} &amp;= \underset{\left(n\times k\right)}{X} \underset{\left(k \times m\right)}{B} + \underset{\left(n \times k\right)}{E}.
+\end{align*}\]</span></p>
+</div>
+<div id="simulation" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Simulation<a href="topic-02.html#simulation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="set-up" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Set up<a href="topic-02.html#set-up" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="topic-02.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># clear workspace</span></span>
+<span id="cb1-2"><a href="topic-02.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> (<span class="at">list =</span> <span class="fu">ls</span>(<span class="at">all=</span><span class="cn">TRUE</span>))</span>
+<span id="cb1-3"><a href="topic-02.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="topic-02.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># set seed</span></span>
+<span id="cb1-5"><a href="topic-02.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234567</span>, <span class="at">kind=</span><span class="st">&quot;Mersenne-Twister&quot;</span>)</span></code></pre></div>
+</div>
+<div id="data-generating-process" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Data Generating Process<a href="topic-02.html#data-generating-process" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[\begin{align*}
+y_t B + x_t A &amp;= u_t \\
+u_t &amp;= u_{t-1} P + v_t \\
+v_t &amp;= N\left(0, V_t\right) \\
+V_t &amp;= S_t S_t^{&#39;} \\
+S_t &amp;= C + D w_t \\
+x_{1t} &amp;\sim U\left[x_{1l},x_{1u}\right] \\
+x_{1t} &amp;\sim N \left(\mu_{x_{1}},\sigma_{x_{1}}^2\right)
+\end{align*}\]</span></p>
+</div>
+<div id="simulation-1" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Simulation<a href="topic-02.html#simulation-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="topic-02.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># number of observations</span></span>
+<span id="cb2-2"><a href="topic-02.html#cb2-2" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="dv">2000</span></span>
+<span id="cb2-3"><a href="topic-02.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="topic-02.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># parameters</span></span>
+<span id="cb2-5"><a href="topic-02.html#cb2-5" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fl">0.6</span> </span>
+<span id="cb2-6"><a href="topic-02.html#cb2-6" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">&lt;-</span> <span class="fl">0.2</span> </span>
+<span id="cb2-7"><a href="topic-02.html#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="topic-02.html#cb2-8" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb2-9"><a href="topic-02.html#cb2-9" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.5</span> </span>
+<span id="cb2-10"><a href="topic-02.html#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="topic-02.html#cb2-11" aria-hidden="true" tabindex="-1"></a>c11 <span class="ot">&lt;-</span> <span class="fl">1.0</span></span>
+<span id="cb2-12"><a href="topic-02.html#cb2-12" aria-hidden="true" tabindex="-1"></a>c21 <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb2-13"><a href="topic-02.html#cb2-13" aria-hidden="true" tabindex="-1"></a>c22 <span class="ot">&lt;-</span> <span class="fl">2.0</span></span>
+<span id="cb2-14"><a href="topic-02.html#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="topic-02.html#cb2-15" aria-hidden="true" tabindex="-1"></a>d11  <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb2-16"><a href="topic-02.html#cb2-16" aria-hidden="true" tabindex="-1"></a>d21  <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb2-17"><a href="topic-02.html#cb2-17" aria-hidden="true" tabindex="-1"></a>d22  <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb2-18"><a href="topic-02.html#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="topic-02.html#cb2-19" aria-hidden="true" tabindex="-1"></a>p11 <span class="ot">&lt;-</span> <span class="fl">0.8</span> </span>
+<span id="cb2-20"><a href="topic-02.html#cb2-20" aria-hidden="true" tabindex="-1"></a>p12 <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb2-21"><a href="topic-02.html#cb2-21" aria-hidden="true" tabindex="-1"></a>p21 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.2</span> </span>
+<span id="cb2-22"><a href="topic-02.html#cb2-22" aria-hidden="true" tabindex="-1"></a>p22 <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
+<span id="cb2-23"><a href="topic-02.html#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="topic-02.html#cb2-24" aria-hidden="true" tabindex="-1"></a>b  <span class="ot">&lt;-</span>  <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span>b2,</span>
+<span id="cb2-25"><a href="topic-02.html#cb2-25" aria-hidden="true" tabindex="-1"></a>                <span class="sc">-</span>b1, <span class="dv">1</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb2-26"><a href="topic-02.html#cb2-26" aria-hidden="true" tabindex="-1"></a>a  <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span>a1, <span class="dv">0</span>,</span>
+<span id="cb2-27"><a href="topic-02.html#cb2-27" aria-hidden="true" tabindex="-1"></a>               <span class="dv">0</span>, <span class="sc">-</span>a2), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb2-28"><a href="topic-02.html#cb2-28" aria-hidden="true" tabindex="-1"></a>c  <span class="ot">&lt;-</span>  <span class="fu">matrix</span>(<span class="fu">c</span>(c11,  <span class="dv">0</span>,</span>
+<span id="cb2-29"><a href="topic-02.html#cb2-29" aria-hidden="true" tabindex="-1"></a>                c21, c22), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb2-30"><a href="topic-02.html#cb2-30" aria-hidden="true" tabindex="-1"></a>d  <span class="ot">&lt;-</span>  <span class="fu">matrix</span>(<span class="fu">c</span>(d11,  <span class="dv">0</span>,</span>
+<span id="cb2-31"><a href="topic-02.html#cb2-31" aria-hidden="true" tabindex="-1"></a>                d21,  d22), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb2-32"><a href="topic-02.html#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="topic-02.html#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co"># exogenous variables                      </span></span>
+<span id="cb2-34"><a href="topic-02.html#cb2-34" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">10</span><span class="sc">*</span><span class="fu">runif</span>(t), <span class="dv">3</span><span class="sc">*</span><span class="fu">rnorm</span>(t))</span>
+<span id="cb2-35"><a href="topic-02.html#cb2-35" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">runif</span>(t)</span>
+<span id="cb2-36"><a href="topic-02.html#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="topic-02.html#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co"># disturbances </span></span>
+<span id="cb2-38"><a href="topic-02.html#cb2-38" aria-hidden="true" tabindex="-1"></a>zeros <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">0</span>, <span class="fu">c</span>(t,<span class="dv">2</span>))</span>
+<span id="cb2-39"><a href="topic-02.html#cb2-39" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> zeros</span>
+<span id="cb2-40"><a href="topic-02.html#cb2-40" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> zeros</span>
+<span id="cb2-41"><a href="topic-02.html#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>t) {</span>
+<span id="cb2-42"><a href="topic-02.html#cb2-42" aria-hidden="true" tabindex="-1"></a>  l      <span class="ot">&lt;-</span> c <span class="sc">+</span> d <span class="sc">*</span> w[i]  </span>
+<span id="cb2-43"><a href="topic-02.html#cb2-43" aria-hidden="true" tabindex="-1"></a>  v[i,]  <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">2</span>) <span class="sc">%*%</span> <span class="fu">t</span>(l)</span>
+<span id="cb2-44"><a href="topic-02.html#cb2-44" aria-hidden="true" tabindex="-1"></a>  u[i,<span class="dv">1</span>] <span class="ot">&lt;-</span> p11<span class="sc">*</span>u[i<span class="dv">-1</span>,<span class="dv">1</span>] <span class="sc">+</span> p12<span class="sc">*</span>u[i<span class="dv">-1</span>,<span class="dv">2</span>] <span class="sc">+</span> v[i,<span class="dv">1</span>]</span>
+<span id="cb2-45"><a href="topic-02.html#cb2-45" aria-hidden="true" tabindex="-1"></a>  u[i,<span class="dv">2</span>] <span class="ot">&lt;-</span> p21<span class="sc">*</span>u[i<span class="dv">-1</span>,<span class="dv">1</span>] <span class="sc">+</span> p22<span class="sc">*</span>u[i<span class="dv">-1</span>,<span class="dv">2</span>] <span class="sc">+</span> v[i,<span class="dv">2</span>]  </span>
+<span id="cb2-46"><a href="topic-02.html#cb2-46" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-47"><a href="topic-02.html#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="topic-02.html#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="co"># simulate the reduced form   </span></span>
+<span id="cb2-49"><a href="topic-02.html#cb2-49" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> zeros</span>
+<span id="cb2-50"><a href="topic-02.html#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq</span>(t)) {</span>
+<span id="cb2-51"><a href="topic-02.html#cb2-51" aria-hidden="true" tabindex="-1"></a>  y[i,] <span class="ot">&lt;-</span> <span class="sc">-</span>x[i,] <span class="sc">%*%</span> a <span class="sc">%*%</span> <span class="fu">solve</span>(b) <span class="sc">+</span> u[i,] <span class="sc">%*%</span> <span class="fu">solve</span>(b)    </span>
+<span id="cb2-52"><a href="topic-02.html#cb2-52" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="plots" class="section level3 hasAnchor" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Plots<a href="topic-02.html#plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="topic-02.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb3-2"><a href="topic-02.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="topic-02.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ts.plot</span>(y[,<span class="dv">1</span>])</span>
+<span id="cb3-4"><a href="topic-02.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ts.plot</span>(y[,<span class="dv">2</span>])</span></code></pre></div>
+<p><img src="topics-in-statistics-and-econometrics_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="reduced-form-parameters" class="section level3 hasAnchor" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> Reduced form parameters<a href="topic-02.html#reduced-form-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="topic-02.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># parameteres of the reduced form</span></span>
+<span id="cb4-2"><a href="topic-02.html#cb4-2" aria-hidden="true" tabindex="-1"></a>ab <span class="ot">&lt;-</span> <span class="sc">-</span>a <span class="sc">%*%</span> <span class="fu">solve</span>(b)</span>
+<span id="cb4-3"><a href="topic-02.html#cb4-3" aria-hidden="true" tabindex="-1"></a>ab</span></code></pre></div>
+<pre><code>##            [,1]        [,2]
+## [1,]  0.4545455  0.09090909
+## [2,] -0.3409091 -0.56818182</code></pre>
+</div>
+</div>
+<div id="least-squares-estimator" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Least-Squares Estimator<a href="topic-02.html#least-squares-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use the model in matrix notation across observations <span class="math inline">\(i\)</span>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="topic-02.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dimensions</span></span>
+<span id="cb6-2"><a href="topic-02.html#cb6-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">ncol</span>(y);m</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="topic-02.html#cb8-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">nrow</span>(y);t</span></code></pre></div>
+<pre><code>## [1] 2000</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="topic-02.html#cb10-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">ncol</span>(x);k</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="topic-02.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stack regressands and regressors</span></span>
+<span id="cb12-2"><a href="topic-02.html#cb12-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(y) <span class="co"># stack y over observations</span></span>
+<span id="cb12-3"><a href="topic-02.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(Y)</span></code></pre></div>
+<pre><code>## [1] 4000</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="topic-02.html#cb14-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">diag</span>(m) <span class="sc">%x%</span> x <span class="co"># stack x over observations</span></span>
+<span id="cb14-2"><a href="topic-02.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(X)</span></code></pre></div>
+<pre><code>## [1] 4000    4</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="topic-02.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># estimation</span></span>
+<span id="cb16-2"><a href="topic-02.html#cb16-2" aria-hidden="true" tabindex="-1"></a>lm.res <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb16-3"><a href="topic-02.html#cb16-3" aria-hidden="true" tabindex="-1"></a>lm.res<span class="sc">$</span>coefficients</span></code></pre></div>
+<pre><code>##          X1          X2          X3          X4 
+##  0.44495050 -0.37735285  0.07649982 -0.60879807</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="topic-02.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># comoare with reduced form parameters for simmulation</span></span>
+<span id="cb18-2"><a href="topic-02.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.vector</span>(ab)</span></code></pre></div>
+<pre><code>## [1]  0.45454545 -0.34090909  0.09090909 -0.56818182</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="topic-02.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># expand residuals again</span></span>
+<span id="cb20-2"><a href="topic-02.html#cb20-2" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">matrix</span>(lm.res<span class="sc">$</span>residuals, <span class="at">ncol =</span> m)</span>
+<span id="cb20-3"><a href="topic-02.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(u)</span></code></pre></div>
+<pre><code>## [1] 2000    2</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="topic-02.html#cb22-1" aria-hidden="true" tabindex="-1"></a>Sig.u <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>t <span class="sc">*</span> <span class="fu">t</span>(u) <span class="sc">%*%</span> u</span>
+<span id="cb22-2"><a href="topic-02.html#cb22-2" aria-hidden="true" tabindex="-1"></a>Sig.u</span></code></pre></div>
+<pre><code>##           [,1]     [,2]
+## [1,] 10.861852 7.894577
+## [2,]  7.894577 9.537205</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="topic-02.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># comoare with reduced form parameters for simmulation</span></span>
+<span id="cb24-2"><a href="topic-02.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ???</span></span></code></pre></div>
+</div>
+<div id="sample-distribution-of-least-squares-estimator" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Sample Distribution of Least-Squares Estimator<a href="topic-02.html#sample-distribution-of-least-squares-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use the model in matrix notation across observations <span class="math inline">\(i\)</span>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="topic-01.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/mmoessler/topics-in-statistics-and-econometrics/blob/main/03-topic-02.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

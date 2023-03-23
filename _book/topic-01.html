@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Topic 01 | Topics in Statistics and Econometrics</title>
+  <meta name="description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Topic 01 | Topics in Statistics and Econometrics" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
+  <meta name="github-repo" content="mmoessler/topics-in-statistics-and-econometrics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Topic 01 | Topics in Statistics and Econometrics" />
+  
+  <meta name="twitter:description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
+  
+
+<meta name="author" content="Markus Mößler" />
+
+
+<meta name="date" content="2023-03-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="topic-02.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Topics in Statistics and Econometrics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Motivation</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="topic-01.html"><a href="topic-01.html"><i class="fa fa-check"></i><b>3</b> Topic 01</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="topic-01.html"><a href="topic-01.html#motivation-1"><i class="fa fa-check"></i><b>3.1</b> Motivation</a></li>
+<li class="chapter" data-level="3.2" data-path="topic-01.html"><a href="topic-01.html#probelm"><i class="fa fa-check"></i><b>3.2</b> Probelm</a></li>
+<li class="chapter" data-level="3.3" data-path="topic-01.html"><a href="topic-01.html#analysis"><i class="fa fa-check"></i><b>3.3</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="topic-02.html"><a href="topic-02.html"><i class="fa fa-check"></i><b>4</b> Topic 02</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="topic-02.html"><a href="topic-02.html#statistical-model"><i class="fa fa-check"></i><b>4.1</b> Statistical Model</a></li>
+<li class="chapter" data-level="4.2" data-path="topic-02.html"><a href="topic-02.html#simulation"><i class="fa fa-check"></i><b>4.2</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="topic-02.html"><a href="topic-02.html#set-up"><i class="fa fa-check"></i><b>4.2.1</b> Set up</a></li>
+<li class="chapter" data-level="4.2.2" data-path="topic-02.html"><a href="topic-02.html#data-generating-process"><i class="fa fa-check"></i><b>4.2.2</b> Data Generating Process</a></li>
+<li class="chapter" data-level="4.2.3" data-path="topic-02.html"><a href="topic-02.html#simulation-1"><i class="fa fa-check"></i><b>4.2.3</b> Simulation</a></li>
+<li class="chapter" data-level="4.2.4" data-path="topic-02.html"><a href="topic-02.html#plots"><i class="fa fa-check"></i><b>4.2.4</b> Plots</a></li>
+<li class="chapter" data-level="4.2.5" data-path="topic-02.html"><a href="topic-02.html#reduced-form-parameters"><i class="fa fa-check"></i><b>4.2.5</b> Reduced form parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="topic-02.html"><a href="topic-02.html#least-squares-estimator"><i class="fa fa-check"></i><b>4.3</b> Least-Squares Estimator</a></li>
+<li class="chapter" data-level="4.4" data-path="topic-02.html"><a href="topic-02.html#sample-distribution-of-least-squares-estimator"><i class="fa fa-check"></i><b>4.4</b> Sample Distribution of Least-Squares Estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Topics in Statistics and Econometrics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="topic-01" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Topic 01<a href="topic-01.html#topic-01" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Heteroskedasticity and autocorrelation in systems of equations.</p>
+<div id="motivation-1" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Motivation<a href="topic-01.html#motivation-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Analyse the effect of heteroskdeasticty in systems of equations on SOLS estimator.</p>
+</div>
+<div id="probelm" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Probelm<a href="topic-01.html#probelm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Simulate a bivariate heteroskedasticity model for <span class="math inline">\(T=2000\)</span> observations</p>
+<p><span class="math display">\[\begin{align*}
+B y_t + A x_t &amp;= u_t \\
+u_t &amp;\sim N\left(0, V_t = S_t S_t^{&#39;}\right) \\
+S_t &amp;= C + D w_t
+\end{align*}\]</span></p>
+<p>with,</p>
+<p><span class="math display">\[\begin{align*}
+B &amp;= \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}, \\
+A &amp;= \begin{bmatrix} -0.4 &amp; 0 \\ 0 &amp; 0.5 \end{bmatrix}, \\
+C &amp;= \begin{bmatrix} 1 &amp; 0 \\ 0.5 &amp; 2 \end{bmatrix}, \\
+D &amp;= \begin{bmatrix} 0.5 &amp; 0 \\ 0.2 &amp; 0.2 \end{bmatrix},
+\end{align*}\]</span></p>
+<p>and with,</p>
+<p><span class="math display">\[\begin{align*}
+x_{1,t} &amp;\sim iid \,\,\, U\left[0, 10\right], \\
+x_{2,t} &amp;\sim iid \,\,\, N\left(0, 9\right), \\
+w_{1,t} &amp;\sim iid \,\,\, U\left[0, 1\right],
+\end{align*}\]</span></p>
+</div>
+<div id="analysis" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Analysis<a href="topic-01.html#analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Simulation of the data (<em>without</em> contemporaneous relationships in <span class="math inline">\(y\)</span>)</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="topic-01.html#cb1-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="dv">2000</span></span>
+<span id="cb1-2"><a href="topic-01.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="topic-01.html#cb1-3" aria-hidden="true" tabindex="-1"></a>beta1  <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co"># 0.6</span></span>
+<span id="cb1-4"><a href="topic-01.html#cb1-4" aria-hidden="true" tabindex="-1"></a>alpha1 <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb1-5"><a href="topic-01.html#cb1-5" aria-hidden="true" tabindex="-1"></a>beta2  <span class="ot">&lt;-</span> <span class="dv">0</span> <span class="co"># 0.2</span></span>
+<span id="cb1-6"><a href="topic-01.html#cb1-6" aria-hidden="true" tabindex="-1"></a>alpha2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.5</span></span>
+<span id="cb1-7"><a href="topic-01.html#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="topic-01.html#cb1-8" aria-hidden="true" tabindex="-1"></a>c11 <span class="ot">&lt;-</span> <span class="fl">1.0</span></span>
+<span id="cb1-9"><a href="topic-01.html#cb1-9" aria-hidden="true" tabindex="-1"></a>c21 <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb1-10"><a href="topic-01.html#cb1-10" aria-hidden="true" tabindex="-1"></a>c22 <span class="ot">&lt;-</span> <span class="fl">2.0</span></span>
+<span id="cb1-11"><a href="topic-01.html#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="topic-01.html#cb1-12" aria-hidden="true" tabindex="-1"></a>d11  <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb1-13"><a href="topic-01.html#cb1-13" aria-hidden="true" tabindex="-1"></a>d21  <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb1-14"><a href="topic-01.html#cb1-14" aria-hidden="true" tabindex="-1"></a>d22  <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb1-15"><a href="topic-01.html#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="topic-01.html#cb1-16" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span>  <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span>beta2,</span>
+<span id="cb1-17"><a href="topic-01.html#cb1-17" aria-hidden="true" tabindex="-1"></a>               <span class="sc">-</span>beta1, <span class="dv">1</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb1-18"><a href="topic-01.html#cb1-18" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span>alpha1, <span class="dv">0</span>,</span>
+<span id="cb1-19"><a href="topic-01.html#cb1-19" aria-hidden="true" tabindex="-1"></a>              <span class="dv">0</span>, <span class="sc">-</span>alpha2), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb1-20"><a href="topic-01.html#cb1-20" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span>  <span class="fu">matrix</span>(<span class="fu">c</span>(c11,  <span class="dv">0</span>,</span>
+<span id="cb1-21"><a href="topic-01.html#cb1-21" aria-hidden="true" tabindex="-1"></a>               c21, c22), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb1-22"><a href="topic-01.html#cb1-22" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span>  <span class="fu">matrix</span>(<span class="fu">c</span>(d11,  <span class="dv">0</span>,</span>
+<span id="cb1-23"><a href="topic-01.html#cb1-23" aria-hidden="true" tabindex="-1"></a>               d21,  d22), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb1-24"><a href="topic-01.html#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Exogenous variables</span></span>
+<span id="cb1-25"><a href="topic-01.html#cb1-25" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">10</span><span class="sc">*</span><span class="fu">runif</span>(t), <span class="dv">3</span><span class="sc">*</span><span class="fu">rnorm</span>(t))</span>
+<span id="cb1-26"><a href="topic-01.html#cb1-26" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">runif</span>(t)</span>
+<span id="cb1-27"><a href="topic-01.html#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="topic-01.html#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Disturbances</span></span>
+<span id="cb1-29"><a href="topic-01.html#cb1-29" aria-hidden="true" tabindex="-1"></a>zeros <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">0</span>, <span class="fu">c</span>(t,<span class="dv">2</span>))</span>
+<span id="cb1-30"><a href="topic-01.html#cb1-30" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> zeros</span>
+<span id="cb1-31"><a href="topic-01.html#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq</span>(t)) {</span>
+<span id="cb1-32"><a href="topic-01.html#cb1-32" aria-hidden="true" tabindex="-1"></a>  l     <span class="ot">&lt;-</span> c <span class="sc">+</span> d <span class="sc">*</span> w[i]</span>
+<span id="cb1-33"><a href="topic-01.html#cb1-33" aria-hidden="true" tabindex="-1"></a>  u[i,] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">2</span>) <span class="sc">%*%</span> <span class="fu">t</span>(l)</span>
+<span id="cb1-34"><a href="topic-01.html#cb1-34" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-35"><a href="topic-01.html#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="topic-01.html#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate the reduced form</span></span>
+<span id="cb1-37"><a href="topic-01.html#cb1-37" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> zeros</span>
+<span id="cb1-38"><a href="topic-01.html#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq</span>(t)) {</span>
+<span id="cb1-39"><a href="topic-01.html#cb1-39" aria-hidden="true" tabindex="-1"></a>  y[i,] <span class="ot">&lt;-</span> <span class="sc">-</span>x[i,] <span class="sc">%*%</span> a <span class="sc">%*%</span> <span class="fu">solve</span>(b) <span class="sc">+</span> u[i,] <span class="sc">%*%</span> <span class="fu">solve</span>(b)</span>
+<span id="cb1-40"><a href="topic-01.html#cb1-40" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Estimation of <span class="math inline">\(A\)</span> using OLS (<em>without</em> contemporaneous relationships in <span class="math inline">\(y\)</span>)</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="topic-01.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># OLS fitting</span></span>
+<span id="cb2-2"><a href="topic-01.html#cb2-2" aria-hidden="true" tabindex="-1"></a>lm.res <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb2-3"><a href="topic-01.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="topic-01.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># compare estimates</span></span>
+<span id="cb2-5"><a href="topic-01.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(lm.res<span class="sc">$</span>coefficients)</span></code></pre></div>
+<pre><code>##               x1           x2
+## [1,] 0.387367424 -0.005222276
+## [2,] 0.004203001 -0.513489887</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="topic-01.html#cb4-1" aria-hidden="true" tabindex="-1"></a>b.a <span class="ot">&lt;-</span> <span class="fu">solve</span>(b) <span class="sc">%*%</span> <span class="sc">-</span>a</span>
+<span id="cb4-2"><a href="topic-01.html#cb4-2" aria-hidden="true" tabindex="-1"></a>b.a</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]  0.4  0.0
+## [2,]  0.0 -0.5</code></pre>
+<p>Estimation of <span class="math inline">\(V\)</span> (<em>without</em> contemporaneous relationships in <span class="math inline">\(y\)</span>)</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="topic-01.html#cb6-1" aria-hidden="true" tabindex="-1"></a>Sig.u <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">nrow</span>(lm.res<span class="sc">$</span>residuals) <span class="sc">*</span> <span class="fu">t</span>(lm.res<span class="sc">$</span>residuals) <span class="sc">%*%</span> lm.res<span class="sc">$</span>residuals</span>
+<span id="cb6-2"><a href="topic-01.html#cb6-2" aria-hidden="true" tabindex="-1"></a>Sig.u</span></code></pre></div>
+<pre><code>##           [,1]      [,2]
+## [1,] 1.5950007 0.8120818
+## [2,] 0.8120818 4.7884989</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="topic-01.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reconstruct (average) Sig</span></span>
+<span id="cb8-2"><a href="topic-01.html#cb8-2" aria-hidden="true" tabindex="-1"></a>l <span class="ot">&lt;-</span> c <span class="sc">+</span> d <span class="sc">*</span> <span class="fl">0.5</span></span>
+<span id="cb8-3"><a href="topic-01.html#cb8-3" aria-hidden="true" tabindex="-1"></a>V <span class="ot">&lt;-</span> l <span class="sc">%*%</span> <span class="fu">t</span>(l)</span>
+<span id="cb8-4"><a href="topic-01.html#cb8-4" aria-hidden="true" tabindex="-1"></a>V</span></code></pre></div>
+<pre><code>##        [,1] [,2]
+## [1,] 1.5625 0.75
+## [2,] 0.7500 4.77</code></pre>
+<hr>
+<p>Simulation of the data (<em>with</em> contemporaneous relationships in <span class="math inline">\(y\)</span>)</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="topic-01.html#cb10-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="dv">2000</span></span>
+<span id="cb10-2"><a href="topic-01.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="topic-01.html#cb10-3" aria-hidden="true" tabindex="-1"></a>beta1  <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
+<span id="cb10-4"><a href="topic-01.html#cb10-4" aria-hidden="true" tabindex="-1"></a>alpha1 <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb10-5"><a href="topic-01.html#cb10-5" aria-hidden="true" tabindex="-1"></a>beta2  <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb10-6"><a href="topic-01.html#cb10-6" aria-hidden="true" tabindex="-1"></a>alpha2 <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.5</span></span>
+<span id="cb10-7"><a href="topic-01.html#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="topic-01.html#cb10-8" aria-hidden="true" tabindex="-1"></a>c11 <span class="ot">&lt;-</span> <span class="fl">1.0</span></span>
+<span id="cb10-9"><a href="topic-01.html#cb10-9" aria-hidden="true" tabindex="-1"></a>c21 <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb10-10"><a href="topic-01.html#cb10-10" aria-hidden="true" tabindex="-1"></a>c22 <span class="ot">&lt;-</span> <span class="fl">2.0</span></span>
+<span id="cb10-11"><a href="topic-01.html#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="topic-01.html#cb10-12" aria-hidden="true" tabindex="-1"></a>d11  <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb10-13"><a href="topic-01.html#cb10-13" aria-hidden="true" tabindex="-1"></a>d21  <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb10-14"><a href="topic-01.html#cb10-14" aria-hidden="true" tabindex="-1"></a>d22  <span class="ot">&lt;-</span> <span class="fl">0.2</span></span>
+<span id="cb10-15"><a href="topic-01.html#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="topic-01.html#cb10-16" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span>  <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span>beta2,</span>
+<span id="cb10-17"><a href="topic-01.html#cb10-17" aria-hidden="true" tabindex="-1"></a>               <span class="sc">-</span>beta1, <span class="dv">1</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb10-18"><a href="topic-01.html#cb10-18" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span>alpha1, <span class="dv">0</span>,</span>
+<span id="cb10-19"><a href="topic-01.html#cb10-19" aria-hidden="true" tabindex="-1"></a>              <span class="dv">0</span>, <span class="sc">-</span>alpha2), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb10-20"><a href="topic-01.html#cb10-20" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span>  <span class="fu">matrix</span>(<span class="fu">c</span>(c11,  <span class="dv">0</span>,</span>
+<span id="cb10-21"><a href="topic-01.html#cb10-21" aria-hidden="true" tabindex="-1"></a>               c21, c22), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb10-22"><a href="topic-01.html#cb10-22" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span>  <span class="fu">matrix</span>(<span class="fu">c</span>(d11,  <span class="dv">0</span>,</span>
+<span id="cb10-23"><a href="topic-01.html#cb10-23" aria-hidden="true" tabindex="-1"></a>               d21,  d22), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb10-24"><a href="topic-01.html#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Exogenous variables</span></span>
+<span id="cb10-25"><a href="topic-01.html#cb10-25" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">10</span><span class="sc">*</span><span class="fu">runif</span>(t), <span class="dv">3</span><span class="sc">*</span><span class="fu">rnorm</span>(t))</span>
+<span id="cb10-26"><a href="topic-01.html#cb10-26" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">runif</span>(t)</span>
+<span id="cb10-27"><a href="topic-01.html#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="topic-01.html#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Disturbances</span></span>
+<span id="cb10-29"><a href="topic-01.html#cb10-29" aria-hidden="true" tabindex="-1"></a>zeros <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="dv">0</span>, <span class="fu">c</span>(t,<span class="dv">2</span>))</span>
+<span id="cb10-30"><a href="topic-01.html#cb10-30" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> zeros</span>
+<span id="cb10-31"><a href="topic-01.html#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq</span>(t)) {</span>
+<span id="cb10-32"><a href="topic-01.html#cb10-32" aria-hidden="true" tabindex="-1"></a>  l     <span class="ot">&lt;-</span> c <span class="sc">+</span> d <span class="sc">*</span> w[i]</span>
+<span id="cb10-33"><a href="topic-01.html#cb10-33" aria-hidden="true" tabindex="-1"></a>  u[i,] <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">2</span>) <span class="sc">%*%</span> <span class="fu">t</span>(l)</span>
+<span id="cb10-34"><a href="topic-01.html#cb10-34" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-35"><a href="topic-01.html#cb10-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-36"><a href="topic-01.html#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate the reduced form</span></span>
+<span id="cb10-37"><a href="topic-01.html#cb10-37" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> zeros</span>
+<span id="cb10-38"><a href="topic-01.html#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq</span>(t)) {</span>
+<span id="cb10-39"><a href="topic-01.html#cb10-39" aria-hidden="true" tabindex="-1"></a>  y[i,] <span class="ot">&lt;-</span> <span class="sc">-</span>x[i,] <span class="sc">%*%</span> a <span class="sc">%*%</span> <span class="fu">solve</span>(b) <span class="sc">+</span> u[i,] <span class="sc">%*%</span> <span class="fu">solve</span>(b)</span>
+<span id="cb10-40"><a href="topic-01.html#cb10-40" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Estimation of the parameters using OLS (<em>with</em> contemporaneous relationships in <span class="math inline">\(y\)</span>)</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="topic-01.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># OLS fitting</span></span>
+<span id="cb11-2"><a href="topic-01.html#cb11-2" aria-hidden="true" tabindex="-1"></a>lm.res <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb11-3"><a href="topic-01.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="topic-01.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># compare estimates</span></span>
+<span id="cb11-5"><a href="topic-01.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(lm.res<span class="sc">$</span>coefficients)</span></code></pre></div>
+<pre><code>##              x1         x2
+## [1,] 0.45697825 -0.3482923
+## [2,] 0.08860531 -0.5814871</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="topic-01.html#cb13-1" aria-hidden="true" tabindex="-1"></a>b.a <span class="ot">&lt;-</span> <span class="fu">solve</span>(b) <span class="sc">%*%</span> <span class="sc">-</span>a</span>
+<span id="cb13-2"><a href="topic-01.html#cb13-2" aria-hidden="true" tabindex="-1"></a>b.a</span></code></pre></div>
+<pre><code>##           [,1]       [,2]
+## [1,] 0.4545455 -0.1136364
+## [2,] 0.2727273 -0.5681818</code></pre>
+<p>Estimation of <span class="math inline">\(V\)</span> (<em>with</em> contemporaneous relationships in <span class="math inline">\(y\)</span>)</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="topic-01.html#cb15-1" aria-hidden="true" tabindex="-1"></a>Sig.u <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">nrow</span>(lm.res<span class="sc">$</span>residuals) <span class="sc">*</span> <span class="fu">t</span>(lm.res<span class="sc">$</span>residuals) <span class="sc">%*%</span> lm.res<span class="sc">$</span>residuals</span>
+<span id="cb15-2"><a href="topic-01.html#cb15-2" aria-hidden="true" tabindex="-1"></a>Sig.u</span></code></pre></div>
+<pre><code>##          [,1]     [,2]
+## [1,] 5.194421 4.996690
+## [2,] 4.996690 6.429859</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="topic-01.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reconstruct (average) Sig</span></span>
+<span id="cb17-2"><a href="topic-01.html#cb17-2" aria-hidden="true" tabindex="-1"></a>l <span class="ot">&lt;-</span> c <span class="sc">+</span> d <span class="sc">*</span> <span class="fl">0.5</span></span>
+<span id="cb17-3"><a href="topic-01.html#cb17-3" aria-hidden="true" tabindex="-1"></a>V <span class="ot">&lt;-</span> l <span class="sc">%*%</span> <span class="fu">t</span>(l)</span>
+<span id="cb17-4"><a href="topic-01.html#cb17-4" aria-hidden="true" tabindex="-1"></a>V</span></code></pre></div>
+<pre><code>##        [,1] [,2]
+## [1,] 1.5625 0.75
+## [2,] 0.7500 4.77</code></pre>
+<p>Cholesky decomposition of <span class="math inline">\(V\)</span></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="topic-01.html#cb19-1" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="fu">chol</span>(Sig.u)</span>
+<span id="cb19-2"><a href="topic-01.html#cb19-2" aria-hidden="true" tabindex="-1"></a>S</span></code></pre></div>
+<pre><code>##          [,1]     [,2]
+## [1,] 2.279127 2.192370
+## [2,] 0.000000 1.274116</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="topic-01.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(S) <span class="sc">%*%</span> S</span></code></pre></div>
+<pre><code>##          [,1]     [,2]
+## [1,] 5.194421 4.996690
+## [2,] 4.996690 6.429859</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="topic-01.html#cb23-1" aria-hidden="true" tabindex="-1"></a>Sig.u</span></code></pre></div>
+<pre><code>##          [,1]     [,2]
+## [1,] 5.194421 4.996690
+## [2,] 4.996690 6.429859</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="topic-02.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/mmoessler/topics-in-statistics-and-econometrics/blob/main/02-topic-01.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

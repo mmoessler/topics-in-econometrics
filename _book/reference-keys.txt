@@ -1,0 +1,16 @@
+motivation
+intro
+topic-01
+motivation-1
+probelm
+analysis
+topic-02
+statistical-model
+simulation
+set-up
+data-generating-process
+simulation-1
+plots
+reduced-form-parameters
+least-squares-estimator
+sample-distribution-of-least-squares-estimator

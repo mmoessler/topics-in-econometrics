@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "locale": "en_GB",
+  "platform": "4.2.1",
+  "metadata": {
+    "appmode": "static",
+    "primary_rmd": null,
+    "primary_html": "index.html",
+    "content_category": "site",
+    "has_parameters": false
+  },
+  "packages": null,
+  "files": {
+    "404.html": {
+      "checksum": "87d32a6a56c1c78252414526e20228b3"
+    },
+    "index.html": {
+      "checksum": "3804b1c06d85fc456e33e24b16e7f159"
+    },
+    "intro.html": {
+      "checksum": "6c1ceed88f9aec0f1e65592b338f997f"
+    },
+    "libs/anchor-sections-1.1.0/anchor-sections-hash.css": {
+      "checksum": "cc71c646c089ba898bbfdc599c3b08a1"
+    },
+    "libs/anchor-sections-1.1.0/anchor-sections.css": {
+      "checksum": "fd81c56ce3a57e25675af031c4559784"
+    },
+    "libs/anchor-sections-1.1.0/anchor-sections.js": {
+      "checksum": "1884622a348633e8b7d5db59a84b5df9"
+    },
+    "libs/bootstrap-3.3.5/css/bootstrap.min.css": {
+      "checksum": "aa3db69dbd9b05d8dfd439d464d02969"
+    },
+    "libs/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.eot": {
+      "checksum": "f4769f9bdb7466be65088239c12046d1"
+    },
+    "libs/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.svg": {
+      "checksum": "89889688147bd7575d6327160d64e760"
+    },
+    "libs/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.ttf": {
+      "checksum": "e18bbf611f2a2e43afc071aa2f4e1512"
+    },
+    "libs/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff": {
+      "checksum": "fa2772327f55d8198301fdb8bcfc8158"
+    },
+    "libs/bootstrap-3.3.5/js/bootstrap.min.js": {
+      "checksum": "4becdc9104623e891fbb9d38bba01be4"
+    },
+    "libs/bootstrap-3.3.5/shim/html5shiv.min.js": {
+      "checksum": "ae8fceae0e07d55b5cfaa9af6bc43a6d"
+    },
+    "libs/bootstrap-3.3.5/shim/respond.min.js": {
+      "checksum": "506fe393e9f296d14b63733c0aff6205"
+    },
+    "libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf": {
+      "checksum": "b06871f281fee6b241d60582ae9369b9"
+    },
+    "libs/gitbook-2.6.7/css/plugin-bookdown.css": {
+      "checksum": "511b32706d0828b46237a7cdebf52126"
+    },
+    "libs/gitbook-2.6.7/css/plugin-clipboard.css": {
+      "checksum": "e4a3bdc1e3d5590f47cbac67976f3961"
+    },
+    "libs/gitbook-2.6.7/css/plugin-fontsettings.css": {
+      "checksum": "ddba6e8649d659db2ca0e963ee4b76fb"
+    },
+    "libs/gitbook-2.6.7/css/plugin-highlight.css": {
+      "checksum": "467fbe4b6b5a4b88fdd75c463f8626ec"
+    },
+    "libs/gitbook-2.6.7/css/plugin-search.css": {
+      "checksum": "0d7a6bb6a50e00c7358cf61027f099f0"
+    },
+    "libs/gitbook-2.6.7/css/plugin-table.css": {
+      "checksum": "8cb82f94ce1446fa4bafe7a3933e6c65"
+    },
+    "libs/gitbook-2.6.7/css/style.css": {
+      "checksum": "8ca22ea18b283f8df1cdd191c2c6646f"
+    },
+    "libs/gitbook-2.6.7/js/app.min.js": {
+      "checksum": "395a8093ce46450cabfaa545a0705a3b"
+    },
+    "libs/gitbook-2.6.7/js/clipboard.min.js": {
+      "checksum": "be72101c8c16ba95fd8b69760d5ebc56"
+    },
+    "libs/gitbook-2.6.7/js/jquery.highlight.js": {
+      "checksum": "999424d32e03b9857098d2c7f53928c2"
+    },
+    "libs/gitbook-2.6.7/js/plugin-bookdown.js": {
+      "checksum": "36b5487b9c1020c0de1352b8f26b8a8e"
+    },
+    "libs/gitbook-2.6.7/js/plugin-clipboard.js": {
+      "checksum": "1b9c02dda66377b4fe429c85b58efd6e"
+    },
+    "libs/gitbook-2.6.7/js/plugin-fontsettings.js": {
+      "checksum": "4f57689705fdfa3eabfb7b7b92614f33"
+    },
+    "libs/gitbook-2.6.7/js/plugin-search.js": {
+      "checksum": "a906e04e1fc7aa9e057f3de4668f4a68"
+    },
+    "libs/gitbook-2.6.7/js/plugin-sharing.js": {
+      "checksum": "e2b65328457b1e2b16c46a0fd4f2852c"
+    },
+    "libs/jquery-3.6.0/jquery-3.6.0.min.js": {
+      "checksum": "8fb8fee4fcc3cc86ff6c724154c49c42"
+    },
+    "libs/navigation-1.1/tabsets.js": {
+      "checksum": "3838523138b4d71acb5ea1c5c45ecc00"
+    },
+    "reference-keys.txt": {
+      "checksum": "fa628ea113466d68206a36d9d66573ac"
+    },
+    "references.html": {
+      "checksum": "049b46107dccd40a050f97634bc1ba56"
+    },
+    "search_index.json": {
+      "checksum": "ca1c7f5fa89fff0dc3d866dc4f6a82f0"
+    },
+    "style.css": {
+      "checksum": "0685a61954d17298eb8a27d7f3e4e8ae"
+    },
+    "toc.css": {
+      "checksum": "a820aed9cde3885467d29812a7142bf5"
+    },
+    "topic-01.html": {
+      "checksum": "deb44a7f0e73d6e97877661732ab71c7"
+    },
+    "topic-02.html": {
+      "checksum": "8f0cbf0a01acf7261a95902462cea136"
+    },
+    "topics-in-statistics-and-econometrics_files/figure-html/unnamed-chunk-12-1.png": {
+      "checksum": "cba20660324c245593f86ed94a2a6bb0"
+    },
+    "topics-in-statistics-and-econometrics_files/figure-html/unnamed-chunk-3-1.png": {
+      "checksum": "cba20660324c245593f86ed94a2a6bb0"
+    }
+  },
+  "users": null
+}
