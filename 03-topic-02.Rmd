@@ -1,9 +1,28 @@
 
 # Topic 02
 
+```{r,include=FALSE}
+
+library(knitr)
+knitr::opts_chunk$set(
+  include = TRUE,
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  eval = FALSE
+  # fig.height = 8,
+  # fig.width = 10,
+  # fig.align = 'center'
+  )
+# options(scipen=1)
+# options(width=9999)
+# # See: https://stackoverflow.com/questions/36230790/missing-horizontal-scroll-bar-in-r-markdown-html-code-chunks-and-output
+
+```
+
 ## Statistical Model
 
-Statistical model for each observations $i$ (using the same $k$ regressors across $m$ equations),
+Statistical model for each observations $i$ (same $k$ regressors across $m$ equations),
 
 \begin{align*}
 \underset{\left(m \times 1\right)}{y_{i}} &= \underset{\left(m\times mk\right)}{\overline{X}_{i}} \underset{\left(mk \times 1\right)}{\beta} + \underset{\left(m \times 1\right)}{e_{i}}, \\
@@ -43,13 +62,19 @@ with,
 * $x_{ji}$ are $\left(k \times 1\right)$ matrix for $j=1,...,m$.
 * $\beta$ are $\left(k \times 1\right)$ matrix for $j=1,...,m$.
 
-Using the same $k$ regressors across $m$ equations this could be simplified to,
+With the same $k$ regressors across $m$ equations this simplifies to,
 
 \begin{align*}
-\underset{\left(m \times 1\right)}{y_{i}} &= \underset{\left(m\times mk\right)}{\left(\underset{\left(m \times m\right)}{I_{m}} \otimes \underset{\left(1\times k\right)}{x_{i}^{'}}\right)} \underset{\left(mk \times 1\right)}{\beta} + \underset{\left(m \times 1\right)}{e_{i}}.
+\underset{\left(m \times 1\right)}{y_{i}} &= \underset{\left(m\times mk\right)}{\left(\underset{\left(m \times m\right)}{I_{m}} \otimes \underset{\left(1\times k\right)}{x_{i}^{'}}\right)} \underset{\left(mk \times 1\right)}{\beta} + \underset{\left(m \times 1\right)}{e_{i}},
 \end{align*}
 
-Statistical model in matrix notation across observations $i$ (using the same $k$ regressors across $m$ equations),
+thus,
+
+\begin{align*}
+\overline{X}_{i} =\underset{\left(m \times mk\right)}{\underset{\left(m \times m\right)}{I_{m}} \otimes \underset{\left(1 \times k\right)}{x_{i}^{'}}}
+\end{align*}
+
+Statistical model in matrix notation across observations $i$ (same $k$ regressors across $m$ equations),
 
 \begin{align*}
 \underset{\left(n \times m\right)}{Y} &= \underset{\left(n\times k\right)}{X} \underset{\left(k \times m\right)}{B} + \underset{\left(n \times k\right)}{E}.
@@ -208,4 +233,73 @@ Sig.u
 
 ## Sample Distribution of Least-Squares Estimator
 
-Use the model in matrix notation across observations $i$.
+General form:
+
+\begin{align*}
+V_{\beta} = Q^{-1} \Omega Q^{-1}
+\end{align*}
+
+$\Omega$ in the population (robust w.r.t heteroskedasticity):
+
+<div hidden>
+
+\begin{align*}
+\underset{\left(mk\times m\right)}{\overline{X}_{i}^{'}}\underset{\left(m\times 1\right)}{e_{i}} = \left(\begin{array}{c}
+\underset{\left(k\times 1\right)}{x_{1i}}\underset{\left(k\times 1\right)}{e_{1i}} \\ \vdots \\ \underset{\left(k\times 1\right)}{x_{mi}}\underset{\left(1\times 1\right)}{e_{mi}} \end{array}\right)
+\end{align*}
+
+\begin{align*}
+\frac{1}{\sqrt{n}}\sum_{i=1}^{n}\underset{\left(mk\times m\right)}{\overline{X}_{i}^{'}}\underset{\left(m\times 1\right)}{e_{i}} \underset{d}{\rightarrow}N\left(\underset{\left(mk\times 1\right)}{0}\underset{\left(mk\times mk\right)}{\Omega}\right)
+\end{align*}
+
+</div>
+
+\begin{align*}
+\underset{\left(mk\times mk\right)}{\Omega} &= \text{E}\left[\underset{\left(mk\times m\right)}{\overline{X}_{i}^{'}}\underset{\left(m\times 1\right)}{e_{i}^{\phantom{'}}}\underset{\left(1\times m\right)}{e_{i}^{'}}\underset{\left(m\times km\right)}{\overline{X}_{i}^{\phantom{'}}}\right] \\
+\phantom{\underset{\left(mk\times mk\right)}{\Omega}} &= \text{E} \left[ \underset{\left(mk \times m\right)}{\left(  \underset{\left(m \times m\right)}{I_{m}^{\phantom{'}}} \otimes \underset{\left(k \times 1\right)}{x_{i}^{\phantom{'}}} \right)} \underset{\left(m \times 1\right)}{e_{i}^{\phantom{'}}} \underset{\left(1 \times m\right)}{e_{i}^{'}} \underset{\left(m \times mk\right)}{\left( \underset{\left(m \times m\right)}{I_{m}^{\phantom{'}}} \otimes \underset{\left(1 \times k\right)}{x_{i}^{'}} \right)} \right] \\
+\phantom{\underset{\left(mk\times mk\right)}{\Omega}} &= \text{E}\left[\underset{\left(m \times 1\right)}{e_{i}^{\phantom{'}}}\underset{\left(1 \times m\right)}{e_{i}^{'}} \otimes \underset{\left(k \times 1\right)}{x_{i}^{\phantom{'}}}\underset{\left(1 \times k\right)}{x_{i}^{'}}\right]
+\end{align*}
+
+$\Omega$ in the population (robust w.r.t heteroskedasticity and serial correlation):
+
+\begin{align*}
+\underset{\left(mk\times mk\right)}{\Omega} &= \sum_{l=-\infty}^{\infty} \text{E}\left[\underset{\left(mk\times m\right)}{\overline{X}_{t-l}^{'}}\underset{\left(m\times 1\right)}{e_{t-l}^{\phantom{'}}}\underset{\left(1\times m\right)}{e_{t}^{'}}\underset{\left(m\times km\right)}{\overline{X}_{t}^{\phantom{'}}}\right]  \\
+\phantom{\underset{\left(mk\times mk\right)}{\Omega}} &= \sum_{l=-\infty}^{\infty} \text{E} \left[ \underset{\left(mk \times m\right)}{\left(  \underset{\left(m \times m\right)}{I_{m}^{\phantom{'}}} \otimes \underset{\left(k \times 1\right)}{x_{t-l}^{\phantom{'}}} \right)} \underset{\left(m \times 1\right)}{e_{t-l}^{\phantom{'}}} \underset{\left(1 \times m\right)}{e_{t}^{'}} \underset{\left(m \times mk\right)}{\left( \underset{\left(m \times m\right)}{I_{m}^{\phantom{'}}} \otimes \underset{\left(1 \times k\right)}{x_{t}^{'}} \right)} \right] \\
+\phantom{\underset{\left(mk\times mk\right)}{\Omega}} &= \sum_{l=-\infty}^{\infty} \text{E}\left[\underset{\left(m \times 1\right)}{e_{t-l}^{\phantom{'}}}\underset{\left(1 \times m\right)}{e_{t}^{'}} \otimes \underset{\left(k \times 1\right)}{x_{t-l}^{\phantom{'}}}\underset{\left(1 \times k\right)}{x_{t}^{'}}\right]
+\end{align*}
+
+$Q$ in the population:
+
+\begin{align*}
+\underset{\left(mk\times mk\right)}{Q} &= \text{E} \left[ \overline{X}_{i}^{'} \overline{X}_{i} \right] \\
+\phantom{Q} &= \text{E} \left[ \left( I_{m} \otimes x_{i} \right) \left( I_{m} \otimes x_{i}^{'} \right) \right] \\
+\phantom{Q} &= I_{m} \otimes \text{E} \left[ x_{i}^{'} x_{i} \right]
+\end{align*}
+
+Sample counterpart of $\Omega$ (robust w.r.t heteroskedasticity):
+
+\begin{align*}
+\underset{\left(mk\times mk\right)}{\widehat{\Omega}} &= \sum_{i=1}^{n} \underset{\left(mk\times m\right)}{\overline{X}_{i}^{'}}\underset{\left(m\times 1\right)}{\widehat{e}_{i}}\underset{\left(1\times m\right)}{\widehat{e}_{i}^{'}}\underset{\left(m\times km\right)}{\overline{X}_{i}} \\
+\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \sum_{i=1}^{n} \left( \left( I_{m} \otimes x_{i} \right) \widehat{e}_{i} \widehat{e}_{i}^{'} \left( I_{m} \otimes x_{i}^{'} \right) \right) \\
+\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \sum_{i=1}^{n}\left(\widehat{e}_{i}\widehat{e}_{i}^{'} \otimes x_{i}x_{i}^{'}\right)
+\end{align*}
+
+Sample counterpart of $\Omega$ (robust w.r.t heteroskedasticity and serial correlation):
+
+...
+
+Sample counterpart of $Q$:
+
+\begin{align*}
+\underset{\left(mk\times mk\right)}{Q} &= \sum_{i=1}^{n} \left( \overline{X}_{i}^{'} \overline{X}_{i} \right) \\
+\phantom{Q} &= \sum_{i=1}^{n} \left( \left( I_{m} \otimes x_{i} \right) \left( I_{m} \otimes x_{i}^{'} \right) \right) \\
+\phantom{Q} &= I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right)
+\end{align*}
+
+Sample counterpart of $V_{\beta}$:
+
+\begin{align*}
+\widehat{V}_{\widehat{\beta}} &= \widehat{Q}^{-1} \widehat{\Omega} \widehat{Q}^{-1} \\
+\phantom{\widehat{V}_{\widehat{\beta}}} &= \left(I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right)\right)^{-1} \sum_{i=1}^{n}\left(\widehat{e}_{i}\widehat{e}_{i}^{'} \otimes x_{i}x_{i}^{'}\right) \left(I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right)\right)^{-1} \\
+\phantom{\widehat{V}_{\widehat{\beta}}} &= \left(I_{m} \otimes \left( X^{'} X \right)^{-1}\right) \sum_{i=1}^{n}\left(\widehat{e}_{i}\widehat{e}_{i}^{'} \otimes x_{i}x_{i}^{'}\right) \left(I_{m} \otimes \left( X^{'} X \right)^{-1}\right)
+\end{align*}

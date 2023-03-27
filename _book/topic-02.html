@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Topic 02 | Topics in Statistics and Econometrics</title>
+  <title>4 Topic 02 | Topics in Statistics and Econometrics</title>
   <meta name="description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Topic 02 | Topics in Statistics and Econometrics" />
+  <meta property="og:title" content="4 Topic 02 | Topics in Statistics and Econometrics" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
   <meta name="github-repo" content="mmoessler/topics-in-statistics-and-econometrics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Topic 02 | Topics in Statistics and Econometrics" />
+  <meta name="twitter:title" content="4 Topic 02 | Topics in Statistics and Econometrics" />
   
   <meta name="twitter:description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Markus Mößler" />
 
 
-<meta name="date" content="2023-03-23" />
+<meta name="date" content="2023-03-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -177,10 +177,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="topic-02" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Topic 02<a href="topic-02.html#topic-02" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">4</span> Topic 02<a href="topic-02.html#topic-02" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="statistical-model" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Statistical Model<a href="topic-02.html#statistical-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Statistical model for each observations <span class="math inline">\(i\)</span> (using the same <span class="math inline">\(k\)</span> regressors across <span class="math inline">\(m\)</span> equations),</p>
+<p>Statistical model for each observations <span class="math inline">\(i\)</span> (same <span class="math inline">\(k\)</span> regressors across <span class="math inline">\(m\)</span> equations),</p>
 <p><span class="math display">\[\begin{align*}
 \underset{\left(m \times 1\right)}{y_{i}} &amp;= \underset{\left(m\times mk\right)}{\overline{X}_{i}} \underset{\left(mk \times 1\right)}{\beta} + \underset{\left(m \times 1\right)}{e_{i}}, \\
 
@@ -218,11 +218,15 @@ u_{mi}
 <li><span class="math inline">\(x_{ji}\)</span> are <span class="math inline">\(\left(k \times 1\right)\)</span> matrix for <span class="math inline">\(j=1,...,m\)</span>.</li>
 <li><span class="math inline">\(\beta\)</span> are <span class="math inline">\(\left(k \times 1\right)\)</span> matrix for <span class="math inline">\(j=1,...,m\)</span>.</li>
 </ul>
-<p>Using the same <span class="math inline">\(k\)</span> regressors across <span class="math inline">\(m\)</span> equations this could be simplified to,</p>
+<p>With the same <span class="math inline">\(k\)</span> regressors across <span class="math inline">\(m\)</span> equations this simplifies to,</p>
 <p><span class="math display">\[\begin{align*}
-\underset{\left(m \times 1\right)}{y_{i}} &amp;= \underset{\left(m\times mk\right)}{\left(\underset{\left(m \times m\right)}{I_{m}} \otimes \underset{\left(1\times k\right)}{x_{i}^{&#39;}}\right)} \underset{\left(mk \times 1\right)}{\beta} + \underset{\left(m \times 1\right)}{e_{i}}.
+\underset{\left(m \times 1\right)}{y_{i}} &amp;= \underset{\left(m\times mk\right)}{\left(\underset{\left(m \times m\right)}{I_{m}} \otimes \underset{\left(1\times k\right)}{x_{i}^{&#39;}}\right)} \underset{\left(mk \times 1\right)}{\beta} + \underset{\left(m \times 1\right)}{e_{i}},
 \end{align*}\]</span></p>
-<p>Statistical model in matrix notation across observations <span class="math inline">\(i\)</span> (using the same <span class="math inline">\(k\)</span> regressors across <span class="math inline">\(m\)</span> equations),</p>
+<p>thus,</p>
+<p><span class="math display">\[\begin{align*}
+\overline{X}_{i} =\underset{\left(m \times mk\right)}{\underset{\left(m \times m\right)}{I_{m}} \otimes \underset{\left(1 \times k\right)}{x_{i}^{&#39;}}}
+\end{align*}\]</span></p>
+<p>Statistical model in matrix notation across observations <span class="math inline">\(i\)</span> (same <span class="math inline">\(k\)</span> regressors across <span class="math inline">\(m\)</span> equations),</p>
 <p><span class="math display">\[\begin{align*}
 \underset{\left(n \times m\right)}{Y} &amp;= \underset{\left(n\times k\right)}{X} \underset{\left(k \times m\right)}{B} + \underset{\left(n \times k\right)}{E}.
 \end{align*}\]</span></p>
@@ -310,58 +314,97 @@ x_{1t} &amp;\sim N \left(\mu_{x_{1}},\sigma_{x_{1}}^2\right)
 <span id="cb3-2"><a href="topic-02.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="topic-02.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ts.plot</span>(y[,<span class="dv">1</span>])</span>
 <span id="cb3-4"><a href="topic-02.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ts.plot</span>(y[,<span class="dv">2</span>])</span></code></pre></div>
-<p><img src="topics-in-statistics-and-econometrics_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 <div id="reduced-form-parameters" class="section level3 hasAnchor" number="4.2.5">
 <h3><span class="header-section-number">4.2.5</span> Reduced form parameters<a href="topic-02.html#reduced-form-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="topic-02.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># parameteres of the reduced form</span></span>
 <span id="cb4-2"><a href="topic-02.html#cb4-2" aria-hidden="true" tabindex="-1"></a>ab <span class="ot">&lt;-</span> <span class="sc">-</span>a <span class="sc">%*%</span> <span class="fu">solve</span>(b)</span>
 <span id="cb4-3"><a href="topic-02.html#cb4-3" aria-hidden="true" tabindex="-1"></a>ab</span></code></pre></div>
-<pre><code>##            [,1]        [,2]
-## [1,]  0.4545455  0.09090909
-## [2,] -0.3409091 -0.56818182</code></pre>
 </div>
 </div>
 <div id="least-squares-estimator" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Least-Squares Estimator<a href="topic-02.html#least-squares-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Use the model in matrix notation across observations <span class="math inline">\(i\)</span>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="topic-02.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dimensions</span></span>
-<span id="cb6-2"><a href="topic-02.html#cb6-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">ncol</span>(y);m</span></code></pre></div>
-<pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="topic-02.html#cb8-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">nrow</span>(y);t</span></code></pre></div>
-<pre><code>## [1] 2000</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="topic-02.html#cb10-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">ncol</span>(x);k</span></code></pre></div>
-<pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="topic-02.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stack regressands and regressors</span></span>
-<span id="cb12-2"><a href="topic-02.html#cb12-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(y) <span class="co"># stack y over observations</span></span>
-<span id="cb12-3"><a href="topic-02.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(Y)</span></code></pre></div>
-<pre><code>## [1] 4000</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="topic-02.html#cb14-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">diag</span>(m) <span class="sc">%x%</span> x <span class="co"># stack x over observations</span></span>
-<span id="cb14-2"><a href="topic-02.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(X)</span></code></pre></div>
-<pre><code>## [1] 4000    4</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="topic-02.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># estimation</span></span>
-<span id="cb16-2"><a href="topic-02.html#cb16-2" aria-hidden="true" tabindex="-1"></a>lm.res <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb16-3"><a href="topic-02.html#cb16-3" aria-hidden="true" tabindex="-1"></a>lm.res<span class="sc">$</span>coefficients</span></code></pre></div>
-<pre><code>##          X1          X2          X3          X4 
-##  0.44495050 -0.37735285  0.07649982 -0.60879807</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="topic-02.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># comoare with reduced form parameters for simmulation</span></span>
-<span id="cb18-2"><a href="topic-02.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.vector</span>(ab)</span></code></pre></div>
-<pre><code>## [1]  0.45454545 -0.34090909  0.09090909 -0.56818182</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="topic-02.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># expand residuals again</span></span>
-<span id="cb20-2"><a href="topic-02.html#cb20-2" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">matrix</span>(lm.res<span class="sc">$</span>residuals, <span class="at">ncol =</span> m)</span>
-<span id="cb20-3"><a href="topic-02.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(u)</span></code></pre></div>
-<pre><code>## [1] 2000    2</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="topic-02.html#cb22-1" aria-hidden="true" tabindex="-1"></a>Sig.u <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>t <span class="sc">*</span> <span class="fu">t</span>(u) <span class="sc">%*%</span> u</span>
-<span id="cb22-2"><a href="topic-02.html#cb22-2" aria-hidden="true" tabindex="-1"></a>Sig.u</span></code></pre></div>
-<pre><code>##           [,1]     [,2]
-## [1,] 10.861852 7.894577
-## [2,]  7.894577 9.537205</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="topic-02.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># comoare with reduced form parameters for simmulation</span></span>
-<span id="cb24-2"><a href="topic-02.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ???</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="topic-02.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dimensions</span></span>
+<span id="cb5-2"><a href="topic-02.html#cb5-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">ncol</span>(y);m</span>
+<span id="cb5-3"><a href="topic-02.html#cb5-3" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">nrow</span>(y);t</span>
+<span id="cb5-4"><a href="topic-02.html#cb5-4" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">ncol</span>(x);k</span>
+<span id="cb5-5"><a href="topic-02.html#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="topic-02.html#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># stack regressands and regressors</span></span>
+<span id="cb5-7"><a href="topic-02.html#cb5-7" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(y) <span class="co"># stack y over observations</span></span>
+<span id="cb5-8"><a href="topic-02.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(Y)</span>
+<span id="cb5-9"><a href="topic-02.html#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="topic-02.html#cb5-10" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">diag</span>(m) <span class="sc">%x%</span> x <span class="co"># stack x over observations</span></span>
+<span id="cb5-11"><a href="topic-02.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(X)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="topic-02.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># estimation</span></span>
+<span id="cb6-2"><a href="topic-02.html#cb6-2" aria-hidden="true" tabindex="-1"></a>lm.res <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb6-3"><a href="topic-02.html#cb6-3" aria-hidden="true" tabindex="-1"></a>lm.res<span class="sc">$</span>coefficients</span>
+<span id="cb6-4"><a href="topic-02.html#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="topic-02.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># comoare with reduced form parameters for simmulation</span></span>
+<span id="cb6-6"><a href="topic-02.html#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">as.vector</span>(ab)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="topic-02.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># expand residuals again</span></span>
+<span id="cb7-2"><a href="topic-02.html#cb7-2" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">matrix</span>(lm.res<span class="sc">$</span>residuals, <span class="at">ncol =</span> m)</span>
+<span id="cb7-3"><a href="topic-02.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(u)</span>
+<span id="cb7-4"><a href="topic-02.html#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="topic-02.html#cb7-5" aria-hidden="true" tabindex="-1"></a>Sig.u <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>t <span class="sc">*</span> <span class="fu">t</span>(u) <span class="sc">%*%</span> u</span>
+<span id="cb7-6"><a href="topic-02.html#cb7-6" aria-hidden="true" tabindex="-1"></a>Sig.u</span>
+<span id="cb7-7"><a href="topic-02.html#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="topic-02.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># comoare with reduced form parameters for simmulation</span></span>
+<span id="cb7-9"><a href="topic-02.html#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ???</span></span></code></pre></div>
 </div>
 <div id="sample-distribution-of-least-squares-estimator" class="section level2 hasAnchor" number="4.4">
 <h2><span class="header-section-number">4.4</span> Sample Distribution of Least-Squares Estimator<a href="topic-02.html#sample-distribution-of-least-squares-estimator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Use the model in matrix notation across observations <span class="math inline">\(i\)</span>.</p>
+<p>General form:</p>
+<p><span class="math display">\[\begin{align*}
+V_{\beta} = Q^{-1} \Omega Q^{-1}
+\end{align*}\]</span></p>
+<p><span class="math inline">\(\Omega\)</span> in the population (robust w.r.t heteroskedasticity):</p>
+<div hidden="">
+<p><span class="math display">\[\begin{align*}
+\underset{\left(mk\times m\right)}{\overline{X}_{i}^{&#39;}}\underset{\left(m\times 1\right)}{e_{i}} = \left(\begin{array}{c}
+\underset{\left(k\times 1\right)}{x_{1i}}\underset{\left(k\times 1\right)}{e_{1i}} \\ \vdots \\ \underset{\left(k\times 1\right)}{x_{mi}}\underset{\left(1\times 1\right)}{e_{mi}} \end{array}\right)
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\frac{1}{\sqrt{n}}\sum_{i=1}^{n}\underset{\left(mk\times m\right)}{\overline{X}_{i}^{&#39;}}\underset{\left(m\times 1\right)}{e_{i}} \underset{d}{\rightarrow}N\left(\underset{\left(mk\times 1\right)}{0}\underset{\left(mk\times mk\right)}{\Omega}\right)
+\end{align*}\]</span></p>
+</div>
+<p><span class="math display">\[\begin{align*}
+\underset{\left(mk\times mk\right)}{\Omega} &amp;= \text{E}\left[\underset{\left(mk\times m\right)}{\overline{X}_{i}^{&#39;}}\underset{\left(m\times 1\right)}{e_{i}^{\phantom{&#39;}}}\underset{\left(1\times m\right)}{e_{i}^{&#39;}}\underset{\left(m\times km\right)}{\overline{X}_{i}^{\phantom{&#39;}}}\right] \\
+\phantom{\underset{\left(mk\times mk\right)}{\Omega}} &amp;= \text{E} \left[ \underset{\left(mk \times m\right)}{\left(  \underset{\left(m \times m\right)}{I_{m}^{\phantom{&#39;}}} \otimes \underset{\left(k \times 1\right)}{x_{i}^{\phantom{&#39;}}} \right)} \underset{\left(m \times 1\right)}{e_{i}^{\phantom{&#39;}}} \underset{\left(1 \times m\right)}{e_{i}^{&#39;}} \underset{\left(m \times mk\right)}{\left( \underset{\left(m \times m\right)}{I_{m}^{\phantom{&#39;}}} \otimes \underset{\left(1 \times k\right)}{x_{i}^{&#39;}} \right)} \right] \\
+\phantom{\underset{\left(mk\times mk\right)}{\Omega}} &amp;= \text{E}\left[\underset{\left(m \times 1\right)}{e_{i}^{\phantom{&#39;}}}\underset{\left(1 \times m\right)}{e_{i}^{&#39;}} \otimes \underset{\left(k \times 1\right)}{x_{i}^{\phantom{&#39;}}}\underset{\left(1 \times k\right)}{x_{i}^{&#39;}}\right]
+\end{align*}\]</span></p>
+<p><span class="math inline">\(\Omega\)</span> in the population (robust w.r.t heteroskedasticity and serial correlation):</p>
+<p><span class="math display">\[\begin{align*}
+\underset{\left(mk\times mk\right)}{\Omega} &amp;= \sum_{l=-\infty}^{\infty} \text{E}\left[\underset{\left(mk\times m\right)}{\overline{X}_{t-l}^{&#39;}}\underset{\left(m\times 1\right)}{e_{t-l}^{\phantom{&#39;}}}\underset{\left(1\times m\right)}{e_{t}^{&#39;}}\underset{\left(m\times km\right)}{\overline{X}_{t}^{\phantom{&#39;}}}\right]  \\
+\phantom{\underset{\left(mk\times mk\right)}{\Omega}} &amp;= \sum_{l=-\infty}^{\infty} \text{E} \left[ \underset{\left(mk \times m\right)}{\left(  \underset{\left(m \times m\right)}{I_{m}^{\phantom{&#39;}}} \otimes \underset{\left(k \times 1\right)}{x_{t-l}^{\phantom{&#39;}}} \right)} \underset{\left(m \times 1\right)}{e_{t-l}^{\phantom{&#39;}}} \underset{\left(1 \times m\right)}{e_{t}^{&#39;}} \underset{\left(m \times mk\right)}{\left( \underset{\left(m \times m\right)}{I_{m}^{\phantom{&#39;}}} \otimes \underset{\left(1 \times k\right)}{x_{t}^{&#39;}} \right)} \right] \\
+\phantom{\underset{\left(mk\times mk\right)}{\Omega}} &amp;= \sum_{l=-\infty}^{\infty} \text{E}\left[\underset{\left(m \times 1\right)}{e_{t-l}^{\phantom{&#39;}}}\underset{\left(1 \times m\right)}{e_{t}^{&#39;}} \otimes \underset{\left(k \times 1\right)}{x_{t-l}^{\phantom{&#39;}}}\underset{\left(1 \times k\right)}{x_{t}^{&#39;}}\right]
+\end{align*}\]</span></p>
+<p><span class="math inline">\(Q\)</span> in the population:</p>
+<p><span class="math display">\[\begin{align*}
+\underset{\left(mk\times mk\right)}{Q} &amp;= \text{E} \left[ \overline{X}_{i}^{&#39;} \overline{X}_{i} \right] \\
+\phantom{Q} &amp;= \text{E} \left[ \left( I_{m} \otimes x_{i} \right) \left( I_{m} \otimes x_{i}^{&#39;} \right) \right] \\
+\phantom{Q} &amp;= I_{m} \otimes \text{E} \left[ x_{i}^{&#39;} x_{i} \right]
+\end{align*}\]</span></p>
+<p>Sample counterpart of <span class="math inline">\(\Omega\)</span> (robust w.r.t heteroskedasticity):</p>
+<p><span class="math display">\[\begin{align*}
+\underset{\left(mk\times mk\right)}{\widehat{\Omega}} &amp;= \sum_{i=1}^{n} \underset{\left(mk\times m\right)}{\overline{X}_{i}^{&#39;}}\underset{\left(m\times 1\right)}{\widehat{e}_{i}}\underset{\left(1\times m\right)}{\widehat{e}_{i}^{&#39;}}\underset{\left(m\times km\right)}{\overline{X}_{i}} \\
+\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &amp;= \sum_{i=1}^{n} \left( \left( I_{m} \otimes x_{i} \right) \widehat{e}_{i} \widehat{e}_{i}^{&#39;} \left( I_{m} \otimes x_{i}^{&#39;} \right) \right) \\
+\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &amp;= \sum_{i=1}^{n}\left(\widehat{e}_{i}\widehat{e}_{i}^{&#39;} \otimes x_{i}x_{i}^{&#39;}\right)
+\end{align*}\]</span></p>
+<p>Sample counterpart of <span class="math inline">\(\Omega\)</span> (robust w.r.t heteroskedasticity and serial correlation):</p>
+<p>…</p>
+<p>Sample counterpart of <span class="math inline">\(Q\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+\underset{\left(mk\times mk\right)}{Q} &amp;= \sum_{i=1}^{n} \left( \overline{X}_{i}^{&#39;} \overline{X}_{i} \right) \\
+\phantom{Q} &amp;= \sum_{i=1}^{n} \left( \left( I_{m} \otimes x_{i} \right) \left( I_{m} \otimes x_{i}^{&#39;} \right) \right) \\
+\phantom{Q} &amp;= I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{&#39;} x_{i} \right)
+\end{align*}\]</span></p>
+<p>Sample counterpart of <span class="math inline">\(V_{\beta}\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+\widehat{V}_{\widehat{\beta}} &amp;= \widehat{Q}^{-1} \widehat{\Omega} \widehat{Q}^{-1} \\
+\phantom{\widehat{V}_{\widehat{\beta}}} &amp;= \left(I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{&#39;} x_{i} \right)\right)^{-1} \sum_{i=1}^{n}\left(\widehat{e}_{i}\widehat{e}_{i}^{&#39;} \otimes x_{i}x_{i}^{&#39;}\right) \left(I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{&#39;} x_{i} \right)\right)^{-1} \\
+\phantom{\widehat{V}_{\widehat{\beta}}} &amp;= \left(I_{m} \otimes \left( X^{&#39;} X \right)^{-1}\right) \sum_{i=1}^{n}\left(\widehat{e}_{i}\widehat{e}_{i}^{&#39;} \otimes x_{i}x_{i}^{&#39;}\right) \left(I_{m} \otimes \left( X^{&#39;} X \right)^{-1}\right)
+\end{align*}\]</span></p>
 
 </div>
 </div>
