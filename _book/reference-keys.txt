@@ -14,3 +14,5 @@ plots
 reduced-form-parameters
 least-squares-estimator
 sample-distribution-of-least-squares-estimator
+population-quantities
+sample-quantities
