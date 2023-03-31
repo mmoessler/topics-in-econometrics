@@ -352,14 +352,14 @@ Sample counterpart of $\Omega$ (robust w.r.t heteroskedasticity):
 <!-- \end{align*} -->
 
 \begin{align*}
-\underset{\left(mk\times mk\right)}{\widehat{\Omega}} &= \frac{1}{n} \sum_{i=1}^{n} \underset{\left(mk\times m\right)}{\overline{X}_{i}^{'}}\underset{\left(m\times 1\right)}{\widehat{e}_{i}}\underset{\left(1\times m\right)}{\widehat{e}_{i}^{'}}\underset{\left(m\times km\right)}{\overline{X}_{i}}
+\underset{\left(mk\times mk\right)}{\widehat{\Omega}} &= \frac{1}{n^2} \sum_{i=1}^{n} \underset{\left(mk\times m\right)}{\overline{X}_{i}^{'}}\underset{\left(m\times 1\right)}{\widehat{e}_{i}}\underset{\left(1\times m\right)}{\widehat{e}_{i}^{'}}\underset{\left(m\times km\right)}{\overline{X}_{i}}
 \\
-\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \frac{1}{n} \sum_{i=1}^{n} \left( \left( I_{m} \otimes x_{i} \right) \widehat{e}_{i} \widehat{e}_{i}^{'} \left( I_{m} \otimes x_{i}^{'} \right) \right)
+\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \frac{1}{n^2} \sum_{i=1}^{n} \left( \left( I_{m} \otimes x_{i} \right) \widehat{e}_{i} \widehat{e}_{i}^{'} \left( I_{m} \otimes x_{i}^{'} \right) \right)
 \\
-\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \frac{1}{n} \sum_{i=1}^{n}\left(\widehat{e}_{i}\widehat{e}_{i}^{'} \otimes x_{i}x_{i}^{'}\right)
+\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \frac{1}{n^2} \sum_{i=1}^{n}\left(\widehat{e}_{i}\widehat{e}_{i}^{'} \otimes x_{i}x_{i}^{'}\right)
 \end{align*}
 
-```{r}
+```{r, include=FALSE}
 
 Omega.02 <- matrix(0, nrow = m*k, ncol = m*k)
 for (i in 1:t) {
@@ -367,14 +367,12 @@ for (i in 1:t) {
 }
 Omega.02
 
-Omega.02.hat <- 1/n * Omega.02
-Omega.02.hat
+1/n * Omega.02
 
 ```
 
 ```{r}
 
-# or,
 xe.01 <- matrix(seq(1,t*m*k), nrow = t, ncol = m*k)
 for (i in 1:t) {
   for (j in 1:m) {
@@ -382,7 +380,18 @@ for (i in 1:t) {
   }
 }
 
-1/n * (t(xe.01) %*% xe.01)
+Omega.02.hat <- 1/(n^2) * (t(xe.01) %*% xe.01)
+Omega.02.hat
+
+```
+
+Compare with the results of the `sandwich` package.
+
+```{r}
+
+Omega.02.hat * n
+
+sandwich::meat(lm.res.02)
 
 ```
 
@@ -391,9 +400,13 @@ for (i in 1:t) {
 head(xe.01)
 tail(xe.01)
 
-head(sandwich::estfun(lm.res.01))
-tail(sandwich::estfun(lm.res.01))
+head(sandwich::estfun(lm.res.02))
+tail(sandwich::estfun(lm.res.02))
 # seems to work
+
+Omega.02.hat
+
+sandwich::meat(lm.res.02)
 
 ```
 
@@ -419,13 +432,13 @@ Sample counterpart of $\Omega$ (restricted to homoskedasticity):
 <!-- \end{align*} -->
 
 \begin{align*}
-\underset{\left(mk\times mk\right)}{\widehat{\Omega}} &= \frac{1}{n} \sum_{i=1}^{n} \underset{\left(mk\times m\right)}{\overline{X}_{i}^{'}}\underset{\left(m\times 1\right)}{\widehat{e}_{i}}\underset{\left(1\times m\right)}{\widehat{e}_{i}^{'}}\underset{\left(m\times km\right)}{\overline{X}_{i}}
+\underset{\left(mk\times mk\right)}{\widehat{\Omega}} &= \frac{1}{n^2} \sum_{i=1}^{n} \underset{\left(mk\times m\right)}{\overline{X}_{i}^{'}}\underset{\left(m\times 1\right)}{\widehat{e}_{i}}\underset{\left(1\times m\right)}{\widehat{e}_{i}^{'}}\underset{\left(m\times km\right)}{\overline{X}_{i}}
 \\
-\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \frac{1}{n} \sum_{i=1}^{n} \left( \left( I_{m} \otimes x_{i} \right) \widehat{\Sigma} \left( I_{m} \otimes x_{i}^{'} \right) \right)
+\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \frac{1}{n^2} \sum_{i=1}^{n} \left( \left( I_{m} \otimes x_{i} \right) \widehat{\Sigma} \left( I_{m} \otimes x_{i}^{'} \right) \right)
 \\
-\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \frac{1}{n} \sum_{i=1}^{n} \left( \widehat{\Sigma} \otimes x_{i}^{\phantom{'}}x_{i}^{'} \right)
+\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \frac{1}{n^2} \sum_{i=1}^{n} \left( \widehat{\Sigma} \otimes x_{i}^{\phantom{'}}x_{i}^{'} \right)
 \\
-\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \widehat{\Sigma} \otimes \frac{1}{n} \sum_{i=1}^{n}  x_{i}^{\phantom{'}}x_{i}^{'}
+\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \frac{1}{n^2} \left( \widehat{\Sigma} \otimes \sum_{i=1}^{n}  x_{i}^{\phantom{'}}x_{i}^{'} \right)
 \end{align*}
 
 with
@@ -436,14 +449,8 @@ with
 
 ```{r}
 
-Omega.01 <- ((t(e) %*% e) / n) %x% (t(x) %*% x)
-Omega.01
-
-Omega.01.hat <- 1/n * Omega.01
+Omega.01.hat <- 1/(n^2) * ((t(e) %*% e) / n) %x% (t(x) %*% x)
 Omega.01.hat
-
-# check
-(t(e) %*% e / n) %x% (t(x) %*% x)
 
 ```
 
@@ -476,18 +483,27 @@ Sample counterpart of $Q$:
 \\
 \phantom{Q} &= \frac{1}{n} \sum_{i=1}^{n} \left( \left( I_{m} \otimes x_{i} \right) \left( I_{m} \otimes x_{i}^{'} \right) \right)
 \\
-\phantom{Q} &= I_{m} \otimes \frac{1}{n} \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right)
+\phantom{Q} &= \frac{1}{n} \left( I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right) \right)
 \end{align*}
 
 ```{r}
 
-Q <- diag(m) %x% (t(x) %*% x)
-Q
-
-Q.hat <- 1/n * Q
+Q.hat <- 1/n * diag(m) %x% (t(x) %*% x)
 Q.hat
 
 ```
+
+Compare with the results of the `sandwich` package.
+
+```{r}
+
+solve(Q.hat)
+
+sandwich::bread(lm.res.02)
+
+```
+
+
 
 <!-- .................................................. -->
 <hr>
@@ -505,18 +521,25 @@ Sample counterpart of $V_{\beta}$ (robust w.r.t heteroskedasticity):
 \begin{align*}
 \widehat{V}_{\widehat{\beta}} &= \widehat{Q}^{-1} \widehat{\Omega} \widehat{Q}^{-1}
 \\
-\phantom{\widehat{V}_{\widehat{\beta}}} &= \left(I_{m} \otimes \frac{1}{n} \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right)\right)^{-1} \frac{1}{n} \sum_{i=1}^{n}\left(\widehat{e}_{i}\widehat{e}_{i}^{'} \otimes x_{i}x_{i}^{'}\right) \left(I_{m} \otimes \frac{1}{n} \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right)\right)^{-1}
-\\
-\phantom{\widehat{V}_{\widehat{\beta}}} &= \left(I_{m} \otimes \left( \frac{1}{n} X^{'} X \right)^{-1}\right) \sum_{i=1}^{n}\left(\widehat{e}_{i}\widehat{e}_{i}^{'} \otimes x_{i}x_{i}^{'}\right) \left(I_{m} \otimes \left( \frac{1}{n} X^{'} X \right)^{-1}\right)
+\phantom{\widehat{V}_{\widehat{\beta}}} &= \left(\frac{1}{n} \left( I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right) \right)\right)^{-1} \frac{1}{n^2} \sum_{i=1}^{n}\left(\widehat{e}_{i}\widehat{e}_{i}^{'} \otimes x_{i}x_{i}^{'}\right) \left(\frac{1}{n} \left( I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right) \right)\right)^{-1}
 \end{align*}
+
+<!-- \phantom{\widehat{V}_{\widehat{\beta}}} &= \left(I_{m} \otimes \left( \frac{1}{n} X^{'} X \right)^{-1}\right) \frac{1}{n^2} \sum_{i=1}^{n}\left(\widehat{e}_{i}\widehat{e}_{i}^{'} \otimes x_{i}x_{i}^{'}\right) \left(I_{m} \otimes \left( \frac{1}{n} X^{'} X \right)^{-1}\right) -->
 
 ```{r}
 
-V.b.02 <- solve(Q) %*% Omega.02 %*% solve(Q)
-V.b.02
-
 V.b.hat.02 <- solve(Q.hat) %*% Omega.02.hat %*% solve(Q.hat)
 V.b.hat.02
+
+```
+
+Compare with the results of the `sandwich` package.
+
+```{r}
+
+V.b.hat.02
+
+sandwich::vcovHC(lm.res.02, type = "HC0")
 
 ```
 
@@ -537,22 +560,26 @@ Sample counterpart of $V_{\beta}$ (restricted to homoskedasticity):
 \begin{align*}
 \widehat{V}_{\widehat{\beta}} &= \widehat{Q}^{-1} \widehat{\Omega} \widehat{Q}^{-1}
 \\
-\phantom{\widehat{V}_{\widehat{\beta}}} &= \left(I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right)\right)^{-1} \sum_{i=1}^{n} \left( \left( I_{m} \otimes x_{i} \right) \widehat{\Sigma} \left( I_{m} \otimes x_{i}^{'} \right) \right) \left(I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right)\right)^{-1}
+\phantom{\widehat{V}_{\widehat{\beta}}} &= \left(\frac{1}{n} \left( I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right) \right)\right)^{-1} \frac{1}{n^2} \sum_{i=1}^{n} \left( \left( I_{m} \otimes x_{i} \right) \widehat{\Sigma} \left( I_{m} \otimes x_{i}^{'} \right) \right) \left(\frac{1}{n} \left( I_{m} \otimes \sum_{i=1}^{n} \left( x_{i}^{'} x_{i} \right) \right)\right)^{-1}
 \\
 \phantom{\widehat{V}_{\widehat{\beta}}} 
-\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \widehat{\Sigma} \otimes \sum_{i=1}^{n}  x_{i}^{\phantom{'}}x_{i}^{'}
+\phantom{\underset{\left(mk\times mk\right)}{\widehat{\Omega}}} &= \frac{1}{n^2} \left( \widehat{\Sigma} \otimes \sum_{i=1}^{n}  x_{i}^{\phantom{'}}x_{i}^{'} \right) 
 \end{align*}
 
 ```{r}
 
-V.b.01 <- solve(Q) %*% Omega.01 %*% solve(Q)
-V.b.01
-
-# or,
-(t(e) %*% e) %x% solve(t(x) %*% x)
-
 V.b.hat.01 <- solve(Q.hat) %*% Omega.01.hat %*% solve(Q.hat)
 V.b.hat.01
+
+```
+
+Compare with results of the `stats` package.
+
+```{r}
+
+V.b.hat.01 * n/(n-2)
+
+vcov(lm.res.02)
 
 ```
 
@@ -567,7 +594,7 @@ Sample counterpart of $V_{\beta}$ (robust w.r.t heteroskedasticity and serial co
 
 
 
-```{r, include=FALSE}
+```{r, include=FALSE, eval=TRUE}
 
 # some checks
 
@@ -618,108 +645,39 @@ se <- as.matrix(sqrt(diag(v)))
 
 v
 
-V.b.02
+V.b.hat.02
 # seems to work!
-V.b.hat.02 # what is the difference here?!
-v * 2000
 
 t(xe) %*% xe
 Omega.02
 # seems to work!
 
 m0
-Q
+solve(Q.hat)
+solve(Q.hat * n)
 # seems to work!
 
 # non robust
 k_product(sige, zz0)
-V.b.01
+V.b.hat.01
 (t(e) %*% e/t) %x% solve(t(x) %*% x)
-
-head(xe.01)
-head(xe)
+# seems to work!
 
 library(sandwich)
 
 lm.res.03 <- lm(y ~ x - 1)
+
 bread(lm.res.03) %*% meat(lm.res.03) %*% bread(lm.res.03) / n
-sandwich::vcovHC(lm.res.03, type = "HC1")
-
-cov
+sandwich::vcovHC(lm.res.03, type = "HC0")
 v
-
-t(xe) %*% xe / n
-Omega.02 / n
-
-```
-
-```{r, include=FALSE}
-
-xxx <- summary(lm.res.02)
-
-xxx$`Response Y1`$coefficients[,2]
-xxx$`Response Y2`$coefficients[,2]
-
-sqrt(diag(V.b.01))
-
-library(sandwich)
-
-bread(lm.res.02)
-solve(Q.hat)
+V.b.hat.02
 # seems to work!
 
-meat(lm.res.02)
-Omega.02.hat # seems to work!
-
-bread(lm.res.02) %*% meat(lm.res.02) %*% bread(lm.res.02)
-V.b.hat.02 # seems to work!
-
-vcovHC(lm.res.02, type = "HC0")
-V.b.hat.02/n # seems to work!
-# why do I have to divide by n
-
-sandwich___meat_function <- function(x, adjust = FALSE, ...) {
-  
-    x <- lm.res.02
-    adjust <- FALSE
-    
-    
-  
-    if (is.list(x) && !is.null(x$na.action)) {
-      class(x$na.action) <- "omit"
-    }
-    # psi <- estfun(x, ...)
-    psi <- estfun(x)
-    k <- NCOL(psi)
-    n <- NROW(psi)
-    rval <- crossprod(as.matrix(psi))/n
-    if (adjust) {
-      rval <- n/(n - k) * rval
-    }
-    
-    rownames(rval) <- colnames(rval) <- colnames(psi)
-    
-    return(rval)
-    
-    head(psi)
-    head(xe)
- 
-    dim(psi)
-    
-    t(xe) %*% xe
-    
-    crossprod(xe.01[,1:2,drop=F])
-    t(xe.01[,1:2,drop=F]) %*% xe.01[,1:2,drop=F]
-    crossprod(as.matrix(psi))
-    Omega.01
-       
-}
-
-# sandwich::meatHAC
-
 ```
 
-```{r, include=FALSE}
+
+
+```{r, include=FALSE, eval=FALSE}
 
 sandwich__meatHAC <- function (x, order.by = NULL, prewhite = FALSE, weights = weightsAndrews, 
                                adjust = TRUE, diagnostics = FALSE, ar.method = "ols", 
@@ -734,7 +692,7 @@ sandwich__meatHAC <- function (x, order.by = NULL, prewhite = FALSE, weights = w
   ar.method <- "ols"
   data = list()
   
-  library(zoo)
+  # library(zoo)
   
   
   
@@ -746,7 +704,7 @@ sandwich__meatHAC <- function (x, order.by = NULL, prewhite = FALSE, weights = w
   prewhite <- as.integer(prewhite)
   # umat <- estfun(x, ...)[, , drop = FALSE]
   umat <- estfun(x)[, , drop = FALSE]
-  if (is.zoo(umat)) {
+  if (zoo::is.zoo(umat)) {
     umat <- as.matrix(coredata(umat))
   }
   n.orig <- n <- nrow(umat)
@@ -813,10 +771,222 @@ sandwich__meatHAC <- function (x, order.by = NULL, prewhite = FALSE, weights = w
   
 }
 
+sandwich__weightsAndrews <- function (x, order.by = NULL, bw = bwAndrews,
+                                      kernel = c("Quadratic Spectral", "Truncated", "Bartlett", "Parzen", "Tukey-Hanning"),
+                                      prewhite = 1, ar.method = "ols", tol = 1e-07, data = list(), verbose = FALSE, ...) {
+  
+  
+  
+    if (is.list(x) && !is.null(x$na.action)) {
+      class(x$na.action) <- "omit"
+    }
+    kernel <- match.arg(kernel)
+    if (is.function(bw)) {
+      bw <- bw(x, order.by = order.by, kernel = kernel, prewhite = prewhite, data = data, ar.method = ar.method, ...)
+    }
+        
+    if (verbose) {
+      cat(paste("\nBandwidth chosen:", format(bw), "\n"))
+    }
+    n <- NROW(estfun(x)) - as.integer(prewhite)
+    weights <- kweights(0:(n - 1)/bw, kernel = kernel)
+    weights <- weights[1:max(which(abs(weights) > tol))]
+    
+    return(weights)
+    
+}
+
+sandwich___bwAndrews <- function (x, order.by = NULL,
+                                  kernel = c("Quadratic Spectral", "Truncated", "Bartlett", "Parzen", "Tukey-Hanning"),
+                                  approx = c("AR(1)", "ARMA(1,1)"), weights = NULL, prewhite = 1, ar.method = "ols", data = list(), ...) {
+  
+  
+  
+    if (is.list(x) && !is.null(x$na.action)) {
+      class(x$na.action) <- "omit"
+    }
+    kernel <- match.arg(kernel)
+    approx <- match.arg(approx)
+    prewhite <- as.integer(prewhite)
+    umat <- if (inherits(x, "matrix")) {
+      x
+    } else {
+      estfun(x)[, , drop = FALSE]
+    }
+    if (is.zoo(umat)) {
+      umat <- as.matrix(coredata(umat))
+    }
+    n <- nrow(umat)
+    k <- ncol(umat)
+    if (!is.null(order.by)) {
+      if (inherits(order.by, "formula")) {
+        z <- model.matrix(order.by, data = data)
+        z <- as.vector(z[, ncol(z)])
+      } else {
+        z <- order.by
+      }
+      index <- order(z)
+    } else {
+      index <- 1:n
+    }
+    umat <- umat[index, , drop = FALSE]
+    if (is.null(weights)) {
+      weights <- rep(1, k)
+      unames <- colnames(umat)
+      if (!is.null(unames) && "(Intercept)" %in% unames) {
+        weights[which(unames == "(Intercept)")] <- 0
+      } else {
+        res <- try(as.vector(rowMeans(estfun(x)/model.matrix(x), na.rm = TRUE)), silent = TRUE)
+        if (inherits(res, "try-error")) {
+          res <- try(residuals(x), silent = TRUE)
+        }
+        if (!inherits(res, "try-error")) {
+          weights[which(colSums((umat - res)^2) < 1e-16)] <- 0
+        }
+      }
+      if (isTRUE(all.equal(weights, rep(0, k)))) {
+        weights <- rep(1, k)
+      }
+    } else {
+      weights <- rep(weights, length.out = k)
+    }
+    if (length(weights) < 2) {
+      weights <- 1
+    }
+    if (prewhite > 0) {
+      var.fit <- ar(umat, order.max = prewhite, demean = FALSE, aic = FALSE, method = ar.method)
+      if (inherits(var.fit, "try-error")) {
+        stop(sprintf("VAR(%i) prewhitening of estimating functions failed", prewhite))
+      }
+      umat <- as.matrix(na.omit(var.fit$resid))
+      n <- n - prewhite
+    }
+    if (approx == "AR(1)") {
+      fitAR1 <- function(x) {
+        rval <- ar(x, order.max = 1, aic = FALSE, method = "ols")
+        rval <- c(rval$ar, sqrt(rval$var.pred))
+        names(rval) <- c("rho", "sigma")
+        return(rval)
+      }
+      ar.coef <- apply(umat, 2, fitAR1)
+      denum <- sum(weights * (ar.coef["sigma", ]/(1 - ar.coef["rho", ]))^4)
+      alpha2 <- sum(weights * 4 * ar.coef["rho", ]^2 * ar.coef["sigma", ]^4/(1 - ar.coef["rho", ])^8)/denum
+      alpha1 <- sum(weights * 4 * ar.coef["rho", ]^2 * ar.coef["sigma", ]^4/((1 - ar.coef["rho", ])^6 * (1 + ar.coef["rho", ])^2))/denum
+    } else {
+      fitARMA11 <- function(x) {
+        rval <- arima(x, order = c(1, 0, 1), include.mean = FALSE)
+        rval <- c(rval$coef, sqrt(rval$sigma2))
+        names(rval) <- c("rho", "psi", "sigma")
+        return(rval)
+      }
+      arma.coef <- apply(umat, 2, fitARMA11)
+      denum <- sum(weights * ((1 + arma.coef["psi", ]) * arma.coef["sigma", ]/(1 - arma.coef["rho", ]))^4)
+      alpha2 <- sum(weights * 4 * ((1 + arma.coef["rho", ] * arma.coef["psi", ]) * (arma.coef["rho", ] + arma.coef["psi", ]))^2 * arma.coef["sigma", ]^4/(1 - arma.coef["rho", ])^8)/denum
+      alpha1 <- sum(weights * 4 * ((1 + arma.coef["rho", ] * arma.coef["psi", ]) * (arma.coef["rho", ] + arma.coef["psi", ]))^2 * arma.coef["sigma", ]^4/((1 - arma.coef["rho", ])^6 * (1 + arma.coef["rho", ])^2))/denum
+    }
+    rval <- switch(kernel,
+                   Truncated = { 0.6611 * (n * alpha2)^(1/5) },
+                   Bartlett = { 1.1447 * (n * alpha1)^(1/3) },
+                   Parzen = { 2.6614 * (n * alpha2)^(1/5) },
+                   `Tukey-Hanning` = { 1.7462 * (n * alpha2)^(1/5) },
+                   `Quadratic Spectral` = { 1.3221 * (n * alpha2)^(1/5) } )
+    
+    return(rval)
+    
+}
+
+sandwich___bwNeweyWest <- function (x, order.by = NULL,
+                                    kernel = c("Bartlett", "Parzen", "Quadratic Spectral", "Truncated", "Tukey-Hanning"),
+                                    weights = NULL, prewhite = 1, ar.method = "ols", data = list(), ...) {
+  
+  
+  
+  if (is.list(x) && !is.null(x$na.action)) {
+    class(x$na.action) <- "omit"
+  }
+  kernel <- match.arg(kernel)
+  if (kernel %in% c("Truncated", "Tukey-Hanning")) {
+    stop(paste("Automatic bandwidth selection only available for ", dQuote("Bartlett"), ", ", dQuote("Parzen"), " and ", dQuote("Quadratic Spectral"), " kernel. Use ", sQuote("bwAndrews"), " instead.", sep = ""))
+  }
+  prewhite <- as.integer(prewhite)
+  umat <- if (inherits(x, "matrix")) {
+    x
+  } else {
+    estfun(x)[, , drop = FALSE]
+  }
+  if (is.zoo(umat)) {
+    umat <- as.matrix(coredata(umat))
+  }
+  n <- nrow(umat)
+  k <- ncol(umat)
+  if (!is.null(order.by)) {
+    if (inherits(order.by, "formula")) {
+      z <- model.matrix(order.by, data = data)
+      z <- as.vector(z[, ncol(z)])
+    } else {
+      z <- order.by
+    }
+    index <- order(z)
+  } else {
+    index <- 1:n
+  }
+  umat <- umat[index, , drop = FALSE]
+  if (is.null(weights)) {
+      weights <- rep(1, k)
+      unames <- colnames(umat)
+      if (!is.null(unames) && "(Intercept)" %in% unames) {
+        weights[which(unames == "(Intercept)")] <- 0
+      } else {
+        res <- try(as.vector(rowMeans(estfun(x)/model.matrix(x), na.rm = TRUE)), silent = TRUE)
+        if (inherits(res, "try-error")) {
+          res <- try(residuals(x), silent = TRUE)
+        }
+        if (!inherits(res, "try-error")) {
+          weights[which(colSums((umat - res)^2) < 1e-16)] <- 0
+        }
+      }
+      if (all(weights <= 0)) {
+        weights <- rep(1, length.out = k)
+      }
+  } else {
+    weights <- rep(weights, length.out = k)
+  }
+  if (length(weights) < 2) {
+    weights <- 1
+  }
+  mrate <- switch(kernel,
+                  Bartlett = 2/9,
+                  Parzen = 4/25,
+                  `Quadratic Spectral` = 2/25)
+  m <- floor(ifelse(prewhite > 0, 3, 4) * (n/100)^mrate)
+  if (prewhite > 0) {
+    var.fit <- ar(umat, order.max = prewhite, demean = FALSE, aic = FALSE, method = ar.method)
+    if (inherits(var.fit, "try-error")) {
+      stop(sprintf("VAR(%i) prewhitening of estimating functions failed", prewhite))
+    }
+    umat <- as.matrix(na.omit(var.fit$resid))
+    n <- n - prewhite
+  }
+  hw <- umat %*% weights
+  sigmaj <- function(j) { sum(hw[1:(n - j)] * hw[(j + 1):n])/n }
+  sigma <- sapply(0:m, sigmaj)
+  s0 <- sigma[1] + 2 * sum(sigma[-1])
+  s1 <- 2 * sum(1:m * sigma[-1])
+  s2 <- 2 * sum((1:m)^2 * sigma[-1])
+  qrate <- 1/(2 * ifelse(kernel == "Bartlett", 1, 2) + 1)
+  rval <- switch(kernel,
+                 Bartlett = { 1.1447 * ((s1/s0)^2)^qrate },
+                 Parzen = { 2.6614 * ((s2/s0)^2)^qrate },
+                 `Quadratic Spectral` = { 1.3221 * ((s2/s0)^2)^qrate })
+  rval <- rval * (n + prewhite)^qrate
+  
+  return(rval)
+  
+}
+
 ```
 
 ```{r, include=FALSE, eval=FALSE}
-
 
 library(MASS)
 
@@ -873,7 +1043,6 @@ solve(lm.sum.res$cov.unscaled)
 Q.hat
 
 crossprod(x)
-
 
 ```
 
