@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Topics in Statistics and Econometrics</title>
+  <title>5 Topic 03 | Topics in Statistics and Econometrics</title>
   <meta name="description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Topics in Statistics and Econometrics" />
+  <meta property="og:title" content="5 Topic 03 | Topics in Statistics and Econometrics" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
   <meta name="github-repo" content="mmoessler/topics-in-statistics-and-econometrics" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Topics in Statistics and Econometrics" />
+  <meta name="twitter:title" content="5 Topic 03 | Topics in Statistics and Econometrics" />
   
   <meta name="twitter:description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="topic-02.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -122,19 +122,62 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="topic-03" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Topic 03<a href="topic-03.html#topic-03" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="statistical-model-1" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Statistical Model<a href="topic-03.html#statistical-model-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Cointegrating regression model</p>
+<p><span class="math display">\[\begin{align}
+y_{1t} &amp;= \mu_0 + \mu_1 t + B y_{2t} + u_{1t} \\
+y_{2t} &amp;= y_{2t-1} + u_{2t}
+\end{align}\]</span></p>
+<p>with</p>
+<p><span class="math display">\[\begin{align}
+\begin{bmatrix} u_{1t} \\ u_{2t} \end{bmatrix} = C\left(L\right) \varepsilon_{t},
+\end{align}\]</span></p>
+</div>
+<div id="estimation" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Estimation<a href="topic-03.html#estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Correction due to endogeneity in <span class="math inline">\(y_{2t}\)</span> due to cointegration link between <span class="math inline">\(y_{1t}\)</span> and <span class="math inline">\(y_{2t}\)</span>.</p>
+<p><span class="math display">\[\begin{align}
+y_{1t}^{*} = y_{1t} - \widehat{\Omega}_{1y_2}\widehat{\Omega}_{y_2 y_2}^{-1}\Delta y_{2t}
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(\widehat{\Omega}_{1y_2}\)</span> is an estimate for the long-run covariances matrix of <span class="math inline">\(u_{1t}\)</span> and <span class="math inline">\(y_2\)</span> and where <span class="math inline">\(\widehat{\Omega}_{y_2 y_2}\)</span> is an estimate for the long-run covariances matrix of <span class="math inline">\(y_2\)</span> and <span class="math inline">\(y_2\)</span>.</p>
+<p>Correlation due to serial correlation in <span class="math inline">\(u_{1t}\)</span>.</p>
+<p><span class="math display">\[\begin{align}
+\widehat{\Delta}_{1y_2}^{*} = \widehat{\Delta}_{1y_2} - \widehat{\Omega}_{1y_2}\widehat{\Omega}_{y_2 y_2}^{-1}\widehat{\Delta}_{y_2 y_2}
+\end{align}\]</span></p>
+<p>Fully modified (FM) OLS estimator</p>
+<p><span class="math display">\[\begin{align}
+\widehat{B}^{*} = \left(Y_{1}^{*&#39;}Y_{2} - T \widehat{\Delta}_{1y_2}^{*}\right)\left(Y_{2}^{&#39;}Y_{2}\right)^{-1}
+\end{align}\]</span></p>
+</div>
+<div id="sample-distribution" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Sample Distribution<a href="topic-03.html#sample-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>From Theorem 4.1 we get the (potentially degenerated) asymptotics for the full coefficnet matrix <span class="math inline">\(\widehat{B}^{*}\)</span></p>
+<p><span class="math display">\[\begin{align}
+\sqrt{T}\left(\widehat{B}^{*}-B^{*}\right) &amp;\underset{d}{\rightarrow} N\left(0,\left(I\otimes H_{1} \Sigma_{11}^{-1}\right)\Omega_{\varphi\varphi}\left(I\otimes \Sigma_{11}^{-1}H_{1}^{&#39;}\right)\right)
+\\
+\phantom{\sqrt{T}\left(\widehat{B}^{*}-B^{*}\right)} &amp;\underset{d}{\rightarrow} N\left(0, \Sigma_{00} \otimes H_{1} \Sigma_{11}^{-1} H_{1}^{&#39;} \right)
+\end{align}\]</span></p>
+<p>with</p>
+<p><span class="math display">\[\begin{align}
+\Omega_{\varphi\varphi} &amp;= \sum_{j=-\infty}^{\infty} \text{E}\left( \left(u_{1t}, u_{2t}\right)\left(u_{1t+j}, u_{2t+j}\right)^{&#39;} \otimes u_{1t} u_{1t+j}^{&#39;} \right)
+\\
+\Sigma_{00} &amp;= \text{E}\left(\left(u_{1t}, u_{2t}\right)^{&#39;}\left(u_{1t}, u_{2t}\right)\right)
+\\
+\Sigma_{11} &amp;= \text{E}\left(u_{1t}^{&#39;}u_{1t}\right)
+\end{align}\]</span></p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="topic-02.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -173,7 +216,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/mmoessler/topics-in-statistics-and-econometrics/blob/main/%s",
+"link": "https://github.com/mmoessler/topics-in-statistics-and-econometrics/blob/main/04-topic-03.Rmd",
 "text": null
 },
 "download": null,

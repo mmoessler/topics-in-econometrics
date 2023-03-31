@@ -1,0 +1,79 @@
+
+# Topic 03
+
+```{r,include=FALSE}
+
+library(knitr)
+knitr::opts_chunk$set(
+  include = TRUE,
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  eval = TRUE
+  # fig.height = 8,
+  # fig.width = 10,
+  # fig.align = 'center'
+  )
+# options(scipen=1)
+# options(width=9999)
+# # See: https://stackoverflow.com/questions/36230790/missing-horizontal-scroll-bar-in-r-markdown-html-code-chunks-and-output
+
+```
+
+## Statistical Model
+
+Cointegrating regression model
+
+\begin{align}
+y_{1t} &= \mu_0 + \mu_1 t + B y_{2t} + u_{1t} \\
+y_{2t} &= y_{2t-1} + u_{2t}
+\end{align}
+
+with
+
+\begin{align}
+\begin{bmatrix} u_{1t} \\ u_{2t} \end{bmatrix} = C\left(L\right) \varepsilon_{t},
+\end{align}
+
+## Estimation
+
+Correction due to endogeneity in $y_{2t}$ due to cointegration link between $y_{1t}$ and $y_{2t}$.
+
+\begin{align}
+y_{1t}^{*} = y_{1t} - \widehat{\Omega}_{1y_2}\widehat{\Omega}_{y_2 y_2}^{-1}\Delta y_{2t}
+\end{align}
+
+where $\widehat{\Omega}_{1y_2}$ is an estimate for the long-run covariances matrix of $u_{1t}$ and $y_2$ and where $\widehat{\Omega}_{y_2 y_2}$ is an estimate for the long-run covariances matrix of $y_2$ and $y_2$. 
+
+Correlation due to serial correlation in $u_{1t}$.
+
+\begin{align}
+\widehat{\Delta}_{1y_2}^{*} = \widehat{\Delta}_{1y_2} - \widehat{\Omega}_{1y_2}\widehat{\Omega}_{y_2 y_2}^{-1}\widehat{\Delta}_{y_2 y_2}
+\end{align}
+
+Fully modified (FM) OLS estimator
+
+\begin{align}
+\widehat{B}^{*} = \left(Y_{1}^{*'}Y_{2} - T \widehat{\Delta}_{1y_2}^{*}\right)\left(Y_{2}^{'}Y_{2}\right)^{-1}
+\end{align}
+
+## Sample Distribution
+
+From Theorem 4.1 we get the (potentially degenerated) asymptotics for the full coefficnet matrix $\widehat{B}^{*}$
+
+\begin{align}
+\sqrt{T}\left(\widehat{B}^{*}-B^{*}\right) &\underset{d}{\rightarrow} N\left(0,\left(I\otimes H_{1} \Sigma_{11}^{-1}\right)\Omega_{\varphi\varphi}\left(I\otimes \Sigma_{11}^{-1}H_{1}^{'}\right)\right)
+\\
+\phantom{\sqrt{T}\left(\widehat{B}^{*}-B^{*}\right)} &\underset{d}{\rightarrow} N\left(0, \Sigma_{00} \otimes H_{1} \Sigma_{11}^{-1} H_{1}^{'} \right)
+\end{align}
+
+with
+
+\begin{align}
+\Omega_{\varphi\varphi} &= \sum_{j=-\infty}^{\infty} \text{E}\left( \left(u_{1t}, u_{2t}\right)\left(u_{1t+j}, u_{2t+j}\right)^{'} \otimes u_{1t} u_{1t+j}^{'} \right)
+\\
+\Sigma_{00} &= \text{E}\left(\left(u_{1t}, u_{2t}\right)^{'}\left(u_{1t}, u_{2t}\right)\right)
+\\
+\Sigma_{11} &= \text{E}\left(u_{1t}^{'}u_{1t}\right)
+\end{align}
+
