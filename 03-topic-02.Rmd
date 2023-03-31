@@ -620,6 +620,8 @@ v
 
 V.b.02
 # seems to work!
+V.b.hat.02 # what is the difference here?!
+v * 2000
 
 t(xe) %*% xe
 Omega.02
@@ -636,6 +638,18 @@ V.b.01
 
 head(xe.01)
 head(xe)
+
+library(sandwich)
+
+lm.res.03 <- lm(y ~ x - 1)
+bread(lm.res.03) %*% meat(lm.res.03) %*% bread(lm.res.03) / n
+sandwich::vcovHC(lm.res.03, type = "HC1")
+
+cov
+v
+
+t(xe) %*% xe / n
+Omega.02 / n
 
 ```
 
@@ -662,6 +676,7 @@ V.b.hat.02 # seems to work!
 
 vcovHC(lm.res.02, type = "HC0")
 V.b.hat.02/n # seems to work!
+# why do I have to divide by n
 
 sandwich___meat_function <- function(x, adjust = FALSE, ...) {
   
@@ -700,12 +715,11 @@ sandwich___meat_function <- function(x, adjust = FALSE, ...) {
        
 }
 
-sandwich::meatHAC
+# sandwich::meatHAC
 
 ```
 
 ```{r, include=FALSE}
-
 
 sandwich__meatHAC <- function (x, order.by = NULL, prewhite = FALSE, weights = weightsAndrews, 
                                adjust = TRUE, diagnostics = FALSE, ar.method = "ols", 
@@ -798,7 +812,6 @@ sandwich__meatHAC <- function (x, order.by = NULL, prewhite = FALSE, weights = w
   return(rval)
   
 }
-
 
 ```
 
