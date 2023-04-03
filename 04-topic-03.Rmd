@@ -77,3 +77,73 @@ with
 \Sigma_{11} &= \text{E}\left(u_{1t}^{'}u_{1t}\right)
 \end{align}
 
+
+
+
+
+Check Hamilton based on finite sample results...
+
+\begin{align}
+
+\left(\underset{\left(m \times 1\right)}{R_{\alpha}} \underset{\left(1\times 1\right)}{\widehat{\alpha_{T}}} + \underset{\left(m \times g\right)}{R_{\gamma}} \underset{\left(g\times 1\right)}{\widehat{\gamma_{T}}}-\underset{\left(m\times 1\right)}{r}\right)^{'}
+
+&\times \\
+
+\left(\underset{
+
+\left(1\times 1\right)}{S_T^2}
+
+\begin{pmatrix}
+\underset{\left(m \times 1\right)}{R_{\alpha}} & \underset{\left(m \times g\right)}{R_{\gamma}}
+\end{pmatrix}
+
+\begin{pmatrix}
+\underset{\left(1 \times 1\right)}{T} & \underset{\left(1 \times g\right)}{\sum y_{2t}^{'}} \\
+\underset{\left(g \times 1\right)}{\sum y_{2t}} & \underset{\left(g \times g\right)}{\sum y_{2t}y_{2t}^{'}}
+\end{pmatrix}^{-1}
+
+\begin{pmatrix}
+\underset{\left(1 \times m\right)}{R_{\alpha}^{'}} \\ \underset{\left(g \times m\right)}{R_{\gamma}^{'}}
+\end{pmatrix}
+
+\right)^{-1}
+
+&\times \\
+
+\left(\underset{\left(m \times 1\right)}{R_{\alpha}} \underset{\left(1\times 1\right)}{\widehat{\alpha_{T}}} + \underset{\left(m \times g\right)}{R_{\gamma}} \underset{\left(g\times 1\right)}{\widehat{\gamma_{T}}}-\underset{\left(m\times 1\right)}{r}\right)^{'}
+
+&\div m
+
+\end{align}
+
+
+
+\begin{align}
+
+\left(
+\underset{\left(m \times k\right)}{R} \underset{\left(k \times 1\right)}{b} - \underset{\left(m \times 1\right)}{r}
+\right)^{'}
+
+&\times \\
+
+\left(
+\underset{\left(1 \times 1\right)}{\sigma^{2}}\underset{\left(m \times k\right)}{R}\left(\underset{\left(k \times T\right)}{X^{'}}\underset{\left(T \times k\right)}{X}\right)^{-1}\underset{\left(k \times m\right)}{R^{'}}
+\right)^{-1}
+
+&\times \\
+
+\left(
+\underset{\left(m \times k\right)}{R} \underset{\left(k \times 1\right)}{b} - \underset{\left(m \times 1\right)}{r}
+\right)
+
+&\div m
+
+\end{align}
+
+
+
+
+
+Check Hamilton based on infinite sample results...
+
+
