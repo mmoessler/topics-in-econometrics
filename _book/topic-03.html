@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Topic 03 | Topics in Statistics and Econometrics</title>
   <meta name="description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Topic 03 | Topics in Statistics and Econometrics" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Markus Mößler" />
 
 
-<meta name="date" content="2023-03-31" />
+<meta name="date" content="2023-04-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -167,6 +167,60 @@ y_{1t}^{*} = y_{1t} - \widehat{\Omega}_{1y_2}\widehat{\Omega}_{y_2 y_2}^{-1}\Del
 \Sigma_{00} &amp;= \text{E}\left(\left(u_{1t}, u_{2t}\right)^{&#39;}\left(u_{1t}, u_{2t}\right)\right)
 \\
 \Sigma_{11} &amp;= \text{E}\left(u_{1t}^{&#39;}u_{1t}\right)
+\end{align}\]</span></p>
+<p>Check Hamilton</p>
+<p><span class="math display">\[\begin{align}
+
+\left(\underset{\left(m \times 1\right)}{R_{\alpha}} \underset{\left(1\times 1\right)}{\widehat{\alpha_{T}}} + \underset{\left(m \times g\right)}{R_{\gamma}} \underset{\left(g\times 1\right)}{\widehat{\gamma_{T}}}-\underset{\left(m\times 1\right)}{r}\right)^{&#39;}
+
+&amp;\times \\
+
+\left(\underset{
+
+\left(1\times 1\right)}{S_T^2}
+
+\begin{pmatrix}
+\underset{\left(m \times 1\right)}{R_{\alpha}} &amp; \underset{\left(m \times g\right)}{R_{\gamma}}
+\end{pmatrix}
+
+\begin{pmatrix}
+\underset{\left(1 \times 1\right)}{T} &amp; \underset{\left(1 \times g\right)}{\sum y_{2t}^{&#39;}} \\
+\underset{\left(g \times 1\right)}{\sum y_{2t}} &amp; \underset{\left(g \times g\right)}{\sum y_{2t}y_{2t}^{&#39;}}
+\end{pmatrix}^{-1}
+
+\begin{pmatrix}
+\underset{\left(1 \times m\right)}{R_{\alpha}^{&#39;}} \\ \underset{\left(g \times m\right)}{R_{\gamma}^{&#39;}}
+\end{pmatrix}
+
+\right)^{-1}
+
+&amp;\times \\
+
+\left(\underset{\left(m \times 1\right)}{R_{\alpha}} \underset{\left(1\times 1\right)}{\widehat{\alpha_{T}}} + \underset{\left(m \times g\right)}{R_{\gamma}} \underset{\left(g\times 1\right)}{\widehat{\gamma_{T}}}-\underset{\left(m\times 1\right)}{r}\right)^{&#39;}
+
+&amp;\div m
+
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+
+\left(
+\underset{\left(m \times k\right)}{R} \underset{\left(k \times 1\right)}{b} - \underset{\left(m \times 1\right)}{r}
+\right)^{&#39;}
+
+&amp;\times \\
+
+\left(
+\underset{\left(1 \times 1\right)}{\sigma^{2}}\underset{\left(m \times k\right)}{R}\left(\underset{\left(k \times T\right)}{X^{&#39;}}\underset{\left(T \times k\right)}{X}\right)^{-1}\underset{\left(k \times m\right)}{R^{&#39;}}
+\right)^{-1}
+
+&amp;\times \\
+
+\left(
+\underset{\left(m \times k\right)}{R} \underset{\left(k \times 1\right)}{b} - \underset{\left(m \times 1\right)}{r}
+\right)
+
+&amp;\div m
+
 \end{align}\]</span></p>
 
 </div>
