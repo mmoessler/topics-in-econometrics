@@ -1,7 +1,7 @@
 bookdown::gitbook:
   css: style.css
   includes: 
-    in_header: script.js
+    in_header: script.html
   config:
     toc:
       before: |
