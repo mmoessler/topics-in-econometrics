@@ -1,0 +1,838 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Topic 05
+
+```{r,include=FALSE}
+
+library(knitr)
+knitr::opts_chunk$set(
+  include = TRUE,
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  eval = TRUE,
+  cache.path = "./cache-files"
+  # fig.height = 8,
+  # fig.width = 10,
+  # fig.align = 'center'
+  )
+# options(scipen=1)
+# options(width=9999)
+# # See: https://stackoverflow.com/questions/36230790/missing-horizontal-scroll-bar-in-r-markdown-html-code-chunks-and-output
+
+```
+
+## Motivation
+
+Comparison of the analysis of multivariate time series using the `urca` in combination with the `vars` package and the `tsDyn` package
+
+## Linear VECM model estimation
+
+```{r}
+
+plot(tsDyn::zeroyldMeta$Date, tsDyn::zeroyldMeta$short.run, type = "l",
+     xlab = "Date", ylab = "Rate")
+lines(tsDyn::zeroyldMeta$Date, tsDyn::zeroyldMeta$long.run, lty = 2)
+legend("topleft", lty = c(1, 2),
+       legend = c("Short rate: 12 months", "Long rate: 120 months"))
+
+```
+
+```{r}
+
+vecm.tsdyn <- tsDyn::VECM(tsDyn::zeroyldMeta[, c("long.run", "short.run")], r = 1, lag = 1, estim = "ML")
+summary(vecm.tsdyn)
+
+```
+
+```{r}
+
+vecm.urca <- urca::ca.jo(x = tsDyn::zeroyldMeta[, c("long.run", "short.run")], ecdet = "none", K = 2)
+vecm.urca@V
+
+```
+
+## Linear VECM model orthogonalized IRF analysis
+
+Compare non-orthogonalized IRFs first
+
+```{r}
+
+irf.tsdyn <- tsDyn:::irf.VECM(vecm.tsdyn, ortho = FALSE, boot = FALSE)
+
+irf.tsdyn$irf$short.run
+irf.tsdyn$irf$long.run
+
+```
+
+```{r}
+
+v2v.vars <- vars::vec2var(vecm.urca, r = 1)
+v2v.vars <- vars::irf(v2v.vars, ortho = FALSE, boot = FALSE)
+
+v2v.vars$irf$short.run
+v2v.vars$irf$long.run
+
+```
+
+Compare orthongonalized IRFs afterwards
+
+```{r}
+
+irf.tsdyn <- tsDyn:::irf.VECM(vecm.tsdyn, ortho = TRUE, boot = FALSE)
+
+irf.tsdyn$irf$short.run
+irf.tsdyn$irf$long.run
+
+```
+
+```{r}
+
+v2v.vars <- vars::vec2var(vecm.urca, r = 1)
+v2v.vars <- vars::irf(v2v.vars, ortho = TRUE, boot = FALSE)
+
+v2v.vars$irf$short.run
+v2v.vars$irf$long.run
+
+```
+
+## Linear VECM model generalized IRF analysis
+
+Step x: Check class and `GIRF` method of linear object
+
+```{r}
+
+class(vecm.tsdyn)
+
+tsDyn:::GIRF.nlVar
+
+```
+
+Step x: Call function `tsDyn:::GIRF.setar()`
+
+```{r, cache = TRUE}
+
+# tsDyn_GIRF_setar_fun no 01 ----
+
+# tsDyn_GIRF_setar_fun - function (object, n.ahead = 10, seed = NULL, n.hist = 20, n.shock = 20, 
+#                                  R = 10, hist_li = NULL, shock_li = NULL, ...) {
+  
+  # inputs
+  object <- vecm.tsdyn
+  n.ahead <- 10
+  seed <- NULL
+  n.hist = 20
+  n.shock = 20
+  R = 10
+  hist_li <- NULL
+  shock_li <- NULL
+  
+    
+  
+  # lag <- tsDyn:::get_lag(object)
+  lag <- tsDyn:::get_lag.nlVar(object)
+  n_start <- ifelse(inherits(object, c("VECM", "TVECM")), lag + 1, lag)
+  # x_orig <- get_data_orig(object, as.df = TRUE)
+  x_orig <- tsDyn:::get_data_orig.nlVar(object, as.df = TRUE)
+  N <- nrow(x_orig)
+  resids <- as.data.frame(residuals(object, initVal = FALSE))
+  n_used <- nrow(resids)
+  # nVar <- get_nVar(object)
+  nVar <- tsDyn:::get_nVar.nlVar(object)
+  
+  sample_hist <- function() {
+    hist_M <- sample(n_start:N, size = 1, replace = FALSE)
+    (hist_M - n_start + 1):hist_M
+  }
+  
+  nrow_length <- function(x) {
+    nr <- nrow(x)
+    if (is.null(nr)) {
+      nr <- length(x)
+    }
+    nr
+  }
+  
+  if (is.null(hist_li)) {
+    if (!is.null(seed)) {
+      set.seed(seed)
+    }
+    samples_hist <- sample(n_start:N, size = n.hist, replace = FALSE)
+    hist_li <- lapply(samples_hist, function(i) x_orig[(i - n_start + 1):i, , drop = FALSE])
+  } else {
+    if (!is.list(hist_li)) {
+      stop("hist_li should be a list of vectors/matrices")
+    }
+    if (unique(sapply(hist_li, nrow_length)) != n_start) {
+      stop("each element of hist_li should have length lags (+1 if VECM)")
+    }
+  }
+  
+  samples_hist # index for history
+  hist_li # drawn history (of observations)
+  
+  if (is.null(shock_li)) {
+    if (!is.null(seed)) {
+      set.seed(seed)
+    }
+    samples_shock <- sample(seq_len(n_used), size = n.shock, replace = FALSE)
+    shock_li <- lapply(samples_shock, function(i) resids[i, , drop = FALSE])
+  } else {
+    if (!is.list(shock_li)) {
+      stop("shock_li should be a list of vectors")
+    }
+    if (unique(sapply(shock_li, nrow_length)) != 1) {
+      stop("each element of shock_li should have length lags")
+    }
+  }
+  
+  samples_shock # index for shocks
+  shock_li # drawn shocks (of residuals)
+  
+  M <- expand.grid(hist = hist_li, shock = shock_li)
+  n_cases <- nrow(M)
+  shock_M <- as.data.frame(do.call("rbind", M$shock))
+  colnames(shock_M) <- paste("shock_var", seq_len(nVar), sep = "")
+  hist_M <- as.data.frame(do.call("rbind", lapply(M$hist, function(x) c(as.matrix(x)))))
+  colnames(hist_M) <- paste("hist_x", rep(seq_len(nVar), each = n_start), "_l", rep(seq_len(n_start), times = nVar), sep = "")
+  rep_info <- cbind(n_simu = seq_len(nrow(M)), hist_M, shock_M)
+  
+  # sims <- lapply(1:nrow(M), function(i) irf_1_shock_ave(object = object, shock = M$shock[[i]], hist = M$hist[[i]], n.ahead = n.ahead, R = R, seed = seed, ...))
+  sims <- lapply(1:nrow(M), function(i) tsDyn:::irf_1_shock_ave(object = object, shock = M$shock[[i]], hist = M$hist[[i]], n.ahead = n.ahead, R = R, seed = seed))
+  
+  sims[[1]]
+  sims[[400]]
+  
+  sims_df <- do.call("rbind", sims)
+  n.ahead_here <- length(unique(head(sims_df$n.ahead, 2 * (n.ahead * lag))))
+  sims_df$n_simu <- rep(seq_len(n_cases), each = n.ahead_here * nVar)
+  sims_df$girf <- with(sims_df, sim_1 - sim_2)
+  
+  sims_df2 <- merge(rep_info, sims_df, by = "n_simu", sort = FALSE)
+  class(sims_df2) <- c("GIRF_df", "data.frame")
+  
+  # sims_df2
+  head(sims_df2, 30)
+  tail(sims_df2, 30)
+  
+# }
+
+# ANCKER
+  
+# tsDyn_GIRF_setar_fun no 02 ----
+
+# tsDyn_GIRF_setar_fun - function (object, n.ahead = 10, seed = NULL, n.hist = 20, n.shock = 20, 
+#                                  R = 10, hist_li = NULL, shock_li = NULL, ...) {
+  
+  # inputs
+  object <- vecm.tsdyn
+  n.ahead <- 10
+  seed <- NULL
+  n.hist = 20
+  n.shock = 20
+  R = 10
+  hist_li <- NULL
+  shock_li <- NULL
+  
+    
+  
+  # lag <- tsDyn:::get_lag(object)
+  lag <- tsDyn:::get_lag.nlVar(object)
+  n_start <- ifelse(inherits(object, c("VECM", "TVECM")), lag + 1, lag)
+  # x_orig <- get_data_orig(object, as.df = TRUE)
+  x_orig <- tsDyn:::get_data_orig.nlVar(object, as.df = TRUE)
+  N <- nrow(x_orig)
+  resids <- as.data.frame(residuals(object, initVal = FALSE))
+  n_used <- nrow(resids)
+  # nVar <- get_nVar(object)
+  nVar <- tsDyn:::get_nVar.nlVar(object)
+  sample_hist <- function() {
+    hist_M <- sample(n_start:N, size = 1, replace = FALSE)
+    (hist_M - n_start + 1):hist_M
+  }
+  nrow_length <- function(x) {
+    nr <- nrow(x)
+    if (is.null(nr)) {
+      nr <- length(x)
+    }
+    nr
+  }
+  if (is.null(hist_li)) {
+    if (!is.null(seed)) {
+      set.seed(seed)
+    }
+    samples_hist <- sample(n_start:N, size = n.hist, replace = FALSE)
+    hist_li <- lapply(samples_hist, function(i) x_orig[(i - n_start + 1):i, , drop = FALSE])
+  } else {
+    if (!is.list(hist_li)) {
+      stop("hist_li should be a list of vectors/matrices")
+    }
+    if (unique(sapply(hist_li, nrow_length)) != n_start) {
+      stop("each element of hist_li should have length lags (+1 if VECM)")
+    }
+  }
+  if (is.null(shock_li)) {
+    if (!is.null(seed)) {
+      set.seed(seed)
+    }
+    samples_shock <- sample(seq_len(n_used), size = n.shock, replace = FALSE)
+    shock_li <- lapply(samples_shock, function(i) resids[i, , drop = FALSE])
+  } else {
+    if (!is.list(shock_li)) {
+      stop("shock_li should be a list of vectors")
+    }
+    if (unique(sapply(shock_li, nrow_length)) != 1) {
+      stop("each element of shock_li should have length lags")
+    }
+  }
+  M <- expand.grid(hist = hist_li, shock = shock_li)
+  n_cases <- nrow(M)
+  shock_M <- as.data.frame(do.call("rbind", M$shock))
+  colnames(shock_M) <- paste("shock_var", seq_len(nVar), sep = "")
+  hist_M <- as.data.frame(do.call("rbind", lapply(M$hist, function(x) c(as.matrix(x)))))
+  colnames(hist_M) <- paste("hist_x", rep(seq_len(nVar), each = n_start), "_l", rep(seq_len(n_start), times = nVar), sep = "")
+  rep_info <- cbind(n_simu = seq_len(nrow(M)), hist_M, shock_M)
+  # sims <- lapply(1:nrow(M), function(i) irf_1_shock_ave(object = object, shock = M$shock[[i]], hist = M$hist[[i]], n.ahead = n.ahead, R = R, seed = seed, ...))
+  sims <- lapply(1:nrow(M), function(i) tsDyn:::irf_1_shock_ave(object = object, shock = M$shock[[i]], hist = M$hist[[i]], n.ahead = n.ahead, R = R, seed = seed))
+  sims_df <- do.call("rbind", sims)
+  n.ahead_here <- length(unique(head(sims_df$n.ahead, 2 * (n.ahead * lag))))
+  sims_df$n_simu <- rep(seq_len(n_cases), each = n.ahead_here * nVar)
+  sims_df$girf <- with(sims_df, sim_1 - sim_2)
+  sims_df2 <- merge(rep_info, sims_df, by = "n_simu", sort = FALSE)
+  class(sims_df2) <- c("GIRF_df", "data.frame")
+  
+  # sims_df2
+  head(sims_df2, 30)
+  tail(sims_df2, 30)
+  
+# }
+  
+```
+
+Definition generalized impulse response functions (GIRs) based on Pesaran (2015)
+
+General
+
+\begin{align*}
+GI_{y}\left(n, u_{t}^{0}, \Omega_{t-1}^{0}\right) = \text{E}\left(y_{t+n}|u_{t}=u_{t}^{0}, \Omega_{t-1}^{0}\right) - \text{E}\left(y_{t+n}|\Omega_{t-1}^{0}\right)
+\end{align*}
+
+Particular VAR
+
+\begin{align*}
+GI_{y}\left(n, u_{t}^{0}, \Omega_{t-1}^{0}\right) = A_{n}u_{t}^{0}
+\end{align*}
+
+which is independent of the "history" of the process.
+
+The choice of the vector shocks $u_{t}^{0}$ is arbitrary.
+
+One possibility is to consider a large number of likely shocks and then examine the empirical distribution function of $A_{n}u_{t}^{0}$ for all these shocks.
+
+In the case where $u_{t}^{0}$ is drawn from the same distribution as $u_{t}$, namely a multivariate normal distribution with zero means and a constant covariance matrix $\Sigma$ we have the analyitical result
+
+\begin{align*}
+GI_{y}\left(n, u_{t}^{0}, \Omega_{t-1}^{0}\right) \sim N\left(0, A_{n} \Sigma A_{n}^{'}\right)
+\end{align*}
+
+Persistence profiles (general on X)
+
+Lee  and  Pesaran  (1993) refer  to 
+H,(n),  seen  as  a  function  of  n, as  the  (unscaled)  ‘persistence  profile’,  character- 
+izing the  time  profile  of the  effects  of the  system-wide  shocks  on  X,.
+
+Persitence profiles (specific on Z)
+
+The  above  concept  of  the  persistence  profile  can  be  readily  extended  to 
+cointegrated  systems.  The  (unscaled)  persistence  profile  of  the  cointegrating 
+relations  2,  =  P’X,  is given  by 
+
+
+
+* `n.hist`:
+  * The number of past histories to consider. Should be high, ideally size of data (minus lags).
+  * For VAR models ...
+
+Some interpretation:
+
+* 400 simulations *times* 11 steps *times* 2 shock variables *equals* 8800 rows
+* `girf = sim_1 - sim_2` 
+
+Check plot methods:
+
+```{r, eval=FALSE}
+
+tsDyn_plot_GIRF_df <- function (x, plot_type = c("density", "line"), n.ahead = c(1, 5, 10), var = unique(x$var)[1], n_simu = c(1, 2), ...) {
+  
+  # inputs
+  x <- sims_df2
+  
+  plot_type <- "density"
+  n.ahead <- c(1, 5, 10)
+  var <- unique(x$var)[1]
+  n_simu <- c(1, 2)
+  
+  
+  
+  # plot_type <- match.arg(plot_type)
+  plot_type <- plot_type
+  if (plot_type == "density") {
+    # plot_GIRF_dens(x = x, n.ahead = n.ahead, var = var, ...)
+    tsDyn:::plot_GIRF_dens(x = x, n.ahead = n.ahead, var = var)
+  } else if (plot_type == "line") {
+    # plot_GIRF_line(x = x, n_simu = n_simu, var = var, ...)
+    tsDyn:::plot_GIRF_line(x = x, n_simu = n_simu, var = var)
+  }
+    
+}
+
+tsDyn_plot_GIRF_line <- function (x, n_simu = 1:5, var = unique(x$var)[1], add_legend = TRUE, ...) {
+  
+  # inputs
+  x <- sims_df2
+  n_simu <- 1:5
+  var <- unique(x$var)[1]
+  add_legend <- TRUE
+  
+  
+  
+  df <- x[x$n_simu %in% n_simu & x$var %in% var, c("n_simu", "var", "n.ahead", "girf")]
+  df_w <- reshape(df, idvar = c("n.ahead", "var"), timevar = "n_simu", direction = "wide", v.names = "girf")
+  colnames(df_w) <- gsub("girf\\.", "n_simu: ", colnames(df_w))
+  df_w2 <- df_w[, -c(1, 2), drop = FALSE]
+  # plot(NA, xlim = range(df$n.ahead), ylim = range(df$girf), ylab = "GIRF", xlab = "n.ahead", ...)
+  plot(NA, xlim = range(df$n.ahead), ylim = range(df$girf), ylab = "GIRF", xlab = "n.ahead")
+  invisible <- lapply(1:ncol(df_w2), function(x) lines(x = df_w$n.ahead, y = df_w2[, x], col = x))
+  if (add_legend) {
+    legend("topright", legend = colnames(df_w2), fill = 1:nrow(df_w2))
+  }
+        
+}
+
+tsDyn_plot_GIRF_dens <- function (x, n.ahead = c(1, 5, 10), var = unique(x$var)[1], add_legend = TRUE, ...) {
+  
+  # inputs
+  x <- sims_df2
+  n.ahead <- c(1, 5, 10)
+  var <- unique(x$var)[1]
+  add_legend <- TRUE
+  
+  
+  
+  df <- x[x$n.ahead %in% n.ahead & x$var %in% var, c("n_simu", "var", "n.ahead", "girf")]
+  df_w <- reshape(df, idvar = c("n_simu", "var"), timevar = "n.ahead", direction = "wide", v.names = "girf")
+  colnames(df_w) <- gsub("girf\\.", "n.ahead: ", colnames(df_w))
+  dens <- apply(df_w[, -c(1, 2), drop = FALSE], 2, density)
+  # plot(NA, xlim = range(sapply(dens, "[", "x")), 
+  #     ylim = range(sapply(dens, "[", "y")), ylab = "GIRF", 
+  #     xlab = "Density", ...)
+  plot(NA, xlim = range(sapply(dens, "[", "x")), 
+      ylim = range(sapply(dens, "[", "y")), ylab = "GIRF", 
+      xlab = "Density")
+  invisible <- mapply(lines, dens, col = 1:length(dens))
+  if (add_legend) {
+    legend("topright", legend = names(dens), fill = 1:length(dens))
+  }
+        
+}
+
+```
+
+
+
+
+
+<hr>
+
+Step x: Call function `tsDyn:::irf_1_shock_ave()`
+
+```{r, cache=TRUE}
+
+# tsDyn_irf_1_shock_ave <- function (object, shock, hist, R = 10, n.ahead = 10, innov = NULL, 
+#                                    shock_both = TRUE, returnStarting = FALSE, add.regime = FALSE, 
+#                                    seed = NULL) {
+  
+  # inputs
+  i <- 1
+  object <- vecm.tsdyn
+  shock <- M$shock[[i]]
+  hist <- M$hist[[i]]
+  n.ahead <- 10
+  R <- 10
+  seed <- NULL
+  
+  innov <- NULL
+  shock_both <- TRUE
+  returnStarting <- FALSE
+  add.regime <- FALSE
+
+  
+  
+  if (!is.null(seed)) {
+    set.seed(seed)
+  }
+  # out <- replicate(R, irf_1_shock(object = object, shock = shock, 
+  #                                 hist = hist, n.ahead = n.ahead, innov = innov, shock_both = shock_both, 
+  #                                 returnStarting = returnStarting, add.regime = add.regime), 
+  #                  simplify = FALSE)
+  out <- replicate(R, tsDyn:::irf_1_shock(object = object, shock = shock, 
+                                          hist = hist, n.ahead = n.ahead, innov = innov, shock_both = shock_both, 
+                                          returnStarting = returnStarting, add.regime = add.regime), 
+                   simplify = FALSE)
+  out_M <- do.call("rbind", out)
+  out_M_means <- aggregate(out_M[, grep("sim|regime", colnames(out_M))], list(n.ahead = out_M$n.ahead, var = out_M$var), mean)
+  out_M_means
+    
+# }
+
+```
+
+Step x: Call function `tsDyn:::irf_1_shock()`
+
+```{r, cache=TRUE}
+
+# tsDyn_irf_1_shock_fun <- function (object, shock, hist,
+#                                    n.ahead = 10, innov = NULL, shock_both = TRUE, 
+#                                    returnStarting = FALSE, add.regime = FALSE, seed = NULL) {
+  
+  # inputs
+  object <- vecm.tsdyn
+  i <- 1
+  shock <- M$shock[[i]]
+  hist <- M$hist[[i]]
+  
+  n.ahead <- 10
+  innov <- NULL
+  shock_both <- TRUE
+  returnStarting <- FALSE
+  add.regime <- FALSE
+  add.regime <- FALSE
+  seed <- NULL
+  
+
+  
+  # lag <- get_lag(object)
+  lag <- tsDyn:::get_lag.nlVar(object)
+  n_start <- ifelse(inherits(object, c("VECM", "TVECM")), lag + 1, lag)
+  include <- object$include
+  B <- coef(object, hyperCoef = FALSE)
+  # nthresh <- get_nthresh(object)
+  nthresh <- tsDyn:::get_nthresh.nlVar(object)
+  # Thresh <- getTh(object)
+  Thresh <- tsDyn:::getTh.nlVar(object)
+  N <- n.ahead + 1
+  # K <- get_nVar(object)
+  K <- tsDyn:::get_nVar.nlVar(object)
+  # series <- get_series(object)
+  series <- tsDyn:::get_series(object)
+  beta <- object$model.specific$coint
+  model <- switch(class(object)[[1]],
+                  ar = "setar",
+                  linear = "setar", 
+                  setar = "setar",
+                  VAR = "TVAR",
+                  TVAR = "TVAR", 
+                  VECM = "TVECM",
+                  TVECM = "TVECM", stop("Error model not recognised!"))
+  if (inherits(object, c("TVAR", "TVECM"))) {
+    B <- do.call("cbind", B)
+  }
+  if (is.null(innov)) {
+    res_obj <- as.matrix(residuals(object))
+    res_obj <- res_obj[-seq_len(lag), , drop = FALSE]
+    if (!is.null(seed)) {
+      set.seed(seed)
+    }
+    index_samp <- sample(seq_len(nrow(res_obj)), N, replace = FALSE)
+    innov <- res_obj <- res_obj[index_samp, , drop = FALSE]
+  }
+  hist_M <- as.matrix(hist)
+  shock_M <- as.matrix(shock)
+  if (nrow(hist_M) != n_start) {
+    stop("hist should be of same nrow as lag (+1 if VECM)")
+  }
+  if (ncol(hist_M) != K) {
+    stop("hist should be of same ncol as number of variables")
+  }
+  if (nrow(shock_M) != 1) {
+    stop("shock should have only one row")
+  }
+  if (ncol(shock_M) != K) {
+    stop("shock should be of same ncol as number of variables")
+  }
+  if (nrow(innov) != N) {
+    stop("innov should be of same length as n.ahead + 1")
+  }
+  innov_1 <- rbind(shock_M, innov[-1, , drop = FALSE])
+  if (shock_both) {
+    innov_1 <- innov + rbind(shock_M, matrix(0, nrow = n.ahead, ncol = K))
+  }
+  innov_2 <- innov
+  # sim_1 <- model.gen(model = model, B = B, lag = lag, include = include, 
+  #                    nthresh = nthresh, Thresh = Thresh, beta = beta, starting = hist_M, 
+  #                    innov = innov_1, n = N, returnStarting = TRUE, add.regime = add.regime)
+  sim_1 <- tsDyn:::model.gen(model = model, B = B, lag = lag, include = include, 
+                     nthresh = nthresh, Thresh = Thresh, beta = beta, starting = hist_M, 
+                     innov = innov_1, n = N, returnStarting = TRUE, add.regime = add.regime)
+  # sim_2 <- model.gen(model = model, B = B, lag = lag, include = include, 
+  #                    nthresh = nthresh, Thresh = Thresh, beta = beta, starting = hist_M, 
+  #                    innov = innov_2, n = N, returnStarting = TRUE, add.regime = add.regime)
+  sim_2 <- tsDyn:::model.gen(model = model, B = B, lag = lag, include = include, 
+                     nthresh = nthresh, Thresh = Thresh, beta = beta, starting = hist_M, 
+                     innov = innov_2, n = N, returnStarting = TRUE, add.regime = add.regime)
+  
+  n.aheads_all <- c(-n_start:0, seq_len(n.ahead))
+  if (K > 1) {
+    df <- data.frame(var = rep(series, each = nrow(sim_1)), n.ahead = n.aheads_all, sim_1 = unlist(sim_1), sim_2 = unlist(sim_2))
+    rownames(df) <- seq_len(nrow(df))
+  } else {
+    df <- data.frame(var = series, n.ahead = n.aheads_all, sim_1 = sim_1$res, sim_2 = sim_2$res)
+  }
+  if (add.regime) {
+    df <- df[, 1:4]
+    colnames(df) <- c("n.ahead", "sim_1", "regime_1", "sim_2")
+  }
+  if (!returnStarting) {
+    df <- subset(df, n.ahead >= 0)
+  }
+  
+  df
+  
+# }
+
+```
+
+```{r}
+
+tsDyn_model_gen_fun <- function (model = c("setar", "TVAR", "TVECM"), B, n = 200, lag = 1, 
+                                 include = c("const", "trend", "none", "both"), nthresh = 0, 
+                                 thDelay = 0, Thresh, trendStart = 1, starting = NULL, innov, 
+                                 exo, round_digits = 10, returnStarting = FALSE, add.regime = FALSE, 
+                                 show.parMat = FALSE, thVar = NULL, mTh = 1, beta, ...) {
+  
+  model <- model
+  B <- B
+  lag <- lag
+  include <- include
+  nthresh <- nthresh
+  Thresh <- Thresh
+  beta <- beta
+  starting <- hist_M
+  innov <- innov_1
+  n <- N
+  
+  thDelay <- 0
+  trendStart <- 1
+  exo <- NULL
+  round_digits <- 10
+  returnStarting <- TRUE
+  add.regime <- add.regime
+  show.parMat <- FALSE
+  thVar <- NULL
+  mTh <- 1 
+  
+  
+  
+  # model <- match.arg(model)
+  model <- model
+  if (model == "setar") {
+    res <- tsDyn:::setar.gen(B = B, n = n, lag = lag, include = include, 
+                             nthresh = nthresh, Thresh = Thresh, thDelay = thDelay, 
+                             starting = as.numeric(starting[, 1]), innov = innov, 
+                             exo = exo, trendStart = trendStart, round_digits = round_digits, 
+                             returnStarting = returnStarting, add.regime = add.regime, 
+                             show.parMat = show.parMat, ...)
+  } else if (model == "TVAR") {
+    res <- tsDyn:::TVAR.gen(B = B, n = n, lag = lag, include = include, 
+                            nthresh = nthresh, Thresh = Thresh, thDelay = thDelay, 
+                            starting = starting, innov = innov, thVar = thVar, 
+                            mTh = mTh, trendStart = trendStart, round_digits = round_digits, 
+                            returnStarting = returnStarting, add.regime = add.regime, 
+                            show.parMat = show.parMat, ...)
+  } else if (model == "TVECM") {
+    res <- tsDyn:::TVECM.gen(B = B, n = n, lag = lag, include = include, 
+                             beta = beta, nthresh = nthresh, Thresh = Thresh, 
+                             starting = starting, innov = innov, round_digits = round_digits, 
+                             returnStarting = returnStarting, show.parMat = show.parMat, ...)
+  }
+  as.data.frame(res)
+}
+
+```
+
+```{r}
+
+tsDyn_TVECM_gen_fun <- function (B, beta, n = 200, lag = 1,
+                                 include = c("const", "trend", "none", "both"), nthresh = 1, Thresh,
+                                 starting = NULL, innov, returnStarting = FALSE, show.parMat = FALSE, round_digits = 4) {
+  
+  # inputs
+  B <- B
+  n <- n
+  lag <- lag
+  include <- include
+  beta <- beta
+  nthresh <- nthresh
+  Thresh <- Thresh
+  starting <- starting
+  innov <- innov
+  round_digits <- round_digits
+  returnStarting <- returnStarting
+  show.parMat <- show.parMat
+  
+  
+
+  p <- lag
+  # include <- match.arg(include)
+  include <- include
+  if (!nthresh %in% c(0, 1, 2)) {
+    stop("Arg nthresh should  be either 0, 1 or 2")
+  }
+  if (missing(beta)) {
+    stop("please provide arg beta (cointegrating value)")
+  }
+  ninc <- switch(include, none = 0, const = 1, trend = 1, both = 2)
+  incVal <- switch(include, none = NULL, const = "const", trend = "trend", both = c("const", "trend"))
+  k <- nrow(B)
+  if (is.vector(beta)) {
+    if (length(beta) == k - 1) {
+      beta <- c(1, -beta)
+    }
+    tBETA <- matrix(beta, nrow = 1)
+    r <- 1
+  } else {
+    if (nrow(beta) != k) {
+      stop("beta should have k rows and r cols")
+    }
+    r <- ncol(beta)
+    tBETA <- t(beta)
+  }
+  esp <- p * k + r + ninc
+  pa <- switch(as.character(nthresh), `0` = "", `1` = c("_low", "_upr"), `2` = c("_low", "_mid", "_upr"))
+  lags <- as.vector(outer("L{x", 1:k, paste, sep = ""))
+  lags2 <- paste(rep(lags, times = p), "}{", rep(1:p, each = p), "}", sep = "")
+  if (esp * (nthresh + 1) != ncol(B)) {
+    colnames_Matrix_input <- as.vector(outer(c(rep("ECT", r), incVal, lags2), pa, paste, sep = ""))
+    cat("Matrix B badly specified: should have ", esp * (nthresh + 1), "columns, but has", ncol(B), "\n")
+    print(matrix(NA, nrow = k, ncol = esp * (nthresh + 1), dimnames = list(paste("Equ x", 1:k, sep = ""), colnames_Matrix_input)))
+    stop()
+  }
+  rownames(B) <- paste("Equ x", 1:k, ":", sep = "")
+  if (!is.null(starting)) {
+    if (!is.matrix(starting)) {
+      stop("Provide 'starting' as matrix")
+    }
+    if (!all(dim(starting) == c(p + 1, k))) {
+      stop("Bad specification of starting values. Should have nrow = lag +1 and ncol = number of variables")
+    }
+  }
+  Bmat <- B
+  if (include != "both") {
+    aa1 <- r + switch(include, none = 1:2, const = 2, trend = 1, both = NULL)
+    aa <- sort(rep(aa1, each = nthresh + 1) + (0:nthresh) * (p * k + max(aa1)))
+    # Bmat <- myInsertCol(Bmat, c = aa, 0)
+    Bmat <- tsDyn:::myInsertCol(Bmat, c = aa, 0)
+  }
+  nparBmat <- p * k + 2 + r
+  Yb <- matrix(0, nrow = n + p + 1, ncol = k)
+  if (!is.null(starting)) {
+    Yb[1:(p + 1), ] <- starting
+  }
+  trend <- c(rep(NA, p + 1), seq_len(n))
+  
+  # start generation of Yb
+  
+  if (nthresh == 0) {
+    for (i in (p + 2):(n + p + 1)) {
+      ECT <- Bmat[, 1:r] %*% tBETA %*% matrix(Yb[i - 1, ], ncol = 1)
+      Yb[i, ] <- rowSums(cbind(Yb[i - 1, ], Bmat[, r + 1], Bmat[, r + 2] * trend[i], ECT, Bmat[, -c(1:(r + 2))] %*% matrix(t(Yb[i - c(1:p), ] - Yb[i - c(2:(p + 1)), ]), ncol = 1), innov[i - p - 1, ]))
+    }
+  } else if (nthresh == 1) {
+    BD <- Bmat[, seq_len(nparBmat)]
+    BU <- Bmat[, -seq_len(nparBmat)]
+    for (i in (p + 2):(n + p + 1)) {
+      ECT <- Yb[i - 1, , drop = FALSE] %*% t(tBETA)
+      if (round(ECT, round_digits) <= Thresh) {
+        B_here <- BD
+      } else {
+        B_here <- BU
+      }
+      Yb[i, ] <- rowSums(cbind(Yb[i - 1, ], B_here[, 1] * as.vector(ECT), B_here[, 2], B_here[, 3] * trend[i], B_here[, -c(1, 2, 3)] %*% matrix(t(Yb[i - c(1:p), ] - Yb[i - c(2:(p + 1)), ]), ncol = 1), innov[i - p - 1, ]))
+    }
+  } else if (nthresh == 2) {
+    BD <- Bmat[, seq_len(nparBmat)]
+    BM <- Bmat[, seq_len(nparBmat) + nparBmat]
+    BU <- Bmat[, seq_len(nparBmat) + 2 * nparBmat]
+    for (i in (p + 2):(n + p + 1)) {
+      ECT <- Yb[i - 1, , drop = FALSE] %*% t(tBETA)
+      if (round(ECT, round_digits) <= Thresh[1]) {
+        B_here <- BD
+      } else if (round(ECT, round_digits) > Thresh[2]) {
+        B_here <- BU
+      } else {
+        B_here <- BM
+      }
+      Yb[i, ] <- rowSums(cbind(Yb[i - 1, ], B_here[, 1] * as.vector(ECT), B_here[, 2], B_here[, 3] * trend[i], B_here[, -c(1, 2, 3)] %*% matrix(t(Yb[i - c(1:p), ] - Yb[i - c(2:(p + 1)), ]), ncol = 1), innov[i - p - 1, ]))
+    }
+  }
+  if (show.parMat) {
+    colnames_Matrix_system <- as.vector(outer(c(rep("ECT", r), "Const", "Trend", lags2), pa, paste, sep = ""))
+    colnames(Bmat) <- colnames_Matrix_system
+    print(Bmat)
+  }
+  if (!returnStarting) {
+    Yb <- Yb[-seq_len(p + 1), ]
+  }
+      
+  return(Yb)
+  
+}
+
+```
+
+Strategies to hijack `tsDyn:::GIRF` function
+
+* edit `tsDyn::TVECM` function for known breaks to create ingredients of `tsDyn:::GIRF` function.
+
+
+
+## TVECM model estimation
+
+```{r}
+
+tvec <- tsDyn::TVECM(tsDyn::zeroyldMeta[, c("long.run", "short.run")], lag = 2, ngridTh = 300, beta = list(exact = 1))
+
+```
+
+## TVECM model orthngalized IRF analysis
+
+```{r, eval=FALSE}
+
+# don't run
+irf.tvec <- tsDyn:::irf.VECM(tvec, ortho = FALSE)
+
+```
+
+```{r}
+
+irf.tvec <- tsDyn:::irf.TVECM(tvec, ortho = TRUE, boot = FALSE, n.ahead = 10)
+irf.tvec$irf$short.run
+irf.tvec$irf$long.run
+
+irf.l.tvec <- tsDyn:::irf.TVECM(tvec, ortho = TRUE, regime = "L", boot = FALSE, n.ahead = 10)
+irf.l.tvec$irf$short.run
+irf.l.tvec$irf$long.run
+
+irf.h.tvec <- tsDyn:::irf.TVECM(tvec, ortho = TRUE, regime = "H", boot = FALSE, n.ahead = 10)
+irf.h.tvec$irf$short.run
+irf.h.tvec$irf$long.run
+
+```
+
+## TVECM model generalized IRF analysis
+
+
