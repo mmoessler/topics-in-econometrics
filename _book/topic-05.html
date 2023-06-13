@@ -53,23 +53,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
-//..............................
-// handling of collapsibles
-// see: https://www.w3schools.com/howto/howto_js_collapsible.asp
-var coll = document.getElementsByClassName("collButtonCl");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-        content.style.display = "none";
-        } else {
-        content.style.display = "block";
-        }
-    });
-}
+<script src="script.js"></script>
 
 
 <style type="text/css">
@@ -397,7 +381,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##         n.shock = n.shock, R = R, hist_li = hist_li, shock_li = shock_li, 
 ##         ...)
 ## }
-## &lt;bytecode: 0x0000018743d12d18&gt;
+## &lt;bytecode: 0x0000020e3a3f4538&gt;
 ## &lt;environment: namespace:tsDyn&gt;</code></pre>
 <p>Step x: Call function <code>tsDyn:::GIRF.setar()</code></p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="topic-05.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tsDyn_GIRF_setar_fun no 01 ----</span></span>
