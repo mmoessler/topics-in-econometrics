@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Topic 03 | Topics in Statistics and Econometrics</title>
   <meta name="description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
-  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Topic 03 | Topics in Statistics and Econometrics" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Markus Mößler" />
 
 
-<meta name="date" content="2023-04-14" />
+<meta name="date" content="2023-06-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="topic-02.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="topic-04.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -171,6 +171,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.1" data-path="topic-03.html"><a href="topic-03.html#case-1"><i class="fa fa-check"></i><b>5.3.1</b> Case 1</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="topic-04.html"><a href="topic-04.html"><i class="fa fa-check"></i><b>6</b> Topic 04</a></li>
+<li class="chapter" data-level="7" data-path="topic-05.html"><a href="topic-05.html"><i class="fa fa-check"></i><b>7</b> Topic 05</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="topic-05.html"><a href="topic-05.html#motivation-2"><i class="fa fa-check"></i><b>7.1</b> Motivation</a></li>
+<li class="chapter" data-level="7.2" data-path="topic-05.html"><a href="topic-05.html#linear-vecm-model-estimation"><i class="fa fa-check"></i><b>7.2</b> Linear VECM model estimation</a></li>
+<li class="chapter" data-level="7.3" data-path="topic-05.html"><a href="topic-05.html#linear-vecm-model-orthogonalized-irf-analysis"><i class="fa fa-check"></i><b>7.3</b> Linear VECM model orthogonalized IRF analysis</a></li>
+<li class="chapter" data-level="7.4" data-path="topic-05.html"><a href="topic-05.html#linear-vecm-model-generalized-irf-analysis"><i class="fa fa-check"></i><b>7.4</b> Linear VECM model generalized IRF analysis</a></li>
+<li class="chapter" data-level="7.5" data-path="topic-05.html"><a href="topic-05.html#tvecm-model-estimation"><i class="fa fa-check"></i><b>7.5</b> TVECM model estimation</a></li>
+<li class="chapter" data-level="7.6" data-path="topic-05.html"><a href="topic-05.html#tvecm-model-orthngalized-irf-analysis"><i class="fa fa-check"></i><b>7.6</b> TVECM model orthngalized IRF analysis</a></li>
+<li class="chapter" data-level="7.7" data-path="topic-05.html"><a href="topic-05.html#tvecm-model-generalized-irf-analysis"><i class="fa fa-check"></i><b>7.7</b> TVECM model generalized IRF analysis</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -237,9 +248,14 @@ y_{1t}^{*} = y_{1t} - \widehat{\Omega}_{1y_2}\widehat{\Omega}_{y_2 y_2}^{-1}\Del
 \end{align}\]</span></p>
 <div id="case-1" class="section level3 hasAnchor" number="5.3.1">
 <h3><span class="header-section-number">5.3.1</span> Case 1<a href="topic-03.html#case-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><span style="text-decoration: underline; font-size: 20pt">Assumptions</span></p>
-<p>…</p>
-<p>Check Hamilton based on finite sample results…</p>
+<p><em>see: Hamilton, 1994, p. 602</em></p>
+<p><span style="text-decoration: underline; font-size: 16pt">Assumptions</span></p>
+<ul>
+<li>Gaussian system</li>
+<li><span class="math inline">\(y_{2t}\)</span> follows a random walk</li>
+<li><span class="math inline">\(u_{1t}\)</span> is white noise and uncorrelated with <span class="math inline">\(u_{1t}\)</span> for all <span class="math inline">\(t\)</span> and <span class="math inline">\(\tau\)</span></li>
+</ul>
+<p><span style="text-decoration: underline; font-size: 16pt">Finite sample results</span></p>
 <p><span class="math display">\[\begin{align}
 
 \left(\underset{\left(m \times 1\right)}{R_{\alpha}} \underset{\left(1\times 1\right)}{\widehat{\alpha}_{T}} + \underset{\left(m \times g\right)}{R_{\gamma}} \underset{\left(g\times 1\right)}{\widehat{\gamma}_{T}}-\underset{\left(m\times 1\right)}{r}\right)^{&#39;}
@@ -522,7 +538,7 @@ k\left(z\right) =
         </div>
       </div>
 <a href="topic-02.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="topic-04.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
