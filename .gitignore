@@ -4,3 +4,6 @@
 _bookdown_files
 rsconnect
 old/
+cache-files/
+.rdb
+.rdx
