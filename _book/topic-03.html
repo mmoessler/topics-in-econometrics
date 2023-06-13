@@ -23,7 +23,7 @@
 <meta name="author" content="Markus Mößler" />
 
 
-<meta name="date" content="2023-04-01" />
+<meta name="date" content="2023-04-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,6 +54,70 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -102,7 +166,10 @@
 <ul>
 <li class="chapter" data-level="5.1" data-path="topic-03.html"><a href="topic-03.html#statistical-model-1"><i class="fa fa-check"></i><b>5.1</b> Statistical Model</a></li>
 <li class="chapter" data-level="5.2" data-path="topic-03.html"><a href="topic-03.html#estimation"><i class="fa fa-check"></i><b>5.2</b> Estimation</a></li>
-<li class="chapter" data-level="5.3" data-path="topic-03.html"><a href="topic-03.html#sample-distribution"><i class="fa fa-check"></i><b>5.3</b> Sample Distribution</a></li>
+<li class="chapter" data-level="5.3" data-path="topic-03.html"><a href="topic-03.html#sample-distribution"><i class="fa fa-check"></i><b>5.3</b> Sample Distribution</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="topic-03.html"><a href="topic-03.html#case-1"><i class="fa fa-check"></i><b>5.3.1</b> Case 1</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -168,10 +235,14 @@ y_{1t}^{*} = y_{1t} - \widehat{\Omega}_{1y_2}\widehat{\Omega}_{y_2 y_2}^{-1}\Del
 \\
 \Sigma_{11} &amp;= \text{E}\left(u_{1t}^{&#39;}u_{1t}\right)
 \end{align}\]</span></p>
-<p>Check Hamilton</p>
+<div id="case-1" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Case 1<a href="topic-03.html#case-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span style="text-decoration: underline; font-size: 20pt">Assumptions</span></p>
+<p>…</p>
+<p>Check Hamilton based on finite sample results…</p>
 <p><span class="math display">\[\begin{align}
 
-\left(\underset{\left(m \times 1\right)}{R_{\alpha}} \underset{\left(1\times 1\right)}{\widehat{\alpha_{T}}} + \underset{\left(m \times g\right)}{R_{\gamma}} \underset{\left(g\times 1\right)}{\widehat{\gamma_{T}}}-\underset{\left(m\times 1\right)}{r}\right)^{&#39;}
+\left(\underset{\left(m \times 1\right)}{R_{\alpha}} \underset{\left(1\times 1\right)}{\widehat{\alpha}_{T}} + \underset{\left(m \times g\right)}{R_{\gamma}} \underset{\left(g\times 1\right)}{\widehat{\gamma}_{T}}-\underset{\left(m\times 1\right)}{r}\right)^{&#39;}
 
 &amp;\times \\
 
@@ -201,6 +272,12 @@ y_{1t}^{*} = y_{1t} - \widehat{\Omega}_{1y_2}\widehat{\Omega}_{y_2 y_2}^{-1}\Del
 &amp;\div m
 
 \end{align}\]</span></p>
+<p>with</p>
+<p><span class="math display">\[\begin{align}
+
+\underset{\left(1\times 1\right)}{s_{T}^{2}} = \frac{1}{T-n}\sum_{t=1}^{T}\left( \underset{\left(1\times 1\right)}{y_{1t}} - \underset{\left(1\times 1\right)}{\widehat{\alpha}_{t}} - \underset{\left(1\times g\right)}{\widehat{\gamma}_{t}^{&#39;}} \underset{\left(g\times 1\right)}{y_{2t}} \right)^{2}
+
+\end{align}\]</span></p>
 <p><span class="math display">\[\begin{align}
 
 \left(
@@ -222,7 +299,221 @@ y_{1t}^{*} = y_{1t} - \widehat{\Omega}_{1y_2}\widehat{\Omega}_{y_2 y_2}^{-1}\Del
 &amp;\div m
 
 \end{align}\]</span></p>
+<p>Check Hamilton based on infinite sample results…</p>
+<p>See Hamilton (1994), p. 280</p>
+<p>Let <span class="math inline">\(S\)</span> represent the long-run variance matrix of the vector process <span class="math inline">\(y_t\)</span>, i.e.,</p>
+<p><span class="math display">\[\begin{align}
+\underset{\left(n \times n\right)}{S} &amp;\equiv \lim_{T \rightarrow \infty} T \; \text{E} \left[\underset{\left(n \times 1\right)}{\left(\overline{y}_{T} - \mu\right)}\underset{\left(1 \times n\right)}{\left(\overline{y}_{T} - \mu\right)^{&#39;}}\right]
+\\
+\phantom{\underset{\left(n \times n\right)}{S}} &amp;\equiv \sum_{v=-\infty}^{\infty}\underset{\left(n \times n\right)}{\Gamma_{v}}
+\end{align}\]</span></p>
+<p>For <span class="math inline">\(y_t\)</span> generated by an MA(q) process this implies</p>
+<p><span class="math display">\[\begin{align}
+\underset{\left(n \times n\right)}{S} &amp;= \sum_{v=-q}^{q}\underset{\left(n \times n\right)}{\Gamma_{v}}
+\end{align}\]</span></p>
+<p>which could be estimated by (natural estimator)</p>
+<p><span class="math display">\[\begin{align}
+\underset{\left(n \times n\right)}{\widehat{S}} &amp;= \sum_{v=-q}^{q}\underset{\left(n \times n\right)}{\widehat{\Gamma}_{v}}
+\\
+\phantom{\underset{\left(n \times n\right)}{\widehat{S}}} &amp;= \underset{\left(n \times n\right)}{\widehat{\Gamma}_{0}}+\sum_{v=1}^{q}\underset{\left(n \times n\right)}{\widehat{\Gamma}_{v}}+\underset{\left(n \times n\right)}{\widehat{\Gamma}_{v}^{&#39;}}
+\end{align}\]</span></p>
+<p>with</p>
+<p><span class="math display">\[\begin{align}
+\underset{\left(n \times n\right)}{\widehat{\Gamma}_{v}} = \frac{1}{T}\sum_{t=v+1}^{T}\underset{\left(n \times 1\right)}{\left(y_{t} - \overline{y}\right)}\underset{\left(1 \times n\right)}{\left(y_{t} - \overline{y}\right)^{&#39;}}
+\end{align}\]</span></p>
+<p>Note, this gives a consistent estimate of the asymptotic variance of the sample mean for a broad class of processes exhibiting time-dependent heteroskedasticity and autocorrelation.</p>
+<ul>
+<li><span class="math inline">\(\widehat{S} \underset{p}{\rightarrow} S\)</span></li>
+<li>But with <span class="math inline">\(\widehat{S}\)</span> potentially negative definite in finite sample.</li>
+</ul>
+<hr>
+<p>Newey and West (1987)</p>
+<!-- The estimator potentially results in a negative definite estimate. -->
+<p><span class="math display">\[\begin{align}
+\underset{\left(n \times n\right)}{\widehat{S}} = \underset{\left(n \times n\right)}{\widehat{\Gamma}_{0}}+\sum_{v=1}^{q}\left(1-\frac{v}{q+1}\right)\left(\underset{\left(n \times n\right)}{\widehat{\Gamma}_{v}}+\underset{\left(n \times n\right)}{\widehat{\Gamma}_{v}^{&#39;}}\right)
+\end{align}\]</span></p>
+<p>again with,</p>
+<p><span class="math display">\[\begin{align}
+\underset{\left(n \times n\right)}{\widehat{\Gamma}_{v}} = \frac{1}{T}\sum_{t=v+1}^{T}\underset{\left(n \times 1\right)}{\left(y_{t} - \overline{y}\right)}\underset{\left(1 \times n\right)}{\left(y_{t} - \overline{y}\right)^{&#39;}}
+\end{align}\]</span></p>
+<p>with the following properties</p>
+<ul>
+<li><span class="math inline">\(\widehat{S}\)</span> is positive semidefinite by construction</li>
+<li>For <span class="math inline">\(q \rightarrow \infty\)</span> and <span class="math inline">\(T \rightarrow \infty\)</span> with <span class="math inline">\(q/T^{1/4} \rightarrow 0\)</span>, <span class="math inline">\(\widehat{S} \rightarrow S\)</span></li>
+</ul>
+<p>This is based on the Bartlett kernel…</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="topic-03.html#cb1-1" aria-hidden="true" tabindex="-1"></a>sandwich__bwNeweyWest <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">order.by =</span> <span class="cn">NULL</span>,</span>
+<span id="cb1-2"><a href="topic-03.html#cb1-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">kernel =</span> <span class="fu">c</span>(<span class="st">&quot;Bartlett&quot;</span>, <span class="st">&quot;Parzen&quot;</span>, <span class="st">&quot;Quadratic Spectral&quot;</span>, <span class="st">&quot;Truncated&quot;</span>, <span class="st">&quot;Tukey-Hanning&quot;</span>),</span>
+<span id="cb1-3"><a href="topic-03.html#cb1-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">weights =</span> <span class="cn">NULL</span>, <span class="at">prewhite =</span> <span class="dv">1</span>, <span class="at">ar.method =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> <span class="fu">list</span>(), ...) {</span>
+<span id="cb1-4"><a href="topic-03.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-5"><a href="topic-03.html#cb1-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-6"><a href="topic-03.html#cb1-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-7"><a href="topic-03.html#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.list</span>(x) <span class="sc">&amp;&amp;</span> <span class="sc">!</span><span class="fu">is.null</span>(x<span class="sc">$</span>na.action)) {</span>
+<span id="cb1-8"><a href="topic-03.html#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">class</span>(x<span class="sc">$</span>na.action) <span class="ot">&lt;-</span> <span class="st">&quot;omit&quot;</span></span>
+<span id="cb1-9"><a href="topic-03.html#cb1-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-10"><a href="topic-03.html#cb1-10" aria-hidden="true" tabindex="-1"></a>  kernel <span class="ot">&lt;-</span> <span class="fu">match.arg</span>(kernel)</span>
+<span id="cb1-11"><a href="topic-03.html#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (kernel <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Truncated&quot;</span>, <span class="st">&quot;Tukey-Hanning&quot;</span>)) {</span>
+<span id="cb1-12"><a href="topic-03.html#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="fu">paste</span>(<span class="st">&quot;Automatic bandwidth selection only available for &quot;</span>, </span>
+<span id="cb1-13"><a href="topic-03.html#cb1-13" aria-hidden="true" tabindex="-1"></a>               <span class="fu">dQuote</span>(<span class="st">&quot;Bartlett&quot;</span>), <span class="st">&quot;, &quot;</span>, <span class="fu">dQuote</span>(<span class="st">&quot;Parzen&quot;</span>), <span class="st">&quot; and &quot;</span>, </span>
+<span id="cb1-14"><a href="topic-03.html#cb1-14" aria-hidden="true" tabindex="-1"></a>               <span class="fu">dQuote</span>(<span class="st">&quot;Quadratic Spectral&quot;</span>), <span class="st">&quot; kernel. Use &quot;</span>, <span class="fu">sQuote</span>(<span class="st">&quot;bwAndrews&quot;</span>), </span>
+<span id="cb1-15"><a href="topic-03.html#cb1-15" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot; instead.&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>))</span>
+<span id="cb1-16"><a href="topic-03.html#cb1-16" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-17"><a href="topic-03.html#cb1-17" aria-hidden="true" tabindex="-1"></a>  prewhite <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(prewhite)</span>
+<span id="cb1-18"><a href="topic-03.html#cb1-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-19"><a href="topic-03.html#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># handle umat of interest</span></span>
+<span id="cb1-20"><a href="topic-03.html#cb1-20" aria-hidden="true" tabindex="-1"></a>  umat <span class="ot">&lt;-</span> <span class="cf">if</span> (<span class="fu">inherits</span>(x, <span class="st">&quot;matrix&quot;</span>)) {</span>
+<span id="cb1-21"><a href="topic-03.html#cb1-21" aria-hidden="true" tabindex="-1"></a>    x</span>
+<span id="cb1-22"><a href="topic-03.html#cb1-22" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb1-23"><a href="topic-03.html#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">estfun</span>(x)[, , drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb1-24"><a href="topic-03.html#cb1-24" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-25"><a href="topic-03.html#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.zoo</span>(umat)) {</span>
+<span id="cb1-26"><a href="topic-03.html#cb1-26" aria-hidden="true" tabindex="-1"></a>    umat <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">coredata</span>(umat))</span>
+<span id="cb1-27"><a href="topic-03.html#cb1-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-28"><a href="topic-03.html#cb1-28" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(umat)</span>
+<span id="cb1-29"><a href="topic-03.html#cb1-29" aria-hidden="true" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="fu">ncol</span>(umat)</span>
+<span id="cb1-30"><a href="topic-03.html#cb1-30" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-31"><a href="topic-03.html#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># handle ordering</span></span>
+<span id="cb1-32"><a href="topic-03.html#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(order.by)) {</span>
+<span id="cb1-33"><a href="topic-03.html#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">inherits</span>(order.by, <span class="st">&quot;formula&quot;</span>)) {</span>
+<span id="cb1-34"><a href="topic-03.html#cb1-34" aria-hidden="true" tabindex="-1"></a>      z <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(order.by, <span class="at">data =</span> data)</span>
+<span id="cb1-35"><a href="topic-03.html#cb1-35" aria-hidden="true" tabindex="-1"></a>      z <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(z[, <span class="fu">ncol</span>(z)])</span>
+<span id="cb1-36"><a href="topic-03.html#cb1-36" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb1-37"><a href="topic-03.html#cb1-37" aria-hidden="true" tabindex="-1"></a>      z <span class="ot">&lt;-</span> order.by</span>
+<span id="cb1-38"><a href="topic-03.html#cb1-38" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-39"><a href="topic-03.html#cb1-39" aria-hidden="true" tabindex="-1"></a>    index <span class="ot">&lt;-</span> <span class="fu">order</span>(z)</span>
+<span id="cb1-40"><a href="topic-03.html#cb1-40" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb1-41"><a href="topic-03.html#cb1-41" aria-hidden="true" tabindex="-1"></a>    index <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span>n</span>
+<span id="cb1-42"><a href="topic-03.html#cb1-42" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-43"><a href="topic-03.html#cb1-43" aria-hidden="true" tabindex="-1"></a>  umat <span class="ot">&lt;-</span> umat[index, , drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb1-44"><a href="topic-03.html#cb1-44" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-45"><a href="topic-03.html#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ???</span></span>
+<span id="cb1-46"><a href="topic-03.html#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(weights)) {</span>
+<span id="cb1-47"><a href="topic-03.html#cb1-47" aria-hidden="true" tabindex="-1"></a>    weights <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>, k)</span>
+<span id="cb1-48"><a href="topic-03.html#cb1-48" aria-hidden="true" tabindex="-1"></a>    unames <span class="ot">&lt;-</span> <span class="fu">colnames</span>(umat)</span>
+<span id="cb1-49"><a href="topic-03.html#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(unames) <span class="sc">&amp;&amp;</span> <span class="st">&quot;(Intercept)&quot;</span> <span class="sc">%in%</span> unames) {</span>
+<span id="cb1-50"><a href="topic-03.html#cb1-50" aria-hidden="true" tabindex="-1"></a>      weights[<span class="fu">which</span>(unames <span class="sc">==</span> <span class="st">&quot;(Intercept)&quot;</span>)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-51"><a href="topic-03.html#cb1-51" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb1-52"><a href="topic-03.html#cb1-52" aria-hidden="true" tabindex="-1"></a>      res <span class="ot">&lt;-</span> <span class="fu">try</span>(<span class="fu">as.vector</span>(<span class="fu">rowMeans</span>(<span class="fu">estfun</span>(x)<span class="sc">/</span><span class="fu">model.matrix</span>(x), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)), <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-53"><a href="topic-03.html#cb1-53" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">inherits</span>(res, <span class="st">&quot;try-error&quot;</span>)) {</span>
+<span id="cb1-54"><a href="topic-03.html#cb1-54" aria-hidden="true" tabindex="-1"></a>        res <span class="ot">&lt;-</span> <span class="fu">try</span>(<span class="fu">residuals</span>(x), <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-55"><a href="topic-03.html#cb1-55" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-56"><a href="topic-03.html#cb1-56" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="sc">!</span><span class="fu">inherits</span>(res, <span class="st">&quot;try-error&quot;</span>)) {</span>
+<span id="cb1-57"><a href="topic-03.html#cb1-57" aria-hidden="true" tabindex="-1"></a>        weights[<span class="fu">which</span>(<span class="fu">colSums</span>((umat <span class="sc">-</span> res)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">&lt;</span> <span class="fl">1e-16</span>)] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-58"><a href="topic-03.html#cb1-58" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-59"><a href="topic-03.html#cb1-59" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-60"><a href="topic-03.html#cb1-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">all</span>(weights <span class="sc">&lt;=</span> <span class="dv">0</span>)) {</span>
+<span id="cb1-61"><a href="topic-03.html#cb1-61" aria-hidden="true" tabindex="-1"></a>      weights <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>, <span class="at">length.out =</span> k)</span>
+<span id="cb1-62"><a href="topic-03.html#cb1-62" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-63"><a href="topic-03.html#cb1-63" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb1-64"><a href="topic-03.html#cb1-64" aria-hidden="true" tabindex="-1"></a>    weights <span class="ot">&lt;-</span> <span class="fu">rep</span>(weights, <span class="at">length.out =</span> k)</span>
+<span id="cb1-65"><a href="topic-03.html#cb1-65" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-66"><a href="topic-03.html#cb1-66" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(weights) <span class="sc">&lt;</span> <span class="dv">2</span>) {</span>
+<span id="cb1-67"><a href="topic-03.html#cb1-67" aria-hidden="true" tabindex="-1"></a>    weights <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb1-68"><a href="topic-03.html#cb1-68" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-69"><a href="topic-03.html#cb1-69" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-70"><a href="topic-03.html#cb1-70" aria-hidden="true" tabindex="-1"></a>  <span class="co"># preliminary q (Ham) or P (MHH, Table 9.1)</span></span>
+<span id="cb1-71"><a href="topic-03.html#cb1-71" aria-hidden="true" tabindex="-1"></a>  mrate <span class="ot">&lt;-</span> <span class="cf">switch</span>(kernel,</span>
+<span id="cb1-72"><a href="topic-03.html#cb1-72" aria-hidden="true" tabindex="-1"></a>                  <span class="at">Bartlett =</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">9</span>,</span>
+<span id="cb1-73"><a href="topic-03.html#cb1-73" aria-hidden="true" tabindex="-1"></a>                  <span class="at">Parzen =</span> <span class="dv">4</span><span class="sc">/</span><span class="dv">25</span>,</span>
+<span id="cb1-74"><a href="topic-03.html#cb1-74" aria-hidden="true" tabindex="-1"></a>                  <span class="st">`</span><span class="at">Quadratic Spectral</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">25</span>)</span>
+<span id="cb1-75"><a href="topic-03.html#cb1-75" aria-hidden="true" tabindex="-1"></a>  m <span class="ot">&lt;-</span> <span class="fu">floor</span>(<span class="fu">ifelse</span>(prewhite <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">4</span>) <span class="sc">*</span> (n<span class="sc">/</span><span class="dv">100</span>)<span class="sc">^</span>mrate)</span>
+<span id="cb1-76"><a href="topic-03.html#cb1-76" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-77"><a href="topic-03.html#cb1-77" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (prewhite <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb1-78"><a href="topic-03.html#cb1-78" aria-hidden="true" tabindex="-1"></a>    var.fit <span class="ot">&lt;-</span> <span class="fu">ar</span>(umat, <span class="at">order.max =</span> prewhite, <span class="at">demean =</span> <span class="cn">FALSE</span>, <span class="at">aic =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> ar.method)</span>
+<span id="cb1-79"><a href="topic-03.html#cb1-79" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">inherits</span>(var.fit, <span class="st">&quot;try-error&quot;</span>)) {</span>
+<span id="cb1-80"><a href="topic-03.html#cb1-80" aria-hidden="true" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="fu">sprintf</span>(<span class="st">&quot;VAR(%i) prewhitening of estimating functions failed&quot;</span>, prewhite))</span>
+<span id="cb1-81"><a href="topic-03.html#cb1-81" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-82"><a href="topic-03.html#cb1-82" aria-hidden="true" tabindex="-1"></a>    umat <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">na.omit</span>(var.fit<span class="sc">$</span>resid))</span>
+<span id="cb1-83"><a href="topic-03.html#cb1-83" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">&lt;-</span> n <span class="sc">-</span> prewhite</span>
+<span id="cb1-84"><a href="topic-03.html#cb1-84" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-85"><a href="topic-03.html#cb1-85" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-86"><a href="topic-03.html#cb1-86" aria-hidden="true" tabindex="-1"></a>  hw <span class="ot">&lt;-</span> umat <span class="sc">%*%</span> weights</span>
+<span id="cb1-87"><a href="topic-03.html#cb1-87" aria-hidden="true" tabindex="-1"></a>  sigmaj <span class="ot">&lt;-</span> <span class="cf">function</span>(j) { <span class="fu">sum</span>(hw[<span class="dv">1</span><span class="sc">:</span>(n <span class="sc">-</span> j)] <span class="sc">*</span> hw[(j <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span>n])<span class="sc">/</span>n }</span>
+<span id="cb1-88"><a href="topic-03.html#cb1-88" aria-hidden="true" tabindex="-1"></a>  sigma <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">0</span><span class="sc">:</span>m, sigmaj)</span>
+<span id="cb1-89"><a href="topic-03.html#cb1-89" aria-hidden="true" tabindex="-1"></a>  s0 <span class="ot">&lt;-</span> sigma[<span class="dv">1</span>] <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">sum</span>(sigma[<span class="sc">-</span><span class="dv">1</span>])</span>
+<span id="cb1-90"><a href="topic-03.html#cb1-90" aria-hidden="true" tabindex="-1"></a>  s1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span>m <span class="sc">*</span> sigma[<span class="sc">-</span><span class="dv">1</span>])</span>
+<span id="cb1-91"><a href="topic-03.html#cb1-91" aria-hidden="true" tabindex="-1"></a>  s2 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">sum</span>((<span class="dv">1</span><span class="sc">:</span>m)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> sigma[<span class="sc">-</span><span class="dv">1</span>])</span>
+<span id="cb1-92"><a href="topic-03.html#cb1-92" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-93"><a href="topic-03.html#cb1-93" aria-hidden="true" tabindex="-1"></a>  qrate <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>(<span class="dv">2</span> <span class="sc">*</span> <span class="fu">ifelse</span>(kernel <span class="sc">==</span> <span class="st">&quot;Bartlett&quot;</span>, <span class="dv">1</span>, <span class="dv">2</span>) <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb1-94"><a href="topic-03.html#cb1-94" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-95"><a href="topic-03.html#cb1-95" aria-hidden="true" tabindex="-1"></a>  <span class="co"># updated q (Ham) or P (MHH, Table 9.1)</span></span>
+<span id="cb1-96"><a href="topic-03.html#cb1-96" aria-hidden="true" tabindex="-1"></a>  rval <span class="ot">&lt;-</span> <span class="cf">switch</span>(kernel,</span>
+<span id="cb1-97"><a href="topic-03.html#cb1-97" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Bartlett =</span> { <span class="fl">1.1447</span> <span class="sc">*</span> ((s1<span class="sc">/</span>s0)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">^</span>qrate },</span>
+<span id="cb1-98"><a href="topic-03.html#cb1-98" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Parzen =</span> { <span class="fl">2.6614</span> <span class="sc">*</span> ((s2<span class="sc">/</span>s0)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">^</span>qrate },</span>
+<span id="cb1-99"><a href="topic-03.html#cb1-99" aria-hidden="true" tabindex="-1"></a>                 <span class="st">`</span><span class="at">Quadratic Spectral</span><span class="st">`</span> <span class="ot">=</span> { <span class="fl">1.3221</span> <span class="sc">*</span> ((s2<span class="sc">/</span>s0)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">^</span>qrate })</span>
+<span id="cb1-100"><a href="topic-03.html#cb1-100" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-101"><a href="topic-03.html#cb1-101" aria-hidden="true" tabindex="-1"></a>  rval <span class="ot">&lt;-</span> rval <span class="sc">*</span> (n <span class="sc">+</span> prewhite)<span class="sc">^</span>qrate</span>
+<span id="cb1-102"><a href="topic-03.html#cb1-102" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-103"><a href="topic-03.html#cb1-103" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rval)</span>
+<span id="cb1-104"><a href="topic-03.html#cb1-104" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-105"><a href="topic-03.html#cb1-105" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-106"><a href="topic-03.html#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="topic-03.html#cb1-107" aria-hidden="true" tabindex="-1"></a>sandwich__NeweyWest <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">lag =</span> <span class="cn">NULL</span>, <span class="at">order.by =</span> <span class="cn">NULL</span>, <span class="at">prewhite =</span> <span class="cn">TRUE</span>, <span class="at">adjust =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb1-108"><a href="topic-03.html#cb1-108" aria-hidden="true" tabindex="-1"></a>                                <span class="at">diagnostics =</span> <span class="cn">FALSE</span>, <span class="at">sandwich =</span> <span class="cn">TRUE</span>, <span class="at">ar.method =</span> <span class="st">&quot;ols&quot;</span>, </span>
+<span id="cb1-109"><a href="topic-03.html#cb1-109" aria-hidden="true" tabindex="-1"></a>                                <span class="at">data =</span> <span class="fu">list</span>(), <span class="at">verbose =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb1-110"><a href="topic-03.html#cb1-110" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-111"><a href="topic-03.html#cb1-111" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-112"><a href="topic-03.html#cb1-112" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-113"><a href="topic-03.html#cb1-113" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(lag)) {</span>
+<span id="cb1-114"><a href="topic-03.html#cb1-114" aria-hidden="true" tabindex="-1"></a>    lag <span class="ot">&lt;-</span> <span class="fu">floor</span>(<span class="fu">bwNeweyWest</span>(x, <span class="at">order.by =</span> order.by, <span class="at">prewhite =</span> prewhite, <span class="at">ar.method =</span> ar.method, <span class="at">data =</span> data))</span>
+<span id="cb1-115"><a href="topic-03.html#cb1-115" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-116"><a href="topic-03.html#cb1-116" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (verbose) {</span>
+<span id="cb1-117"><a href="topic-03.html#cb1-117" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Lag truncation parameter chosen:&quot;</span>, lag, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb1-118"><a href="topic-03.html#cb1-118" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-119"><a href="topic-03.html#cb1-119" aria-hidden="true" tabindex="-1"></a>  myweights <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="at">by =</span> <span class="sc">-</span>(<span class="dv">1</span><span class="sc">/</span>(lag <span class="sc">+</span> <span class="dv">1</span>)))</span>
+<span id="cb1-120"><a href="topic-03.html#cb1-120" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-121"><a href="topic-03.html#cb1-121" aria-hidden="true" tabindex="-1"></a>  <span class="fu">vcovHAC</span>(x, <span class="at">order.by =</span> order.by, <span class="at">prewhite =</span> prewhite, <span class="at">weights =</span> myweights, </span>
+<span id="cb1-122"><a href="topic-03.html#cb1-122" aria-hidden="true" tabindex="-1"></a>          <span class="at">adjust =</span> adjust, <span class="at">diagnostics =</span> diagnostics, <span class="at">sandwich =</span> sandwich, </span>
+<span id="cb1-123"><a href="topic-03.html#cb1-123" aria-hidden="true" tabindex="-1"></a>          <span class="at">ar.method =</span> ar.method, <span class="at">data =</span> data)</span>
+<span id="cb1-124"><a href="topic-03.html#cb1-124" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-125"><a href="topic-03.html#cb1-125" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>where:</p>
+<ul>
+<li><code>weights</code>: ???</li>
+<li><code>m</code>: <span class="math inline">\(q\)</span> in Hamilton, 1994, or <span class="math inline">\(P\)</span> in Martin et. al., 2013</li>
+</ul>
+<hr>
+<p>Spectral-Based Estimator</p>
+<p>Note, if <span class="math inline">\(y_t\)</span> is covariance stationary, then <span class="math inline">\(S\)</span> has the interpretation as he autocovariance-generating function defined as</p>
+<p><span class="math display">\[\begin{align}
+G_{Y}\left(z\right) \equiv \sum_{v=-\infty}^{\infty}\underset{\left(n \times n\right)}{\Gamma_{v}z^{v}}
+\end{align}\]</span></p>
+<p>evaluated at <span class="math inline">\(z=1\)</span>, or, equivalently, as <span class="math inline">\(2\pi\)</span> times the population spectrum at frequency zero:</p>
+<p><span class="math display">\[\begin{align}
+S &amp;= \sum_{v=-\infty}^{\infty}\underset{\left(n \times n\right)}{\Gamma_{v}}
+\\
+\phantom{S} &amp;= 2\pi \; \underset{\left(n \times n\right)}{s_{Y}\left(0\right)}
+\end{align}\]</span></p>
+<hr>
+<p>(Kernel-base estimator of) Gallant (1987)</p>
+<p><span class="math display">\[\begin{align}
+\underset{\left(n \times n\right)}{\widehat{S}} = \underset{\left(n \times n\right)}{\widehat{\Gamma}_{0}}+\sum_{v=1}^{q}k\left(\frac{v}{q+1}\right)\left(\underset{\left(n \times n\right)}{\widehat{\Gamma}_{v}}+\underset{\left(n \times n\right)}{\widehat{\Gamma}_{v}^{&#39;}}\right)
+\end{align}\]</span></p>
+<p>with the spectral kernel</p>
+<p><span class="math display">\[\begin{align}
+k\left(z\right) =
+\begin{cases}
+1-6z^2+6z^3 &amp; \text{ for } 0 \leq z \leq \frac{1}{2} \\
+2\left(1-z\right)^3 &amp; \text{ for } \frac{1}{2} \leq z \leq 1 \\
+0 &amp; \text{ otherwise}. \\
+\end{cases}
+\end{align}\]</span></p>
+<p>So, for <span class="math inline">\(q=2\)</span> we get:</p>
+<p><span class="math display">\[\begin{align}
+\underset{\left(n \times n\right)}{\widehat{S}} &amp;= \underset{\left(n \times n\right)}{\widehat{\Gamma}_{0}} + k\left(\frac{1}{2+1}\right) \left(\underset{\left(n \times n\right)}{\widehat{\Gamma}_{1}}+\underset{\left(n \times n\right)}{\widehat{\Gamma}_{1}^{&#39;}}\right) + k\left(\frac{2}{2+1}\right) \left(\underset{\left(n \times n\right)}{\widehat{\Gamma}_{2}}+\underset{\left(n \times n\right)}{\widehat{\Gamma}_{2}^{&#39;}}\right)
+\\
+\phantom{\underset{\left(n \times n\right)}{\widehat{S}}} &amp;= \underset{\left(n \times n\right)}{\widehat{\Gamma}_{0}} + \left(1-6\left(\frac{1}{3}\right)^2 + 6\left(\frac{1}{3}\right)^3\right) \left(\underset{\left(n \times n\right)}{\widehat{\Gamma}_{1}}+\underset{\left(n \times n\right)}{\widehat{\Gamma}_{1}^{&#39;}}\right) + \left(2\left(1-\frac{2}{3}\right)^3 \right) \left(\underset{\left(n \times n\right)}{\widehat{\Gamma}_{2}}+\underset{\left(n \times n\right)}{\widehat{\Gamma}_{2}^{&#39;}}\right)
+\\
+\phantom{\underset{\left(n \times n\right)}{\widehat{S}}} &amp;= \underset{\left(n \times n\right)}{\widehat{\Gamma}_{0}} + \frac{5}{9}\left(\underset{\left(n \times n\right)}{\widehat{\Gamma}_{1}}+\underset{\left(n \times n\right)}{\widehat{\Gamma}_{1}^{&#39;}}\right) + \frac{2}{27}\left(\underset{\left(n \times n\right)}{\widehat{\Gamma}_{2}}+\underset{\left(n \times n\right)}{\widehat{\Gamma}_{2}^{&#39;}}\right)
+\end{align}\]</span></p>
+<p>(Kernel-base estimator of) Andrews (1991)</p>
+<p><span class="math display">\[\begin{align}
+\underset{\left(n \times n\right)}{\widehat{S}} = \frac{T}{T-k_x} \left( \underset{\left(n \times n\right)}{\widehat{\Gamma}_{0}}+\sum_{v=1}^{T-1}k\left(\frac{v}{q+1}\right)\left(\underset{\left(n \times n\right)}{\widehat{\Gamma}_{v}}+\underset{\left(n \times n\right)}{\widehat{\Gamma}_{v}^{&#39;}}\right)\right)
+\end{align}\]</span></p>
+<p>Note, whereas the estimator proposed by Newey and West (1987) and Gallant (1987) uses a fixed number of estimated autocovariances <span class="math inline">\(\widehat{\Gamma}_{v}\)</span>, the estimator proposed by Andrews (1991) uses all <span class="math inline">\(T-1\)</span> estimated autocovariances <span class="math inline">\(\widehat{\Gamma}_{v}\)</span>.</p>
+<p>However, there is still a bandwidth parameter <span class="math inline">\(q\)</span> to be chosen for constructing the kernel.</p>
 
+</div>
 </div>
 </div>
             </section>

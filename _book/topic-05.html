@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Topic 05 | Topics in Statistics and Econometrics</title>
+  <meta name="description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Topic 05 | Topics in Statistics and Econometrics" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
+  <meta name="github-repo" content="mmoessler/topics-in-statistics-and-econometrics" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Topic 05 | Topics in Statistics and Econometrics" />
+  
+  <meta name="twitter:description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
+  
+
+<meta name="author" content="Markus Mößler" />
+
+
+<meta name="date" content="2023-05-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="topic-04.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Topics in Statistics and Econometrics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Motivation</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="topic-01.html"><a href="topic-01.html"><i class="fa fa-check"></i><b>3</b> Topic 01</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="topic-01.html"><a href="topic-01.html#motivation-1"><i class="fa fa-check"></i><b>3.1</b> Motivation</a></li>
+<li class="chapter" data-level="3.2" data-path="topic-01.html"><a href="topic-01.html#probelm"><i class="fa fa-check"></i><b>3.2</b> Probelm</a></li>
+<li class="chapter" data-level="3.3" data-path="topic-01.html"><a href="topic-01.html#analysis"><i class="fa fa-check"></i><b>3.3</b> Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="topic-02.html"><a href="topic-02.html"><i class="fa fa-check"></i><b>4</b> Topic 02</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="topic-02.html"><a href="topic-02.html#statistical-model"><i class="fa fa-check"></i><b>4.1</b> Statistical Model</a></li>
+<li class="chapter" data-level="4.2" data-path="topic-02.html"><a href="topic-02.html#simulation"><i class="fa fa-check"></i><b>4.2</b> Simulation</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="topic-02.html"><a href="topic-02.html#set-up"><i class="fa fa-check"></i><b>4.2.1</b> Set up</a></li>
+<li class="chapter" data-level="4.2.2" data-path="topic-02.html"><a href="topic-02.html#data-generating-process"><i class="fa fa-check"></i><b>4.2.2</b> Data Generating Process</a></li>
+<li class="chapter" data-level="4.2.3" data-path="topic-02.html"><a href="topic-02.html#simulation-1"><i class="fa fa-check"></i><b>4.2.3</b> Simulation</a></li>
+<li class="chapter" data-level="4.2.4" data-path="topic-02.html"><a href="topic-02.html#plots"><i class="fa fa-check"></i><b>4.2.4</b> Plots</a></li>
+<li class="chapter" data-level="4.2.5" data-path="topic-02.html"><a href="topic-02.html#reduced-form-parameters"><i class="fa fa-check"></i><b>4.2.5</b> Reduced form parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="topic-02.html"><a href="topic-02.html#least-squares-estimator"><i class="fa fa-check"></i><b>4.3</b> Least-Squares Estimator</a></li>
+<li class="chapter" data-level="4.4" data-path="topic-02.html"><a href="topic-02.html#sample-distribution-of-least-squares-estimator"><i class="fa fa-check"></i><b>4.4</b> Sample Distribution of Least-Squares Estimator</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="topic-02.html"><a href="topic-02.html#population-quantities"><i class="fa fa-check"></i><b>4.4.1</b> Population Quantities</a></li>
+<li class="chapter" data-level="4.4.2" data-path="topic-02.html"><a href="topic-02.html#sample-quantities"><i class="fa fa-check"></i><b>4.4.2</b> Sample Quantities</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="topic-03.html"><a href="topic-03.html"><i class="fa fa-check"></i><b>5</b> Topic 03</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="topic-03.html"><a href="topic-03.html#statistical-model-1"><i class="fa fa-check"></i><b>5.1</b> Statistical Model</a></li>
+<li class="chapter" data-level="5.2" data-path="topic-03.html"><a href="topic-03.html#estimation"><i class="fa fa-check"></i><b>5.2</b> Estimation</a></li>
+<li class="chapter" data-level="5.3" data-path="topic-03.html"><a href="topic-03.html#sample-distribution"><i class="fa fa-check"></i><b>5.3</b> Sample Distribution</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="topic-03.html"><a href="topic-03.html#case-1"><i class="fa fa-check"></i><b>5.3.1</b> Case 1</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="topic-04.html"><a href="topic-04.html"><i class="fa fa-check"></i><b>6</b> Topic 04</a></li>
+<li class="chapter" data-level="7" data-path="topic-05.html"><a href="topic-05.html"><i class="fa fa-check"></i><b>7</b> Topic 05</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="topic-05.html"><a href="topic-05.html#motivation-2"><i class="fa fa-check"></i><b>7.1</b> Motivation</a></li>
+<li class="chapter" data-level="7.2" data-path="topic-05.html"><a href="topic-05.html#linear-vecm-model-estimation"><i class="fa fa-check"></i><b>7.2</b> Linear VECM model estimation</a></li>
+<li class="chapter" data-level="7.3" data-path="topic-05.html"><a href="topic-05.html#linear-vecm-model-orthogonalized-irf-analysis"><i class="fa fa-check"></i><b>7.3</b> Linear VECM model orthogonalized IRF analysis</a></li>
+<li class="chapter" data-level="7.4" data-path="topic-05.html"><a href="topic-05.html#linear-vecm-model-generalized-irf-analysis"><i class="fa fa-check"></i><b>7.4</b> Linear VECM model generalized IRF analysis</a></li>
+<li class="chapter" data-level="7.5" data-path="topic-05.html"><a href="topic-05.html#tvecm-model-estimation"><i class="fa fa-check"></i><b>7.5</b> TVECM model estimation</a></li>
+<li class="chapter" data-level="7.6" data-path="topic-05.html"><a href="topic-05.html#tvecm-model-orthngalized-irf-analysis"><i class="fa fa-check"></i><b>7.6</b> TVECM model orthngalized IRF analysis</a></li>
+<li class="chapter" data-level="7.7" data-path="topic-05.html"><a href="topic-05.html#tvecm-model-generalized-irf-analysis"><i class="fa fa-check"></i><b>7.7</b> TVECM model generalized IRF analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Topics in Statistics and Econometrics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="topic-05" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Topic 05<a href="topic-05.html#topic-05" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="motivation-2" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Motivation<a href="topic-05.html#motivation-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Comparison of the analysis of multivariate time series using the <code>urca</code> in combination with the <code>vars</code> package and the <code>tsDyn</code> package</p>
+</div>
+<div id="linear-vecm-model-estimation" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Linear VECM model estimation<a href="topic-05.html#linear-vecm-model-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="topic-05.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(tsDyn<span class="sc">::</span>zeroyldMeta<span class="sc">$</span>Date, tsDyn<span class="sc">::</span>zeroyldMeta<span class="sc">$</span>short.run, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb1-2"><a href="topic-05.html#cb1-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Date&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Rate&quot;</span>)</span>
+<span id="cb1-3"><a href="topic-05.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(tsDyn<span class="sc">::</span>zeroyldMeta<span class="sc">$</span>Date, tsDyn<span class="sc">::</span>zeroyldMeta<span class="sc">$</span>long.run, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb1-4"><a href="topic-05.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb1-5"><a href="topic-05.html#cb1-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Short rate: 12 months&quot;</span>, <span class="st">&quot;Long rate: 120 months&quot;</span>))</span></code></pre></div>
+<p><img src="topics-in-statistics-and-econometrics_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="topic-05.html#cb2-1" aria-hidden="true" tabindex="-1"></a>vecm.tsdyn <span class="ot">&lt;-</span> tsDyn<span class="sc">::</span><span class="fu">VECM</span>(tsDyn<span class="sc">::</span>zeroyldMeta[, <span class="fu">c</span>(<span class="st">&quot;long.run&quot;</span>, <span class="st">&quot;short.run&quot;</span>)], <span class="at">r =</span> <span class="dv">1</span>, <span class="at">lag =</span> <span class="dv">1</span>, <span class="at">estim =</span> <span class="st">&quot;ML&quot;</span>)</span>
+<span id="cb2-2"><a href="topic-05.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(vecm.tsdyn)</span></code></pre></div>
+<pre><code>## #############
+## ###Model VECM 
+## #############
+## Full sample size: 482    End sample size: 480
+## Number of variables: 2   Number of estimated slope parameters 8
+## AIC -2155.763    BIC -2118.199   SSR 176.3897
+## Cointegrating vector (estimated by ML):
+##    long.run short.run
+## r1        1 -1.022065
+## 
+## 
+##                    ECT                 Intercept           long.run -1       
+## Equation long.run  -0.0116(0.0153)     0.0169(0.0158)      0.0480(0.0682)    
+## Equation short.run 0.0888(0.0262)***   -0.0362(0.0271)     0.3254(0.1171)**  
+##                    short.run -1      
+## Equation long.run  0.0116(0.0392)    
+## Equation short.run 0.0506(0.0673)</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="topic-05.html#cb4-1" aria-hidden="true" tabindex="-1"></a>vecm.urca <span class="ot">&lt;-</span> urca<span class="sc">::</span><span class="fu">ca.jo</span>(<span class="at">x =</span> tsDyn<span class="sc">::</span>zeroyldMeta[, <span class="fu">c</span>(<span class="st">&quot;long.run&quot;</span>, <span class="st">&quot;short.run&quot;</span>)], <span class="at">ecdet =</span> <span class="st">&quot;none&quot;</span>, <span class="at">K =</span> <span class="dv">2</span>)</span>
+<span id="cb4-2"><a href="topic-05.html#cb4-2" aria-hidden="true" tabindex="-1"></a>vecm.urca<span class="sc">@</span>V</span></code></pre></div>
+<pre><code>##              long.run.l2 short.run.l2
+## long.run.l2     1.000000    1.0000000
+## short.run.l2   -1.022065   -0.2409262</code></pre>
+</div>
+<div id="linear-vecm-model-orthogonalized-irf-analysis" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Linear VECM model orthogonalized IRF analysis<a href="topic-05.html#linear-vecm-model-orthogonalized-irf-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Compare non-orthogonalized IRFs first</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="topic-05.html#cb6-1" aria-hidden="true" tabindex="-1"></a>irf.tsdyn <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">irf.VECM</span>(vecm.tsdyn, <span class="at">ortho =</span> <span class="cn">FALSE</span>, <span class="at">boot =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-2"><a href="topic-05.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="topic-05.html#cb6-3" aria-hidden="true" tabindex="-1"></a>irf.tsdyn<span class="sc">$</span>irf<span class="sc">$</span>short.run</span></code></pre></div>
+<pre><code>##         long.run short.run
+##  [1,] 0.00000000 1.0000000
+##  [2,] 0.02349183 0.9598307
+##  [3,] 0.03527669 0.8804053
+##  [4,] 0.04496349 0.8034402
+##  [5,] 0.05355177 0.7337633
+##  [6,] 0.06124490 0.6711849
+##  [7,] 0.06814511 0.6150379
+##  [8,] 0.07433515 0.5646676
+##  [9,] 0.07988821 0.5194802
+## [10,] 0.08486985 0.4789427
+## [11,] 0.08933889 0.4425764</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="topic-05.html#cb8-1" aria-hidden="true" tabindex="-1"></a>irf.tsdyn<span class="sc">$</span>irf<span class="sc">$</span>long.run</span></code></pre></div>
+<pre><code>##       long.run short.run
+##  [1,] 1.000000 0.0000000
+##  [2,] 1.036387 0.4141980
+##  [3,] 1.035824 0.5014409
+##  [4,] 1.030731 0.5521480
+##  [5,] 1.025657 0.5944773
+##  [6,] 1.021048 0.6320963
+##  [7,] 1.016908 0.6658043
+##  [8,] 1.013192 0.6960393
+##  [9,] 1.009859 0.7231626
+## [10,] 1.006869 0.7474948
+## [11,] 1.004186 0.7693232</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="topic-05.html#cb10-1" aria-hidden="true" tabindex="-1"></a>v2v.vars <span class="ot">&lt;-</span> vars<span class="sc">::</span><span class="fu">vec2var</span>(vecm.urca, <span class="at">r =</span> <span class="dv">1</span>)</span>
+<span id="cb10-2"><a href="topic-05.html#cb10-2" aria-hidden="true" tabindex="-1"></a>v2v.vars <span class="ot">&lt;-</span> vars<span class="sc">::</span><span class="fu">irf</span>(v2v.vars, <span class="at">ortho =</span> <span class="cn">FALSE</span>, <span class="at">boot =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-3"><a href="topic-05.html#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="topic-05.html#cb10-4" aria-hidden="true" tabindex="-1"></a>v2v.vars<span class="sc">$</span>irf<span class="sc">$</span>short.run</span></code></pre></div>
+<pre><code>##         long.run short.run
+##  [1,] 0.00000000 1.0000000
+##  [2,] 0.02349183 0.9598307
+##  [3,] 0.03527669 0.8804053
+##  [4,] 0.04496349 0.8034402
+##  [5,] 0.05355177 0.7337633
+##  [6,] 0.06124490 0.6711849
+##  [7,] 0.06814511 0.6150379
+##  [8,] 0.07433515 0.5646676
+##  [9,] 0.07988821 0.5194802
+## [10,] 0.08486985 0.4789427
+## [11,] 0.08933889 0.4425764</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="topic-05.html#cb12-1" aria-hidden="true" tabindex="-1"></a>v2v.vars<span class="sc">$</span>irf<span class="sc">$</span>long.run</span></code></pre></div>
+<pre><code>##       long.run short.run
+##  [1,] 1.000000 0.0000000
+##  [2,] 1.036387 0.4141980
+##  [3,] 1.035824 0.5014409
+##  [4,] 1.030731 0.5521480
+##  [5,] 1.025657 0.5944773
+##  [6,] 1.021048 0.6320963
+##  [7,] 1.016908 0.6658043
+##  [8,] 1.013192 0.6960393
+##  [9,] 1.009859 0.7231626
+## [10,] 1.006869 0.7474948
+## [11,] 1.004186 0.7693232</code></pre>
+<p>Compare orthongonalized IRFs afterwards</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="topic-05.html#cb14-1" aria-hidden="true" tabindex="-1"></a>irf.tsdyn <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">irf.VECM</span>(vecm.tsdyn, <span class="at">ortho =</span> <span class="cn">TRUE</span>, <span class="at">boot =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-2"><a href="topic-05.html#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="topic-05.html#cb14-3" aria-hidden="true" tabindex="-1"></a>irf.tsdyn<span class="sc">$</span>irf<span class="sc">$</span>short.run</span></code></pre></div>
+<pre><code>##          long.run short.run
+##  [1,] 0.000000000 0.3419007
+##  [2,] 0.008031872 0.3281667
+##  [3,] 0.012061122 0.3010111
+##  [4,] 0.015373048 0.2746967
+##  [5,] 0.018309387 0.2508741
+##  [6,] 0.020939671 0.2294786
+##  [7,] 0.023298858 0.2102819
+##  [8,] 0.025415235 0.1930602
+##  [9,] 0.027313830 0.1776106
+## [10,] 0.029017058 0.1637508
+## [11,] 0.030545024 0.1513172</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="topic-05.html#cb16-1" aria-hidden="true" tabindex="-1"></a>irf.tsdyn<span class="sc">$</span>irf<span class="sc">$</span>long.run</span></code></pre></div>
+<pre><code>##        long.run short.run
+##  [1,] 0.3064400 0.3997063
+##  [2,] 0.3269802 0.5105772
+##  [3,] 0.3315181 0.5055651
+##  [4,] 0.3338293 0.4903403
+##  [5,] 0.3357073 0.4754615
+##  [6,] 0.3373701 0.4619765
+##  [7,] 0.3388592 0.4498636
+##  [8,] 0.3401949 0.4389955
+##  [9,] 0.3413931 0.4292455
+## [10,] 0.3424679 0.4204987
+## [11,] 0.3434322 0.4126520</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="topic-05.html#cb18-1" aria-hidden="true" tabindex="-1"></a>v2v.vars <span class="ot">&lt;-</span> vars<span class="sc">::</span><span class="fu">vec2var</span>(vecm.urca, <span class="at">r =</span> <span class="dv">1</span>)</span>
+<span id="cb18-2"><a href="topic-05.html#cb18-2" aria-hidden="true" tabindex="-1"></a>v2v.vars <span class="ot">&lt;-</span> vars<span class="sc">::</span><span class="fu">irf</span>(v2v.vars, <span class="at">ortho =</span> <span class="cn">TRUE</span>, <span class="at">boot =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-3"><a href="topic-05.html#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="topic-05.html#cb18-4" aria-hidden="true" tabindex="-1"></a>v2v.vars<span class="sc">$</span>irf<span class="sc">$</span>short.run</span></code></pre></div>
+<pre><code>##          long.run short.run
+##  [1,] 0.000000000 0.3404731
+##  [2,] 0.007998335 0.3267965
+##  [3,] 0.012010762 0.2997543
+##  [4,] 0.015308860 0.2735498
+##  [5,] 0.018232938 0.2498267
+##  [6,] 0.020852240 0.2285204
+##  [7,] 0.023201576 0.2094039
+##  [8,] 0.025309116 0.1922541
+##  [9,] 0.027199784 0.1768690
+## [10,] 0.028895901 0.1630671
+## [11,] 0.030417486 0.1506854</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="topic-05.html#cb20-1" aria-hidden="true" tabindex="-1"></a>v2v.vars<span class="sc">$</span>irf<span class="sc">$</span>long.run</span></code></pre></div>
+<pre><code>##        long.run short.run
+##  [1,] 0.3051605 0.3980374
+##  [2,] 0.3256150 0.5084453
+##  [3,] 0.3301339 0.5034542
+##  [4,] 0.3324355 0.4882930
+##  [5,] 0.3343056 0.4734762
+##  [6,] 0.3359614 0.4600475
+##  [7,] 0.3374444 0.4479853
+##  [8,] 0.3387744 0.4371625
+##  [9,] 0.3399676 0.4274532
+## [10,] 0.3410380 0.4187430
+## [11,] 0.3419983 0.4109290</code></pre>
+</div>
+<div id="linear-vecm-model-generalized-irf-analysis" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Linear VECM model generalized IRF analysis<a href="topic-05.html#linear-vecm-model-generalized-irf-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Step x: Check class and <code>GIRF</code> method of linear object</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="topic-05.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vecm.tsdyn)</span></code></pre></div>
+<pre><code>## [1] &quot;VECM&quot;  &quot;VAR&quot;   &quot;nlVar&quot;</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="topic-05.html#cb24-1" aria-hidden="true" tabindex="-1"></a>tsDyn<span class="sc">:::</span>GIRF.nlVar</span></code></pre></div>
+<pre><code>## function (object, n.ahead = 10, seed = NULL, n.hist = 20, n.shock = 20, 
+##     R = 10, hist_li = NULL, shock_li = NULL, ...) 
+## {
+##     GIRF.setar(object, n.ahead = n.ahead, seed = seed, n.hist = n.hist, 
+##         n.shock = n.shock, R = R, hist_li = hist_li, shock_li = shock_li, 
+##         ...)
+## }
+## &lt;bytecode: 0x000002052fe11568&gt;
+## &lt;environment: namespace:tsDyn&gt;</code></pre>
+<p>Step x: Call function <code>tsDyn:::GIRF.setar()</code></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="topic-05.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tsDyn_GIRF_setar_fun no 01 ----</span></span>
+<span id="cb26-2"><a href="topic-05.html#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="topic-05.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># tsDyn_GIRF_setar_fun - function (object, n.ahead = 10, seed = NULL, n.hist = 20, n.shock = 20, </span></span>
+<span id="cb26-4"><a href="topic-05.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#                                  R = 10, hist_li = NULL, shock_li = NULL, ...) {</span></span>
+<span id="cb26-5"><a href="topic-05.html#cb26-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-6"><a href="topic-05.html#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># inputs</span></span>
+<span id="cb26-7"><a href="topic-05.html#cb26-7" aria-hidden="true" tabindex="-1"></a>  object <span class="ot">&lt;-</span> vecm.tsdyn</span>
+<span id="cb26-8"><a href="topic-05.html#cb26-8" aria-hidden="true" tabindex="-1"></a>  n.ahead <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb26-9"><a href="topic-05.html#cb26-9" aria-hidden="true" tabindex="-1"></a>  seed <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb26-10"><a href="topic-05.html#cb26-10" aria-hidden="true" tabindex="-1"></a>  n.hist <span class="ot">=</span> <span class="dv">20</span></span>
+<span id="cb26-11"><a href="topic-05.html#cb26-11" aria-hidden="true" tabindex="-1"></a>  n.shock <span class="ot">=</span> <span class="dv">20</span></span>
+<span id="cb26-12"><a href="topic-05.html#cb26-12" aria-hidden="true" tabindex="-1"></a>  R <span class="ot">=</span> <span class="dv">10</span></span>
+<span id="cb26-13"><a href="topic-05.html#cb26-13" aria-hidden="true" tabindex="-1"></a>  hist_li <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb26-14"><a href="topic-05.html#cb26-14" aria-hidden="true" tabindex="-1"></a>  shock_li <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb26-15"><a href="topic-05.html#cb26-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-16"><a href="topic-05.html#cb26-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-17"><a href="topic-05.html#cb26-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-18"><a href="topic-05.html#cb26-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># lag &lt;- tsDyn:::get_lag(object)</span></span>
+<span id="cb26-19"><a href="topic-05.html#cb26-19" aria-hidden="true" tabindex="-1"></a>  lag <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">get_lag.nlVar</span>(object)</span>
+<span id="cb26-20"><a href="topic-05.html#cb26-20" aria-hidden="true" tabindex="-1"></a>  n_start <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">inherits</span>(object, <span class="fu">c</span>(<span class="st">&quot;VECM&quot;</span>, <span class="st">&quot;TVECM&quot;</span>)), lag <span class="sc">+</span> <span class="dv">1</span>, lag)</span>
+<span id="cb26-21"><a href="topic-05.html#cb26-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># x_orig &lt;- get_data_orig(object, as.df = TRUE)</span></span>
+<span id="cb26-22"><a href="topic-05.html#cb26-22" aria-hidden="true" tabindex="-1"></a>  x_orig <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">get_data_orig.nlVar</span>(object, <span class="at">as.df =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb26-23"><a href="topic-05.html#cb26-23" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(x_orig)</span>
+<span id="cb26-24"><a href="topic-05.html#cb26-24" aria-hidden="true" tabindex="-1"></a>  resids <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">residuals</span>(object, <span class="at">initVal =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb26-25"><a href="topic-05.html#cb26-25" aria-hidden="true" tabindex="-1"></a>  n_used <span class="ot">&lt;-</span> <span class="fu">nrow</span>(resids)</span>
+<span id="cb26-26"><a href="topic-05.html#cb26-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># nVar &lt;- get_nVar(object)</span></span>
+<span id="cb26-27"><a href="topic-05.html#cb26-27" aria-hidden="true" tabindex="-1"></a>  nVar <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">get_nVar.nlVar</span>(object)</span>
+<span id="cb26-28"><a href="topic-05.html#cb26-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-29"><a href="topic-05.html#cb26-29" aria-hidden="true" tabindex="-1"></a>  sample_hist <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb26-30"><a href="topic-05.html#cb26-30" aria-hidden="true" tabindex="-1"></a>    hist_M <span class="ot">&lt;-</span> <span class="fu">sample</span>(n_start<span class="sc">:</span>N, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb26-31"><a href="topic-05.html#cb26-31" aria-hidden="true" tabindex="-1"></a>    (hist_M <span class="sc">-</span> n_start <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span>hist_M</span>
+<span id="cb26-32"><a href="topic-05.html#cb26-32" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb26-33"><a href="topic-05.html#cb26-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-34"><a href="topic-05.html#cb26-34" aria-hidden="true" tabindex="-1"></a>  nrow_length <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb26-35"><a href="topic-05.html#cb26-35" aria-hidden="true" tabindex="-1"></a>    nr <span class="ot">&lt;-</span> <span class="fu">nrow</span>(x)</span>
+<span id="cb26-36"><a href="topic-05.html#cb26-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">is.null</span>(nr)) {</span>
+<span id="cb26-37"><a href="topic-05.html#cb26-37" aria-hidden="true" tabindex="-1"></a>      nr <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb26-38"><a href="topic-05.html#cb26-38" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb26-39"><a href="topic-05.html#cb26-39" aria-hidden="true" tabindex="-1"></a>    nr</span>
+<span id="cb26-40"><a href="topic-05.html#cb26-40" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb26-41"><a href="topic-05.html#cb26-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-42"><a href="topic-05.html#cb26-42" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(hist_li)) {</span>
+<span id="cb26-43"><a href="topic-05.html#cb26-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(seed)) {</span>
+<span id="cb26-44"><a href="topic-05.html#cb26-44" aria-hidden="true" tabindex="-1"></a>      <span class="fu">set.seed</span>(seed)</span>
+<span id="cb26-45"><a href="topic-05.html#cb26-45" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb26-46"><a href="topic-05.html#cb26-46" aria-hidden="true" tabindex="-1"></a>    samples_hist <span class="ot">&lt;-</span> <span class="fu">sample</span>(n_start<span class="sc">:</span>N, <span class="at">size =</span> n.hist, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb26-47"><a href="topic-05.html#cb26-47" aria-hidden="true" tabindex="-1"></a>    hist_li <span class="ot">&lt;-</span> <span class="fu">lapply</span>(samples_hist, <span class="cf">function</span>(i) x_orig[(i <span class="sc">-</span> n_start <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span>i, , <span class="at">drop =</span> <span class="cn">FALSE</span>])</span>
+<span id="cb26-48"><a href="topic-05.html#cb26-48" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb26-49"><a href="topic-05.html#cb26-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.list</span>(hist_li)) {</span>
+<span id="cb26-50"><a href="topic-05.html#cb26-50" aria-hidden="true" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;hist_li should be a list of vectors/matrices&quot;</span>)</span>
+<span id="cb26-51"><a href="topic-05.html#cb26-51" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb26-52"><a href="topic-05.html#cb26-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">unique</span>(<span class="fu">sapply</span>(hist_li, nrow_length)) <span class="sc">!=</span> n_start) {</span>
+<span id="cb26-53"><a href="topic-05.html#cb26-53" aria-hidden="true" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;each element of hist_li should have length lags (+1 if VECM)&quot;</span>)</span>
+<span id="cb26-54"><a href="topic-05.html#cb26-54" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb26-55"><a href="topic-05.html#cb26-55" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb26-56"><a href="topic-05.html#cb26-56" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(shock_li)) {</span>
+<span id="cb26-57"><a href="topic-05.html#cb26-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(seed)) {</span>
+<span id="cb26-58"><a href="topic-05.html#cb26-58" aria-hidden="true" tabindex="-1"></a>      <span class="fu">set.seed</span>(seed)</span>
+<span id="cb26-59"><a href="topic-05.html#cb26-59" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb26-60"><a href="topic-05.html#cb26-60" aria-hidden="true" tabindex="-1"></a>    samples_shock <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">seq_len</span>(n_used), <span class="at">size =</span> n.shock, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb26-61"><a href="topic-05.html#cb26-61" aria-hidden="true" tabindex="-1"></a>    shock_li <span class="ot">&lt;-</span> <span class="fu">lapply</span>(samples_shock, <span class="cf">function</span>(i) resids[i, , <span class="at">drop =</span> <span class="cn">FALSE</span>])</span>
+<span id="cb26-62"><a href="topic-05.html#cb26-62" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb26-63"><a href="topic-05.html#cb26-63" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.list</span>(shock_li)) {</span>
+<span id="cb26-64"><a href="topic-05.html#cb26-64" aria-hidden="true" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;shock_li should be a list of vectors&quot;</span>)</span>
+<span id="cb26-65"><a href="topic-05.html#cb26-65" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb26-66"><a href="topic-05.html#cb26-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">unique</span>(<span class="fu">sapply</span>(shock_li, nrow_length)) <span class="sc">!=</span> <span class="dv">1</span>) {</span>
+<span id="cb26-67"><a href="topic-05.html#cb26-67" aria-hidden="true" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;each element of shock_li should have length lags&quot;</span>)</span>
+<span id="cb26-68"><a href="topic-05.html#cb26-68" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb26-69"><a href="topic-05.html#cb26-69" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb26-70"><a href="topic-05.html#cb26-70" aria-hidden="true" tabindex="-1"></a>  M <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">hist =</span> hist_li, <span class="at">shock =</span> shock_li)</span>
+<span id="cb26-71"><a href="topic-05.html#cb26-71" aria-hidden="true" tabindex="-1"></a>  n_cases <span class="ot">&lt;-</span> <span class="fu">nrow</span>(M)</span>
+<span id="cb26-72"><a href="topic-05.html#cb26-72" aria-hidden="true" tabindex="-1"></a>  shock_M <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">do.call</span>(<span class="st">&quot;rbind&quot;</span>, M<span class="sc">$</span>shock))</span>
+<span id="cb26-73"><a href="topic-05.html#cb26-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(shock_M) <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;shock_var&quot;</span>, <span class="fu">seq_len</span>(nVar), <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb26-74"><a href="topic-05.html#cb26-74" aria-hidden="true" tabindex="-1"></a>  hist_M <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">do.call</span>(<span class="st">&quot;rbind&quot;</span>, <span class="fu">lapply</span>(M<span class="sc">$</span>hist, <span class="cf">function</span>(x) <span class="fu">c</span>(<span class="fu">as.matrix</span>(x)))))</span>
+<span id="cb26-75"><a href="topic-05.html#cb26-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(hist_M) <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;hist_x&quot;</span>, <span class="fu">rep</span>(<span class="fu">seq_len</span>(nVar), <span class="at">each =</span> n_start), <span class="st">&quot;_l&quot;</span>, <span class="fu">rep</span>(<span class="fu">seq_len</span>(n_start), <span class="at">times =</span> nVar), <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb26-76"><a href="topic-05.html#cb26-76" aria-hidden="true" tabindex="-1"></a>  rep_info <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">n_simu =</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(M)), hist_M, shock_M)</span>
+<span id="cb26-77"><a href="topic-05.html#cb26-77" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sims &lt;- lapply(1:nrow(M), function(i) irf_1_shock_ave(object = object, shock = M$shock[[i]], hist = M$hist[[i]], n.ahead = n.ahead, R = R, seed = seed, ...))</span></span>
+<span id="cb26-78"><a href="topic-05.html#cb26-78" aria-hidden="true" tabindex="-1"></a>  sims <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(M), <span class="cf">function</span>(i) tsDyn<span class="sc">:::</span><span class="fu">irf_1_shock_ave</span>(<span class="at">object =</span> object, <span class="at">shock =</span> M<span class="sc">$</span>shock[[i]], <span class="at">hist =</span> M<span class="sc">$</span>hist[[i]], <span class="at">n.ahead =</span> n.ahead, <span class="at">R =</span> R, <span class="at">seed =</span> seed))</span>
+<span id="cb26-79"><a href="topic-05.html#cb26-79" aria-hidden="true" tabindex="-1"></a>  sims_df <span class="ot">&lt;-</span> <span class="fu">do.call</span>(<span class="st">&quot;rbind&quot;</span>, sims)</span>
+<span id="cb26-80"><a href="topic-05.html#cb26-80" aria-hidden="true" tabindex="-1"></a>  n.ahead_here <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">head</span>(sims_df<span class="sc">$</span>n.ahead, <span class="dv">2</span> <span class="sc">*</span> (n.ahead <span class="sc">*</span> lag))))</span>
+<span id="cb26-81"><a href="topic-05.html#cb26-81" aria-hidden="true" tabindex="-1"></a>  sims_df<span class="sc">$</span>n_simu <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">seq_len</span>(n_cases), <span class="at">each =</span> n.ahead_here <span class="sc">*</span> nVar)</span>
+<span id="cb26-82"><a href="topic-05.html#cb26-82" aria-hidden="true" tabindex="-1"></a>  sims_df<span class="sc">$</span>girf <span class="ot">&lt;-</span> <span class="fu">with</span>(sims_df, sim_1 <span class="sc">-</span> sim_2)</span>
+<span id="cb26-83"><a href="topic-05.html#cb26-83" aria-hidden="true" tabindex="-1"></a>  sims_df2 <span class="ot">&lt;-</span> <span class="fu">merge</span>(rep_info, sims_df, <span class="at">by =</span> <span class="st">&quot;n_simu&quot;</span>, <span class="at">sort =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb26-84"><a href="topic-05.html#cb26-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(sims_df2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;GIRF_df&quot;</span>, <span class="st">&quot;data.frame&quot;</span>)</span>
+<span id="cb26-85"><a href="topic-05.html#cb26-85" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-86"><a href="topic-05.html#cb26-86" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sims_df2</span></span>
+<span id="cb26-87"><a href="topic-05.html#cb26-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(sims_df2, <span class="dv">30</span>)</span></code></pre></div>
+<pre><code>##    n_simu hist_x1_l1 hist_x1_l2 hist_x2_l1 hist_x2_l2  shock_var1 shock_var2
+## 1       1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 2       1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 3       1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 4       1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 5       1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 6       1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 7       1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 8       1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 9       1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 10      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 11      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 12      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 13      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 14      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 15      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 16      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 17      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 18      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 19      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 20      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 21      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 22      1      6.781      6.793      7.048      7.593 -0.01988781 -0.2544937
+## 23      2      3.958      3.917      3.009      3.010 -0.01988781 -0.2544937
+## 24      2      3.958      3.917      3.009      3.010 -0.01988781 -0.2544937
+## 25      2      3.958      3.917      3.009      3.010 -0.01988781 -0.2544937
+## 26      2      3.958      3.917      3.009      3.010 -0.01988781 -0.2544937
+## 27      2      3.958      3.917      3.009      3.010 -0.01988781 -0.2544937
+## 28      2      3.958      3.917      3.009      3.010 -0.01988781 -0.2544937
+## 29      2      3.958      3.917      3.009      3.010 -0.01988781 -0.2544937
+## 30      2      3.958      3.917      3.009      3.010 -0.01988781 -0.2544937
+##    n.ahead       var    sim_1    sim_2        girf
+## 1        0  long.run 6.819479 6.839367 -0.01988781
+## 2        1  long.run 6.910245 6.936835 -0.02658998
+## 3        2  long.run 6.912156 6.941734 -0.02957795
+## 4        3  long.run 7.134392 7.166334 -0.03194190
+## 5        4  long.run 7.009632 7.043658 -0.03402666
+## 6        5  long.run 7.067973 7.103866 -0.03589285
+## 7        6  long.run 6.981864 7.019431 -0.03756656
+## 8        7  long.run 7.152451 7.191519 -0.03906800
+## 9        8  long.run 7.192817 7.233232 -0.04041493
+## 10       9  long.run 7.174000 7.215623 -0.04162326
+## 11      10  long.run 7.109745 7.152452 -0.04270725
+## 12       0 short.run 7.130191 7.384684 -0.25449367
+## 13       1 short.run 7.095154 7.347662 -0.25250833
+## 14       2 short.run 7.055808 7.289838 -0.23403013
+## 15       3 short.run 7.195078 7.410529 -0.21545146
+## 16       4 short.run 6.910377 7.108938 -0.19856096
+## 17       5 short.run 6.752890 6.936274 -0.18338333
+## 18       6 short.run 6.520976 6.690741 -0.16976465
+## 19       7 short.run 6.555727 6.713274 -0.15754701
+## 20       8 short.run 6.621875 6.768462 -0.14658654
+## 21       9 short.run 6.594736 6.731490 -0.13675391
+## 22      10 short.run 6.431286 6.559219 -0.12793305
+## 23       0  long.run 3.851579 3.871467 -0.01988781
+## 24       1  long.run 3.679377 3.705967 -0.02658998
+## 25       2  long.run 3.748439 3.778016 -0.02957795
+## 26       3  long.run 3.787635 3.819577 -0.03194190
+## 27       4  long.run 3.558770 3.592797 -0.03402666
+## 28       5  long.run 3.647957 3.683850 -0.03589285
+## 29       6  long.run 3.671695 3.709262 -0.03756656
+## 30       7  long.run 3.640808 3.679876 -0.03906800</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="topic-05.html#cb28-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tail</span>(sims_df2, <span class="dv">30</span>)</span></code></pre></div>
+<pre><code>##      n_simu hist_x1_l1 hist_x1_l2 hist_x2_l1 hist_x2_l2  shock_var1 shock_var2
+## 8771    399      4.175      4.206      3.814      3.777 -0.02281378 -0.2824986
+## 8772    399      4.175      4.206      3.814      3.777 -0.02281378 -0.2824986
+## 8773    399      4.175      4.206      3.814      3.777 -0.02281378 -0.2824986
+## 8774    399      4.175      4.206      3.814      3.777 -0.02281378 -0.2824986
+## 8775    399      4.175      4.206      3.814      3.777 -0.02281378 -0.2824986
+## 8776    399      4.175      4.206      3.814      3.777 -0.02281378 -0.2824986
+## 8777    399      4.175      4.206      3.814      3.777 -0.02281378 -0.2824986
+## 8778    399      4.175      4.206      3.814      3.777 -0.02281378 -0.2824986
+## 8779    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8780    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8781    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8782    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8783    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8784    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8785    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8786    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8787    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8788    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8789    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8790    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8791    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8792    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8793    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8794    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8795    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8796    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8797    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8798    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8799    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+## 8800    400      2.815      2.838      2.447      2.546 -0.02281378 -0.2824986
+##      n.ahead       var    sim_1    sim_2        girf
+## 8771       3 short.run 3.256986 3.496553 -0.23956730
+## 8772       4 short.run 3.195293 3.416142 -0.22084936
+## 8773       5 short.run 3.212575 3.416605 -0.20402930
+## 8774       6 short.run 3.131550 3.320487 -0.18893685
+## 8775       7 short.run 3.027308 3.202705 -0.17539707
+## 8776       8 short.run 3.068877 3.232127 -0.16325049
+## 8777       9 short.run 3.179318 3.331672 -0.15235380
+## 8778      10 short.run 3.054500 3.197078 -0.14257838
+## 8779       0  long.run 2.638546 2.661359 -0.02281378
+## 8780       1  long.run 2.504663 2.534943 -0.03028031
+## 8781       2  long.run 2.632450 2.666046 -0.03359667
+## 8782       3  long.run 2.734590 2.770807 -0.03621699
+## 8783       4  long.run 2.687779 2.726306 -0.03852742
+## 8784       5  long.run 2.789953 2.830549 -0.04059557
+## 8785       6  long.run 3.011267 3.053717 -0.04245041
+## 8786       7  long.run 3.047998 3.092112 -0.04411432
+## 8787       8  long.run 3.147798 3.193405 -0.04560701
+## 8788       9  long.run 3.297849 3.344795 -0.04694610
+## 8789      10  long.run 3.324510 3.372657 -0.04814740
+## 8790       0 short.run 2.106243 2.388742 -0.28249857
+## 8791       1 short.run 1.781168 2.061768 -0.28060022
+## 8792       2 short.run 1.950852 2.211005 -0.26015300
+## 8793       3 short.run 2.365106 2.604673 -0.23956730
+## 8794       4 short.run 2.241123 2.461973 -0.22084936
+## 8795       5 short.run 2.260433 2.464462 -0.20402930
+## 8796       6 short.run 2.838161 3.027098 -0.18893685
+## 8797       7 short.run 2.959442 3.134839 -0.17539707
+## 8798       8 short.run 2.965504 3.128754 -0.16325049
+## 8799       9 short.run 3.038766 3.191119 -0.15235380
+## 8800      10 short.run 3.011509 3.154087 -0.14257838</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="topic-05.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb30-2"><a href="topic-05.html#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="topic-05.html#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ANCKER</span></span>
+<span id="cb30-4"><a href="topic-05.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-5"><a href="topic-05.html#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># tsDyn_GIRF_setar_fun no 02 ----</span></span>
+<span id="cb30-6"><a href="topic-05.html#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="topic-05.html#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co"># tsDyn_GIRF_setar_fun - function (object, n.ahead = 10, seed = NULL, n.hist = 20, n.shock = 20, </span></span>
+<span id="cb30-8"><a href="topic-05.html#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co">#                                  R = 10, hist_li = NULL, shock_li = NULL, ...) {</span></span>
+<span id="cb30-9"><a href="topic-05.html#cb30-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-10"><a href="topic-05.html#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># inputs</span></span>
+<span id="cb30-11"><a href="topic-05.html#cb30-11" aria-hidden="true" tabindex="-1"></a>  object <span class="ot">&lt;-</span> vecm.tsdyn</span>
+<span id="cb30-12"><a href="topic-05.html#cb30-12" aria-hidden="true" tabindex="-1"></a>  n.ahead <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb30-13"><a href="topic-05.html#cb30-13" aria-hidden="true" tabindex="-1"></a>  seed <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb30-14"><a href="topic-05.html#cb30-14" aria-hidden="true" tabindex="-1"></a>  n.hist <span class="ot">=</span> <span class="dv">20</span></span>
+<span id="cb30-15"><a href="topic-05.html#cb30-15" aria-hidden="true" tabindex="-1"></a>  n.shock <span class="ot">=</span> <span class="dv">20</span></span>
+<span id="cb30-16"><a href="topic-05.html#cb30-16" aria-hidden="true" tabindex="-1"></a>  R <span class="ot">=</span> <span class="dv">10</span></span>
+<span id="cb30-17"><a href="topic-05.html#cb30-17" aria-hidden="true" tabindex="-1"></a>  hist_li <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb30-18"><a href="topic-05.html#cb30-18" aria-hidden="true" tabindex="-1"></a>  shock_li <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb30-19"><a href="topic-05.html#cb30-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-20"><a href="topic-05.html#cb30-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb30-21"><a href="topic-05.html#cb30-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-22"><a href="topic-05.html#cb30-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># lag &lt;- tsDyn:::get_lag(object)</span></span>
+<span id="cb30-23"><a href="topic-05.html#cb30-23" aria-hidden="true" tabindex="-1"></a>  lag <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">get_lag.nlVar</span>(object)</span>
+<span id="cb30-24"><a href="topic-05.html#cb30-24" aria-hidden="true" tabindex="-1"></a>  n_start <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">inherits</span>(object, <span class="fu">c</span>(<span class="st">&quot;VECM&quot;</span>, <span class="st">&quot;TVECM&quot;</span>)), lag <span class="sc">+</span> <span class="dv">1</span>, lag)</span>
+<span id="cb30-25"><a href="topic-05.html#cb30-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># x_orig &lt;- get_data_orig(object, as.df = TRUE)</span></span>
+<span id="cb30-26"><a href="topic-05.html#cb30-26" aria-hidden="true" tabindex="-1"></a>  x_orig <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">get_data_orig.nlVar</span>(object, <span class="at">as.df =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb30-27"><a href="topic-05.html#cb30-27" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> <span class="fu">nrow</span>(x_orig)</span>
+<span id="cb30-28"><a href="topic-05.html#cb30-28" aria-hidden="true" tabindex="-1"></a>  resids <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">residuals</span>(object, <span class="at">initVal =</span> <span class="cn">FALSE</span>))</span>
+<span id="cb30-29"><a href="topic-05.html#cb30-29" aria-hidden="true" tabindex="-1"></a>  n_used <span class="ot">&lt;-</span> <span class="fu">nrow</span>(resids)</span>
+<span id="cb30-30"><a href="topic-05.html#cb30-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># nVar &lt;- get_nVar(object)</span></span>
+<span id="cb30-31"><a href="topic-05.html#cb30-31" aria-hidden="true" tabindex="-1"></a>  nVar <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">get_nVar.nlVar</span>(object)</span>
+<span id="cb30-32"><a href="topic-05.html#cb30-32" aria-hidden="true" tabindex="-1"></a>  sample_hist <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb30-33"><a href="topic-05.html#cb30-33" aria-hidden="true" tabindex="-1"></a>    hist_M <span class="ot">&lt;-</span> <span class="fu">sample</span>(n_start<span class="sc">:</span>N, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb30-34"><a href="topic-05.html#cb30-34" aria-hidden="true" tabindex="-1"></a>    (hist_M <span class="sc">-</span> n_start <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span>hist_M</span>
+<span id="cb30-35"><a href="topic-05.html#cb30-35" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb30-36"><a href="topic-05.html#cb30-36" aria-hidden="true" tabindex="-1"></a>  nrow_length <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb30-37"><a href="topic-05.html#cb30-37" aria-hidden="true" tabindex="-1"></a>    nr <span class="ot">&lt;-</span> <span class="fu">nrow</span>(x)</span>
+<span id="cb30-38"><a href="topic-05.html#cb30-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">is.null</span>(nr)) {</span>
+<span id="cb30-39"><a href="topic-05.html#cb30-39" aria-hidden="true" tabindex="-1"></a>      nr <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb30-40"><a href="topic-05.html#cb30-40" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb30-41"><a href="topic-05.html#cb30-41" aria-hidden="true" tabindex="-1"></a>    nr</span>
+<span id="cb30-42"><a href="topic-05.html#cb30-42" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb30-43"><a href="topic-05.html#cb30-43" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(hist_li)) {</span>
+<span id="cb30-44"><a href="topic-05.html#cb30-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(seed)) {</span>
+<span id="cb30-45"><a href="topic-05.html#cb30-45" aria-hidden="true" tabindex="-1"></a>      <span class="fu">set.seed</span>(seed)</span>
+<span id="cb30-46"><a href="topic-05.html#cb30-46" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb30-47"><a href="topic-05.html#cb30-47" aria-hidden="true" tabindex="-1"></a>    samples_hist <span class="ot">&lt;-</span> <span class="fu">sample</span>(n_start<span class="sc">:</span>N, <span class="at">size =</span> n.hist, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb30-48"><a href="topic-05.html#cb30-48" aria-hidden="true" tabindex="-1"></a>    hist_li <span class="ot">&lt;-</span> <span class="fu">lapply</span>(samples_hist, <span class="cf">function</span>(i) x_orig[(i <span class="sc">-</span> n_start <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span>i, , <span class="at">drop =</span> <span class="cn">FALSE</span>])</span>
+<span id="cb30-49"><a href="topic-05.html#cb30-49" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb30-50"><a href="topic-05.html#cb30-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.list</span>(hist_li)) {</span>
+<span id="cb30-51"><a href="topic-05.html#cb30-51" aria-hidden="true" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;hist_li should be a list of vectors/matrices&quot;</span>)</span>
+<span id="cb30-52"><a href="topic-05.html#cb30-52" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb30-53"><a href="topic-05.html#cb30-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">unique</span>(<span class="fu">sapply</span>(hist_li, nrow_length)) <span class="sc">!=</span> n_start) {</span>
+<span id="cb30-54"><a href="topic-05.html#cb30-54" aria-hidden="true" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;each element of hist_li should have length lags (+1 if VECM)&quot;</span>)</span>
+<span id="cb30-55"><a href="topic-05.html#cb30-55" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb30-56"><a href="topic-05.html#cb30-56" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb30-57"><a href="topic-05.html#cb30-57" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(shock_li)) {</span>
+<span id="cb30-58"><a href="topic-05.html#cb30-58" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(seed)) {</span>
+<span id="cb30-59"><a href="topic-05.html#cb30-59" aria-hidden="true" tabindex="-1"></a>      <span class="fu">set.seed</span>(seed)</span>
+<span id="cb30-60"><a href="topic-05.html#cb30-60" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb30-61"><a href="topic-05.html#cb30-61" aria-hidden="true" tabindex="-1"></a>    samples_shock <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">seq_len</span>(n_used), <span class="at">size =</span> n.shock, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb30-62"><a href="topic-05.html#cb30-62" aria-hidden="true" tabindex="-1"></a>    shock_li <span class="ot">&lt;-</span> <span class="fu">lapply</span>(samples_shock, <span class="cf">function</span>(i) resids[i, , <span class="at">drop =</span> <span class="cn">FALSE</span>])</span>
+<span id="cb30-63"><a href="topic-05.html#cb30-63" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb30-64"><a href="topic-05.html#cb30-64" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.list</span>(shock_li)) {</span>
+<span id="cb30-65"><a href="topic-05.html#cb30-65" aria-hidden="true" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;shock_li should be a list of vectors&quot;</span>)</span>
+<span id="cb30-66"><a href="topic-05.html#cb30-66" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb30-67"><a href="topic-05.html#cb30-67" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">unique</span>(<span class="fu">sapply</span>(shock_li, nrow_length)) <span class="sc">!=</span> <span class="dv">1</span>) {</span>
+<span id="cb30-68"><a href="topic-05.html#cb30-68" aria-hidden="true" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;each element of shock_li should have length lags&quot;</span>)</span>
+<span id="cb30-69"><a href="topic-05.html#cb30-69" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb30-70"><a href="topic-05.html#cb30-70" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb30-71"><a href="topic-05.html#cb30-71" aria-hidden="true" tabindex="-1"></a>  M <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">hist =</span> hist_li, <span class="at">shock =</span> shock_li)</span>
+<span id="cb30-72"><a href="topic-05.html#cb30-72" aria-hidden="true" tabindex="-1"></a>  n_cases <span class="ot">&lt;-</span> <span class="fu">nrow</span>(M)</span>
+<span id="cb30-73"><a href="topic-05.html#cb30-73" aria-hidden="true" tabindex="-1"></a>  shock_M <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">do.call</span>(<span class="st">&quot;rbind&quot;</span>, M<span class="sc">$</span>shock))</span>
+<span id="cb30-74"><a href="topic-05.html#cb30-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(shock_M) <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;shock_var&quot;</span>, <span class="fu">seq_len</span>(nVar), <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb30-75"><a href="topic-05.html#cb30-75" aria-hidden="true" tabindex="-1"></a>  hist_M <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">do.call</span>(<span class="st">&quot;rbind&quot;</span>, <span class="fu">lapply</span>(M<span class="sc">$</span>hist, <span class="cf">function</span>(x) <span class="fu">c</span>(<span class="fu">as.matrix</span>(x)))))</span>
+<span id="cb30-76"><a href="topic-05.html#cb30-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(hist_M) <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;hist_x&quot;</span>, <span class="fu">rep</span>(<span class="fu">seq_len</span>(nVar), <span class="at">each =</span> n_start), <span class="st">&quot;_l&quot;</span>, <span class="fu">rep</span>(<span class="fu">seq_len</span>(n_start), <span class="at">times =</span> nVar), <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb30-77"><a href="topic-05.html#cb30-77" aria-hidden="true" tabindex="-1"></a>  rep_info <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">n_simu =</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(M)), hist_M, shock_M)</span>
+<span id="cb30-78"><a href="topic-05.html#cb30-78" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sims &lt;- lapply(1:nrow(M), function(i) irf_1_shock_ave(object = object, shock = M$shock[[i]], hist = M$hist[[i]], n.ahead = n.ahead, R = R, seed = seed, ...))</span></span>
+<span id="cb30-79"><a href="topic-05.html#cb30-79" aria-hidden="true" tabindex="-1"></a>  sims <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(M), <span class="cf">function</span>(i) tsDyn<span class="sc">:::</span><span class="fu">irf_1_shock_ave</span>(<span class="at">object =</span> object, <span class="at">shock =</span> M<span class="sc">$</span>shock[[i]], <span class="at">hist =</span> M<span class="sc">$</span>hist[[i]], <span class="at">n.ahead =</span> n.ahead, <span class="at">R =</span> R, <span class="at">seed =</span> seed))</span>
+<span id="cb30-80"><a href="topic-05.html#cb30-80" aria-hidden="true" tabindex="-1"></a>  sims_df <span class="ot">&lt;-</span> <span class="fu">do.call</span>(<span class="st">&quot;rbind&quot;</span>, sims)</span>
+<span id="cb30-81"><a href="topic-05.html#cb30-81" aria-hidden="true" tabindex="-1"></a>  n.ahead_here <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">head</span>(sims_df<span class="sc">$</span>n.ahead, <span class="dv">2</span> <span class="sc">*</span> (n.ahead <span class="sc">*</span> lag))))</span>
+<span id="cb30-82"><a href="topic-05.html#cb30-82" aria-hidden="true" tabindex="-1"></a>  sims_df<span class="sc">$</span>n_simu <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">seq_len</span>(n_cases), <span class="at">each =</span> n.ahead_here <span class="sc">*</span> nVar)</span>
+<span id="cb30-83"><a href="topic-05.html#cb30-83" aria-hidden="true" tabindex="-1"></a>  sims_df<span class="sc">$</span>girf <span class="ot">&lt;-</span> <span class="fu">with</span>(sims_df, sim_1 <span class="sc">-</span> sim_2)</span>
+<span id="cb30-84"><a href="topic-05.html#cb30-84" aria-hidden="true" tabindex="-1"></a>  sims_df2 <span class="ot">&lt;-</span> <span class="fu">merge</span>(rep_info, sims_df, <span class="at">by =</span> <span class="st">&quot;n_simu&quot;</span>, <span class="at">sort =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb30-85"><a href="topic-05.html#cb30-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">class</span>(sims_df2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;GIRF_df&quot;</span>, <span class="st">&quot;data.frame&quot;</span>)</span>
+<span id="cb30-86"><a href="topic-05.html#cb30-86" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-87"><a href="topic-05.html#cb30-87" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sims_df2</span></span>
+<span id="cb30-88"><a href="topic-05.html#cb30-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(sims_df2, <span class="dv">30</span>)</span></code></pre></div>
+<pre><code>##    n_simu hist_x1_l1 hist_x1_l2 hist_x2_l1 hist_x2_l2 shock_var1 shock_var2
+## 1       1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 2       1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 3       1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 4       1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 5       1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 6       1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 7       1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 8       1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 9       1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 10      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 11      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 12      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 13      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 14      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 15      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 16      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 17      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 18      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 19      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 20      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 21      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 22      1      9.015      9.280      7.496      7.483 -0.2672951 -0.4176587
+## 23      2      3.987      4.019      2.942      2.989 -0.2672951 -0.4176587
+## 24      2      3.987      4.019      2.942      2.989 -0.2672951 -0.4176587
+## 25      2      3.987      4.019      2.942      2.989 -0.2672951 -0.4176587
+## 26      2      3.987      4.019      2.942      2.989 -0.2672951 -0.4176587
+## 27      2      3.987      4.019      2.942      2.989 -0.2672951 -0.4176587
+## 28      2      3.987      4.019      2.942      2.989 -0.2672951 -0.4176587
+## 29      2      3.987      4.019      2.942      2.989 -0.2672951 -0.4176587
+## 30      2      3.987      4.019      2.942      2.989 -0.2672951 -0.4176587
+##    n.ahead       var    sim_1    sim_2       girf
+## 1        0  long.run 9.098229 9.365524 -0.2672951
+## 2        1  long.run 9.038827 9.325660 -0.2868327
+## 3        2  long.run 9.125489 9.417093 -0.2916042
+## 4        3  long.run 9.233738 9.528026 -0.2942887
+## 5        4  long.run 9.348268 9.644787 -0.2965195
+## 6        5  long.run 9.155405 9.453906 -0.2985007
+## 7        6  long.run 9.323196 9.623471 -0.3002759
+## 8        7  long.run 9.208196 9.510064 -0.3018681
+## 9        8  long.run 9.182041 9.485337 -0.3032964
+## 10       9  long.run 9.141934 9.446512 -0.3045778
+## 11      10  long.run 9.428278 9.734005 -0.3057273
+## 12       0 short.run 7.374956 7.792615 -0.4176587
+## 13       1 short.run 7.306490 7.818085 -0.5115947
+## 14       2 short.run 7.603232 8.104974 -0.5017417
+## 15       3 short.run 7.765840 8.248990 -0.4831503
+## 16       4 short.run 8.165087 8.630450 -0.4653635
+## 17       5 short.run 8.124336 8.573619 -0.4492825
+## 18       6 short.run 8.566243 9.001085 -0.4348422
+## 19       7 short.run 8.601800 9.023686 -0.4218862
+## 20       8 short.run 8.561421 8.971684 -0.4102633
+## 21       9 short.run 8.553327 8.953163 -0.3998363
+## 22      10 short.run 8.902982 9.293464 -0.3904823
+## 23       0  long.run 3.796233 4.063528 -0.2672951
+## 24       1  long.run 3.720981 4.007814 -0.2868327
+## 25       2  long.run 3.668138 3.959742 -0.2916042
+## 26       3  long.run 3.493087 3.787376 -0.2942887
+## 27       4  long.run 3.567152 3.863672 -0.2965195
+## 28       5  long.run 3.450267 3.748767 -0.2985007
+## 29       6  long.run 3.439857 3.740133 -0.3002759
+## 30       7  long.run 3.563164 3.865032 -0.3018681</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="topic-05.html#cb32-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tail</span>(sims_df2, <span class="dv">30</span>)</span></code></pre></div>
+<pre><code>##      n_simu hist_x1_l1 hist_x1_l2 hist_x2_l1 hist_x2_l2   shock_var1 shock_var2
+## 8771    399      4.225      4.191      3.792      3.867 -0.004671349 -0.3841743
+## 8772    399      4.225      4.191      3.792      3.867 -0.004671349 -0.3841743
+## 8773    399      4.225      4.191      3.792      3.867 -0.004671349 -0.3841743
+## 8774    399      4.225      4.191      3.792      3.867 -0.004671349 -0.3841743
+## 8775    399      4.225      4.191      3.792      3.867 -0.004671349 -0.3841743
+## 8776    399      4.225      4.191      3.792      3.867 -0.004671349 -0.3841743
+## 8777    399      4.225      4.191      3.792      3.867 -0.004671349 -0.3841743
+## 8778    399      4.225      4.191      3.792      3.867 -0.004671349 -0.3841743
+## 8779    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8780    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8781    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8782    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8783    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8784    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8785    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8786    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8787    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8788    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8789    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8790    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8791    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8792    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8793    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8794    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8795    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8796    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8797    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8798    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8799    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+## 8800    400      7.336      7.037      8.664      8.465 -0.004671349 -0.3841743
+##      n.ahead       var    sim_1    sim_2         girf
+## 8771       3 short.run 3.729601 4.040841 -0.311240336
+## 8772       4 short.run 3.772994 4.057664 -0.284669990
+## 8773       5 short.run 3.962337 4.223142 -0.260804731
+## 8774       6 short.run 4.010553 4.249945 -0.239391952
+## 8775       7 short.run 4.082121 4.302303 -0.220182190
+## 8776       8 short.run 4.134639 4.337588 -0.202949079
+## 8777       9 short.run 4.053997 4.241486 -0.187489257
+## 8778      10 short.run 4.142258 4.315878 -0.173620256
+## 8779       0  long.run 6.966454 6.971125 -0.004671349
+## 8780       1  long.run 7.098349 7.112215 -0.013866281
+## 8781       2  long.run 7.254361 7.272752 -0.018391089
+## 8782       3  long.run 7.232112 7.254201 -0.022088720
+## 8783       4  long.run 7.364818 7.390183 -0.025364416
+## 8784       5  long.run 7.394290 7.422588 -0.028298388
+## 8785       6  long.run 7.224883 7.255813 -0.030929929
+## 8786       7  long.run 7.392956 7.426247 -0.033290625
+## 8787       8  long.run 7.501049 7.536458 -0.035408398
+## 8788       9  long.run 7.551281 7.588590 -0.037308250
+## 8789      10  long.run 7.423807 7.462820 -0.039012607
+## 8790       0 short.run 7.738376 8.122550 -0.384174272
+## 8791       1 short.run 7.656163 8.026840 -0.370677124
+## 8792       2 short.run 7.617876 7.958447 -0.340571469
+## 8793       3 short.run 7.590126 7.901367 -0.311240336
+## 8794       4 short.run 7.650885 7.935555 -0.284669990
+## 8795       5 short.run 7.624758 7.885562 -0.260804731
+## 8796       6 short.run 7.029904 7.269296 -0.239391952
+## 8797       7 short.run 7.276154 7.496336 -0.220182190
+## 8798       8 short.run 7.394401 7.597350 -0.202949079
+## 8799       9 short.run 7.514079 7.701568 -0.187489257
+## 8800      10 short.run 7.222148 7.395768 -0.173620256</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="topic-05.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span></code></pre></div>
+<p>Definition generalized impulse response functions (GIRs)</p>
+<p>General</p>
+<p><span class="math display">\[\begin{align*}
+GI_{y}\left(n, u_{t}^{0}, \Omega_{t-1}^{0}\right) = \text{E}\left(y_{t+n}|u_{t}=u_{t}^{0}, \Omega_{t-1}^{0}\right) - \text{E}\left(y_{t+n}|\Omega_{t-1}^{0}\right)
+\end{align*}\]</span></p>
+<p>Particular VAR</p>
+<p><span class="math display">\[\begin{align*}
+GI_{y}\left(n, u_{t}^{0}, \Omega_{t-1}^{0}\right) = A_{n}u_{t}^{0}
+\end{align*}\]</span></p>
+<p>which is independent of the “history” of the process.</p>
+<p>The choice of the vector shocks <span class="math inline">\(u_{t}^{0}\)</span> is arbitrary.</p>
+<p>One possibility is to consider a large number of likely shocks and then examine the empirical distribution function of <span class="math inline">\(A_{n}u_{t}^{0}\)</span> for all these shocks.</p>
+<p>In the case where <span class="math inline">\(u_{t}^{0}\)</span> is drawn from the same distribution as <span class="math inline">\(u_{t}\)</span>, namely a multivariate normal distribution with zero means and a constant covariance matrix <span class="math inline">\(\Sigma\)</span> we have the analyitical result</p>
+<p><span class="math display">\[\begin{align*}
+GI_{y}\left(n, u_{t}^{0}, \Omega_{t-1}^{0}\right) \sim N\left(0, A_{n} \Sigma A_{n}^{&#39;}\right)
+\end{align*}\]</span></p>
+<p>Persistence profiles (general on X)</p>
+<p>Lee and Pesaran (1993) refer to
+H,(n), seen as a function of n, as the (unscaled) ‘persistence profile’, character-
+izing the time profile of the effects of the system-wide shocks on X,.</p>
+<p>Persitence profiles (specific on Z)</p>
+<p>The above concept of the persistence profile can be readily extended to
+cointegrated systems. The (unscaled) persistence profile of the cointegrating
+relations 2, = P’X, is given by</p>
+<ul>
+<li><code>n.hist</code>:
+<ul>
+<li>The number of past histories to consider. Should be high, ideally size of data (minus lags).</li>
+<li>For VAR models …</li>
+</ul></li>
+</ul>
+<p>Some interpretation:</p>
+<ul>
+<li>400 simulations <em>times</em> 11 steps <em>times</em> 2 shock variables <em>equals</em> 8800 rows</li>
+<li><code>girf = sim_1 - sim_2</code></li>
+</ul>
+<p>Check plot methods:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="topic-05.html#cb35-1" aria-hidden="true" tabindex="-1"></a>tsDyn_plot_GIRF_df <span class="ot">&lt;-</span> <span class="cf">function</span> (x, <span class="at">plot_type =</span> <span class="fu">c</span>(<span class="st">&quot;density&quot;</span>, <span class="st">&quot;line&quot;</span>), <span class="at">n.ahead =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>), <span class="at">var =</span> <span class="fu">unique</span>(x<span class="sc">$</span>var)[<span class="dv">1</span>], <span class="at">n_simu =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), ...) {</span>
+<span id="cb35-2"><a href="topic-05.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-3"><a href="topic-05.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># inputs</span></span>
+<span id="cb35-4"><a href="topic-05.html#cb35-4" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> sims_df2</span>
+<span id="cb35-5"><a href="topic-05.html#cb35-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-6"><a href="topic-05.html#cb35-6" aria-hidden="true" tabindex="-1"></a>  plot_type <span class="ot">&lt;-</span> <span class="st">&quot;density&quot;</span></span>
+<span id="cb35-7"><a href="topic-05.html#cb35-7" aria-hidden="true" tabindex="-1"></a>  n.ahead <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>)</span>
+<span id="cb35-8"><a href="topic-05.html#cb35-8" aria-hidden="true" tabindex="-1"></a>  var <span class="ot">&lt;-</span> <span class="fu">unique</span>(x<span class="sc">$</span>var)[<span class="dv">1</span>]</span>
+<span id="cb35-9"><a href="topic-05.html#cb35-9" aria-hidden="true" tabindex="-1"></a>  n_simu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb35-10"><a href="topic-05.html#cb35-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-11"><a href="topic-05.html#cb35-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-12"><a href="topic-05.html#cb35-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-13"><a href="topic-05.html#cb35-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot_type &lt;- match.arg(plot_type)</span></span>
+<span id="cb35-14"><a href="topic-05.html#cb35-14" aria-hidden="true" tabindex="-1"></a>  plot_type <span class="ot">&lt;-</span> plot_type</span>
+<span id="cb35-15"><a href="topic-05.html#cb35-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (plot_type <span class="sc">==</span> <span class="st">&quot;density&quot;</span>) {</span>
+<span id="cb35-16"><a href="topic-05.html#cb35-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plot_GIRF_dens(x = x, n.ahead = n.ahead, var = var, ...)</span></span>
+<span id="cb35-17"><a href="topic-05.html#cb35-17" aria-hidden="true" tabindex="-1"></a>    tsDyn<span class="sc">:::</span><span class="fu">plot_GIRF_dens</span>(<span class="at">x =</span> x, <span class="at">n.ahead =</span> n.ahead, <span class="at">var =</span> var)</span>
+<span id="cb35-18"><a href="topic-05.html#cb35-18" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (plot_type <span class="sc">==</span> <span class="st">&quot;line&quot;</span>) {</span>
+<span id="cb35-19"><a href="topic-05.html#cb35-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plot_GIRF_line(x = x, n_simu = n_simu, var = var, ...)</span></span>
+<span id="cb35-20"><a href="topic-05.html#cb35-20" aria-hidden="true" tabindex="-1"></a>    tsDyn<span class="sc">:::</span><span class="fu">plot_GIRF_line</span>(<span class="at">x =</span> x, <span class="at">n_simu =</span> n_simu, <span class="at">var =</span> var)</span>
+<span id="cb35-21"><a href="topic-05.html#cb35-21" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb35-22"><a href="topic-05.html#cb35-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-23"><a href="topic-05.html#cb35-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-24"><a href="topic-05.html#cb35-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-25"><a href="topic-05.html#cb35-25" aria-hidden="true" tabindex="-1"></a>tsDyn_plot_GIRF_line <span class="ot">&lt;-</span> <span class="cf">function</span> (x, <span class="at">n_simu =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">var =</span> <span class="fu">unique</span>(x<span class="sc">$</span>var)[<span class="dv">1</span>], <span class="at">add_legend =</span> <span class="cn">TRUE</span>, ...) {</span>
+<span id="cb35-26"><a href="topic-05.html#cb35-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-27"><a href="topic-05.html#cb35-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># inputs</span></span>
+<span id="cb35-28"><a href="topic-05.html#cb35-28" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> sims_df2</span>
+<span id="cb35-29"><a href="topic-05.html#cb35-29" aria-hidden="true" tabindex="-1"></a>  n_simu <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb35-30"><a href="topic-05.html#cb35-30" aria-hidden="true" tabindex="-1"></a>  var <span class="ot">&lt;-</span> <span class="fu">unique</span>(x<span class="sc">$</span>var)[<span class="dv">1</span>]</span>
+<span id="cb35-31"><a href="topic-05.html#cb35-31" aria-hidden="true" tabindex="-1"></a>  add_legend <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb35-32"><a href="topic-05.html#cb35-32" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-33"><a href="topic-05.html#cb35-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-34"><a href="topic-05.html#cb35-34" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-35"><a href="topic-05.html#cb35-35" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> x[x<span class="sc">$</span>n_simu <span class="sc">%in%</span> n_simu <span class="sc">&amp;</span> x<span class="sc">$</span>var <span class="sc">%in%</span> var, <span class="fu">c</span>(<span class="st">&quot;n_simu&quot;</span>, <span class="st">&quot;var&quot;</span>, <span class="st">&quot;n.ahead&quot;</span>, <span class="st">&quot;girf&quot;</span>)]</span>
+<span id="cb35-36"><a href="topic-05.html#cb35-36" aria-hidden="true" tabindex="-1"></a>  df_w <span class="ot">&lt;-</span> <span class="fu">reshape</span>(df, <span class="at">idvar =</span> <span class="fu">c</span>(<span class="st">&quot;n.ahead&quot;</span>, <span class="st">&quot;var&quot;</span>), <span class="at">timevar =</span> <span class="st">&quot;n_simu&quot;</span>, <span class="at">direction =</span> <span class="st">&quot;wide&quot;</span>, <span class="at">v.names =</span> <span class="st">&quot;girf&quot;</span>)</span>
+<span id="cb35-37"><a href="topic-05.html#cb35-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(df_w) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;girf</span><span class="sc">\\</span><span class="st">.&quot;</span>, <span class="st">&quot;n_simu: &quot;</span>, <span class="fu">colnames</span>(df_w))</span>
+<span id="cb35-38"><a href="topic-05.html#cb35-38" aria-hidden="true" tabindex="-1"></a>  df_w2 <span class="ot">&lt;-</span> df_w[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb35-39"><a href="topic-05.html#cb35-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot(NA, xlim = range(df$n.ahead), ylim = range(df$girf), ylab = &quot;GIRF&quot;, xlab = &quot;n.ahead&quot;, ...)</span></span>
+<span id="cb35-40"><a href="topic-05.html#cb35-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="cn">NA</span>, <span class="at">xlim =</span> <span class="fu">range</span>(df<span class="sc">$</span>n.ahead), <span class="at">ylim =</span> <span class="fu">range</span>(df<span class="sc">$</span>girf), <span class="at">ylab =</span> <span class="st">&quot;GIRF&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;n.ahead&quot;</span>)</span>
+<span id="cb35-41"><a href="topic-05.html#cb35-41" aria-hidden="true" tabindex="-1"></a>  invisible <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(df_w2), <span class="cf">function</span>(x) <span class="fu">lines</span>(<span class="at">x =</span> df_w<span class="sc">$</span>n.ahead, <span class="at">y =</span> df_w2[, x], <span class="at">col =</span> x))</span>
+<span id="cb35-42"><a href="topic-05.html#cb35-42" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (add_legend) {</span>
+<span id="cb35-43"><a href="topic-05.html#cb35-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">colnames</span>(df_w2), <span class="at">fill =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df_w2))</span>
+<span id="cb35-44"><a href="topic-05.html#cb35-44" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb35-45"><a href="topic-05.html#cb35-45" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb35-46"><a href="topic-05.html#cb35-46" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-47"><a href="topic-05.html#cb35-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-48"><a href="topic-05.html#cb35-48" aria-hidden="true" tabindex="-1"></a>tsDyn_plot_GIRF_dens <span class="ot">&lt;-</span> <span class="cf">function</span> (x, <span class="at">n.ahead =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>), <span class="at">var =</span> <span class="fu">unique</span>(x<span class="sc">$</span>var)[<span class="dv">1</span>], <span class="at">add_legend =</span> <span class="cn">TRUE</span>, ...) {</span>
+<span id="cb35-49"><a href="topic-05.html#cb35-49" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-50"><a href="topic-05.html#cb35-50" aria-hidden="true" tabindex="-1"></a>  <span class="co"># inputs</span></span>
+<span id="cb35-51"><a href="topic-05.html#cb35-51" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> sims_df2</span>
+<span id="cb35-52"><a href="topic-05.html#cb35-52" aria-hidden="true" tabindex="-1"></a>  n.ahead <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>)</span>
+<span id="cb35-53"><a href="topic-05.html#cb35-53" aria-hidden="true" tabindex="-1"></a>  var <span class="ot">&lt;-</span> <span class="fu">unique</span>(x<span class="sc">$</span>var)[<span class="dv">1</span>]</span>
+<span id="cb35-54"><a href="topic-05.html#cb35-54" aria-hidden="true" tabindex="-1"></a>  add_legend <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb35-55"><a href="topic-05.html#cb35-55" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-56"><a href="topic-05.html#cb35-56" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-57"><a href="topic-05.html#cb35-57" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb35-58"><a href="topic-05.html#cb35-58" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> x[x<span class="sc">$</span>n.ahead <span class="sc">%in%</span> n.ahead <span class="sc">&amp;</span> x<span class="sc">$</span>var <span class="sc">%in%</span> var, <span class="fu">c</span>(<span class="st">&quot;n_simu&quot;</span>, <span class="st">&quot;var&quot;</span>, <span class="st">&quot;n.ahead&quot;</span>, <span class="st">&quot;girf&quot;</span>)]</span>
+<span id="cb35-59"><a href="topic-05.html#cb35-59" aria-hidden="true" tabindex="-1"></a>  df_w <span class="ot">&lt;-</span> <span class="fu">reshape</span>(df, <span class="at">idvar =</span> <span class="fu">c</span>(<span class="st">&quot;n_simu&quot;</span>, <span class="st">&quot;var&quot;</span>), <span class="at">timevar =</span> <span class="st">&quot;n.ahead&quot;</span>, <span class="at">direction =</span> <span class="st">&quot;wide&quot;</span>, <span class="at">v.names =</span> <span class="st">&quot;girf&quot;</span>)</span>
+<span id="cb35-60"><a href="topic-05.html#cb35-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(df_w) <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;girf</span><span class="sc">\\</span><span class="st">.&quot;</span>, <span class="st">&quot;n.ahead: &quot;</span>, <span class="fu">colnames</span>(df_w))</span>
+<span id="cb35-61"><a href="topic-05.html#cb35-61" aria-hidden="true" tabindex="-1"></a>  dens <span class="ot">&lt;-</span> <span class="fu">apply</span>(df_w[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">drop =</span> <span class="cn">FALSE</span>], <span class="dv">2</span>, density)</span>
+<span id="cb35-62"><a href="topic-05.html#cb35-62" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plot(NA, xlim = range(sapply(dens, &quot;[&quot;, &quot;x&quot;)), </span></span>
+<span id="cb35-63"><a href="topic-05.html#cb35-63" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     ylim = range(sapply(dens, &quot;[&quot;, &quot;y&quot;)), ylab = &quot;GIRF&quot;, </span></span>
+<span id="cb35-64"><a href="topic-05.html#cb35-64" aria-hidden="true" tabindex="-1"></a>  <span class="co">#     xlab = &quot;Density&quot;, ...)</span></span>
+<span id="cb35-65"><a href="topic-05.html#cb35-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="cn">NA</span>, <span class="at">xlim =</span> <span class="fu">range</span>(<span class="fu">sapply</span>(dens, <span class="st">&quot;[&quot;</span>, <span class="st">&quot;x&quot;</span>)), </span>
+<span id="cb35-66"><a href="topic-05.html#cb35-66" aria-hidden="true" tabindex="-1"></a>      <span class="at">ylim =</span> <span class="fu">range</span>(<span class="fu">sapply</span>(dens, <span class="st">&quot;[&quot;</span>, <span class="st">&quot;y&quot;</span>)), <span class="at">ylab =</span> <span class="st">&quot;GIRF&quot;</span>, </span>
+<span id="cb35-67"><a href="topic-05.html#cb35-67" aria-hidden="true" tabindex="-1"></a>      <span class="at">xlab =</span> <span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb35-68"><a href="topic-05.html#cb35-68" aria-hidden="true" tabindex="-1"></a>  invisible <span class="ot">&lt;-</span> <span class="fu">mapply</span>(lines, dens, <span class="at">col =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(dens))</span>
+<span id="cb35-69"><a href="topic-05.html#cb35-69" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (add_legend) {</span>
+<span id="cb35-70"><a href="topic-05.html#cb35-70" aria-hidden="true" tabindex="-1"></a>    <span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">names</span>(dens), <span class="at">fill =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(dens))</span>
+<span id="cb35-71"><a href="topic-05.html#cb35-71" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb35-72"><a href="topic-05.html#cb35-72" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb35-73"><a href="topic-05.html#cb35-73" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<hr>
+<p>Step x: Call function <code>tsDyn:::irf_1_shock_ave()</code></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="topic-05.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tsDyn_irf_1_shock_ave &lt;- function (object, shock, hist, R = 10, n.ahead = 10, innov = NULL, </span></span>
+<span id="cb36-2"><a href="topic-05.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co">#                                    shock_both = TRUE, returnStarting = FALSE, add.regime = FALSE, </span></span>
+<span id="cb36-3"><a href="topic-05.html#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                                    seed = NULL) {</span></span>
+<span id="cb36-4"><a href="topic-05.html#cb36-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-5"><a href="topic-05.html#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># inputs</span></span>
+<span id="cb36-6"><a href="topic-05.html#cb36-6" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb36-7"><a href="topic-05.html#cb36-7" aria-hidden="true" tabindex="-1"></a>  object <span class="ot">&lt;-</span> vecm.tsdyn</span>
+<span id="cb36-8"><a href="topic-05.html#cb36-8" aria-hidden="true" tabindex="-1"></a>  shock <span class="ot">&lt;-</span> M<span class="sc">$</span>shock[[i]]</span>
+<span id="cb36-9"><a href="topic-05.html#cb36-9" aria-hidden="true" tabindex="-1"></a>  hist <span class="ot">&lt;-</span> M<span class="sc">$</span>hist[[i]]</span>
+<span id="cb36-10"><a href="topic-05.html#cb36-10" aria-hidden="true" tabindex="-1"></a>  n.ahead <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb36-11"><a href="topic-05.html#cb36-11" aria-hidden="true" tabindex="-1"></a>  R <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb36-12"><a href="topic-05.html#cb36-12" aria-hidden="true" tabindex="-1"></a>  seed <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb36-13"><a href="topic-05.html#cb36-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-14"><a href="topic-05.html#cb36-14" aria-hidden="true" tabindex="-1"></a>  innov <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb36-15"><a href="topic-05.html#cb36-15" aria-hidden="true" tabindex="-1"></a>  shock_both <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb36-16"><a href="topic-05.html#cb36-16" aria-hidden="true" tabindex="-1"></a>  returnStarting <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb36-17"><a href="topic-05.html#cb36-17" aria-hidden="true" tabindex="-1"></a>  add.regime <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb36-18"><a href="topic-05.html#cb36-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-19"><a href="topic-05.html#cb36-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-20"><a href="topic-05.html#cb36-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb36-21"><a href="topic-05.html#cb36-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(seed)) {</span>
+<span id="cb36-22"><a href="topic-05.html#cb36-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set.seed</span>(seed)</span>
+<span id="cb36-23"><a href="topic-05.html#cb36-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb36-24"><a href="topic-05.html#cb36-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># out &lt;- replicate(R, irf_1_shock(object = object, shock = shock, </span></span>
+<span id="cb36-25"><a href="topic-05.html#cb36-25" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                                 hist = hist, n.ahead = n.ahead, innov = innov, shock_both = shock_both, </span></span>
+<span id="cb36-26"><a href="topic-05.html#cb36-26" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                                 returnStarting = returnStarting, add.regime = add.regime), </span></span>
+<span id="cb36-27"><a href="topic-05.html#cb36-27" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                  simplify = FALSE)</span></span>
+<span id="cb36-28"><a href="topic-05.html#cb36-28" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">replicate</span>(R, tsDyn<span class="sc">:::</span><span class="fu">irf_1_shock</span>(<span class="at">object =</span> object, <span class="at">shock =</span> shock, </span>
+<span id="cb36-29"><a href="topic-05.html#cb36-29" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">hist =</span> hist, <span class="at">n.ahead =</span> n.ahead, <span class="at">innov =</span> innov, <span class="at">shock_both =</span> shock_both, </span>
+<span id="cb36-30"><a href="topic-05.html#cb36-30" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">returnStarting =</span> returnStarting, <span class="at">add.regime =</span> add.regime), </span>
+<span id="cb36-31"><a href="topic-05.html#cb36-31" aria-hidden="true" tabindex="-1"></a>                   <span class="at">simplify =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb36-32"><a href="topic-05.html#cb36-32" aria-hidden="true" tabindex="-1"></a>  out_M <span class="ot">&lt;-</span> <span class="fu">do.call</span>(<span class="st">&quot;rbind&quot;</span>, out)</span>
+<span id="cb36-33"><a href="topic-05.html#cb36-33" aria-hidden="true" tabindex="-1"></a>  out_M_means <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(out_M[, <span class="fu">grep</span>(<span class="st">&quot;sim|regime&quot;</span>, <span class="fu">colnames</span>(out_M))], <span class="fu">list</span>(<span class="at">n.ahead =</span> out_M<span class="sc">$</span>n.ahead, <span class="at">var =</span> out_M<span class="sc">$</span>var), mean)</span>
+<span id="cb36-34"><a href="topic-05.html#cb36-34" aria-hidden="true" tabindex="-1"></a>  out_M_means</span></code></pre></div>
+<pre><code>##    n.ahead       var    sim_1    sim_2
+## 1        0  long.run 9.056020 9.323315
+## 2        1  long.run 9.074386 9.361219
+## 3        2  long.run 8.784565 9.076169
+## 4        3  long.run 8.812084 9.106373
+## 5        4  long.run 8.799752 9.096271
+## 6        5  long.run 8.881730 9.180231
+## 7        6  long.run 8.986100 9.286376
+## 8        7  long.run 8.938590 9.240458
+## 9        8  long.run 8.846973 9.150270
+## 10       9  long.run 8.916755 9.221333
+## 11      10  long.run 8.972200 9.277927
+## 12       0 short.run 7.376666 7.794324
+## 13       1 short.run 7.600698 8.112293
+## 14       2 short.run 7.104135 7.605876
+## 15       3 short.run 7.047400 7.530550
+## 16       4 short.run 7.130903 7.596266
+## 17       5 short.run 7.414129 7.863411
+## 18       6 short.run 7.698557 8.133399
+## 19       7 short.run 7.728154 8.150041
+## 20       8 short.run 7.707704 8.117967
+## 21       9 short.run 7.879125 8.278962
+## 22      10 short.run 8.004127 8.394609</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="topic-05.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span></code></pre></div>
+<p>Step x: Call function <code>tsDyn:::irf_1_shock()</code></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="topic-05.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tsDyn_irf_1_shock_fun &lt;- function (object, shock, hist,</span></span>
+<span id="cb39-2"><a href="topic-05.html#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">#                                    n.ahead = 10, innov = NULL, shock_both = TRUE, </span></span>
+<span id="cb39-3"><a href="topic-05.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                                    returnStarting = FALSE, add.regime = FALSE, seed = NULL) {</span></span>
+<span id="cb39-4"><a href="topic-05.html#cb39-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb39-5"><a href="topic-05.html#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># inputs</span></span>
+<span id="cb39-6"><a href="topic-05.html#cb39-6" aria-hidden="true" tabindex="-1"></a>  object <span class="ot">&lt;-</span> vecm.tsdyn</span>
+<span id="cb39-7"><a href="topic-05.html#cb39-7" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb39-8"><a href="topic-05.html#cb39-8" aria-hidden="true" tabindex="-1"></a>  shock <span class="ot">&lt;-</span> M<span class="sc">$</span>shock[[i]]</span>
+<span id="cb39-9"><a href="topic-05.html#cb39-9" aria-hidden="true" tabindex="-1"></a>  hist <span class="ot">&lt;-</span> M<span class="sc">$</span>hist[[i]]</span>
+<span id="cb39-10"><a href="topic-05.html#cb39-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb39-11"><a href="topic-05.html#cb39-11" aria-hidden="true" tabindex="-1"></a>  n.ahead <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb39-12"><a href="topic-05.html#cb39-12" aria-hidden="true" tabindex="-1"></a>  innov <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb39-13"><a href="topic-05.html#cb39-13" aria-hidden="true" tabindex="-1"></a>  shock_both <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb39-14"><a href="topic-05.html#cb39-14" aria-hidden="true" tabindex="-1"></a>  returnStarting <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb39-15"><a href="topic-05.html#cb39-15" aria-hidden="true" tabindex="-1"></a>  add.regime <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb39-16"><a href="topic-05.html#cb39-16" aria-hidden="true" tabindex="-1"></a>  add.regime <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb39-17"><a href="topic-05.html#cb39-17" aria-hidden="true" tabindex="-1"></a>  seed <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb39-18"><a href="topic-05.html#cb39-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb39-19"><a href="topic-05.html#cb39-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-20"><a href="topic-05.html#cb39-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb39-21"><a href="topic-05.html#cb39-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># lag &lt;- get_lag(object)</span></span>
+<span id="cb39-22"><a href="topic-05.html#cb39-22" aria-hidden="true" tabindex="-1"></a>  lag <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">get_lag.nlVar</span>(object)</span>
+<span id="cb39-23"><a href="topic-05.html#cb39-23" aria-hidden="true" tabindex="-1"></a>  n_start <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">inherits</span>(object, <span class="fu">c</span>(<span class="st">&quot;VECM&quot;</span>, <span class="st">&quot;TVECM&quot;</span>)), lag <span class="sc">+</span> <span class="dv">1</span>, lag)</span>
+<span id="cb39-24"><a href="topic-05.html#cb39-24" aria-hidden="true" tabindex="-1"></a>  include <span class="ot">&lt;-</span> object<span class="sc">$</span>include</span>
+<span id="cb39-25"><a href="topic-05.html#cb39-25" aria-hidden="true" tabindex="-1"></a>  B <span class="ot">&lt;-</span> <span class="fu">coef</span>(object, <span class="at">hyperCoef =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb39-26"><a href="topic-05.html#cb39-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># nthresh &lt;- get_nthresh(object)</span></span>
+<span id="cb39-27"><a href="topic-05.html#cb39-27" aria-hidden="true" tabindex="-1"></a>  nthresh <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">get_nthresh.nlVar</span>(object)</span>
+<span id="cb39-28"><a href="topic-05.html#cb39-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Thresh &lt;- getTh(object)</span></span>
+<span id="cb39-29"><a href="topic-05.html#cb39-29" aria-hidden="true" tabindex="-1"></a>  Thresh <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">getTh.nlVar</span>(object)</span>
+<span id="cb39-30"><a href="topic-05.html#cb39-30" aria-hidden="true" tabindex="-1"></a>  N <span class="ot">&lt;-</span> n.ahead <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb39-31"><a href="topic-05.html#cb39-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># K &lt;- get_nVar(object)</span></span>
+<span id="cb39-32"><a href="topic-05.html#cb39-32" aria-hidden="true" tabindex="-1"></a>  K <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">get_nVar.nlVar</span>(object)</span>
+<span id="cb39-33"><a href="topic-05.html#cb39-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># series &lt;- get_series(object)</span></span>
+<span id="cb39-34"><a href="topic-05.html#cb39-34" aria-hidden="true" tabindex="-1"></a>  series <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">get_series</span>(object)</span>
+<span id="cb39-35"><a href="topic-05.html#cb39-35" aria-hidden="true" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> object<span class="sc">$</span>model.specific<span class="sc">$</span>coint</span>
+<span id="cb39-36"><a href="topic-05.html#cb39-36" aria-hidden="true" tabindex="-1"></a>  model <span class="ot">&lt;-</span> <span class="cf">switch</span>(<span class="fu">class</span>(object)[[<span class="dv">1</span>]],</span>
+<span id="cb39-37"><a href="topic-05.html#cb39-37" aria-hidden="true" tabindex="-1"></a>                  <span class="at">ar =</span> <span class="st">&quot;setar&quot;</span>,</span>
+<span id="cb39-38"><a href="topic-05.html#cb39-38" aria-hidden="true" tabindex="-1"></a>                  <span class="at">linear =</span> <span class="st">&quot;setar&quot;</span>, </span>
+<span id="cb39-39"><a href="topic-05.html#cb39-39" aria-hidden="true" tabindex="-1"></a>                  <span class="at">setar =</span> <span class="st">&quot;setar&quot;</span>,</span>
+<span id="cb39-40"><a href="topic-05.html#cb39-40" aria-hidden="true" tabindex="-1"></a>                  <span class="at">VAR =</span> <span class="st">&quot;TVAR&quot;</span>,</span>
+<span id="cb39-41"><a href="topic-05.html#cb39-41" aria-hidden="true" tabindex="-1"></a>                  <span class="at">TVAR =</span> <span class="st">&quot;TVAR&quot;</span>, </span>
+<span id="cb39-42"><a href="topic-05.html#cb39-42" aria-hidden="true" tabindex="-1"></a>                  <span class="at">VECM =</span> <span class="st">&quot;TVECM&quot;</span>,</span>
+<span id="cb39-43"><a href="topic-05.html#cb39-43" aria-hidden="true" tabindex="-1"></a>                  <span class="at">TVECM =</span> <span class="st">&quot;TVECM&quot;</span>, <span class="fu">stop</span>(<span class="st">&quot;Error model not recognised!&quot;</span>))</span>
+<span id="cb39-44"><a href="topic-05.html#cb39-44" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">inherits</span>(object, <span class="fu">c</span>(<span class="st">&quot;TVAR&quot;</span>, <span class="st">&quot;TVECM&quot;</span>))) {</span>
+<span id="cb39-45"><a href="topic-05.html#cb39-45" aria-hidden="true" tabindex="-1"></a>    B <span class="ot">&lt;-</span> <span class="fu">do.call</span>(<span class="st">&quot;cbind&quot;</span>, B)</span>
+<span id="cb39-46"><a href="topic-05.html#cb39-46" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-47"><a href="topic-05.html#cb39-47" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(innov)) {</span>
+<span id="cb39-48"><a href="topic-05.html#cb39-48" aria-hidden="true" tabindex="-1"></a>    res_obj <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">residuals</span>(object))</span>
+<span id="cb39-49"><a href="topic-05.html#cb39-49" aria-hidden="true" tabindex="-1"></a>    res_obj <span class="ot">&lt;-</span> res_obj[<span class="sc">-</span><span class="fu">seq_len</span>(lag), , drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb39-50"><a href="topic-05.html#cb39-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(seed)) {</span>
+<span id="cb39-51"><a href="topic-05.html#cb39-51" aria-hidden="true" tabindex="-1"></a>      <span class="fu">set.seed</span>(seed)</span>
+<span id="cb39-52"><a href="topic-05.html#cb39-52" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb39-53"><a href="topic-05.html#cb39-53" aria-hidden="true" tabindex="-1"></a>    index_samp <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">seq_len</span>(<span class="fu">nrow</span>(res_obj)), N, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb39-54"><a href="topic-05.html#cb39-54" aria-hidden="true" tabindex="-1"></a>    innov <span class="ot">&lt;-</span> res_obj <span class="ot">&lt;-</span> res_obj[index_samp, , drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb39-55"><a href="topic-05.html#cb39-55" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-56"><a href="topic-05.html#cb39-56" aria-hidden="true" tabindex="-1"></a>  hist_M <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(hist)</span>
+<span id="cb39-57"><a href="topic-05.html#cb39-57" aria-hidden="true" tabindex="-1"></a>  shock_M <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(shock)</span>
+<span id="cb39-58"><a href="topic-05.html#cb39-58" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">nrow</span>(hist_M) <span class="sc">!=</span> n_start) {</span>
+<span id="cb39-59"><a href="topic-05.html#cb39-59" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;hist should be of same nrow as lag (+1 if VECM)&quot;</span>)</span>
+<span id="cb39-60"><a href="topic-05.html#cb39-60" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-61"><a href="topic-05.html#cb39-61" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">ncol</span>(hist_M) <span class="sc">!=</span> K) {</span>
+<span id="cb39-62"><a href="topic-05.html#cb39-62" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;hist should be of same ncol as number of variables&quot;</span>)</span>
+<span id="cb39-63"><a href="topic-05.html#cb39-63" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-64"><a href="topic-05.html#cb39-64" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">nrow</span>(shock_M) <span class="sc">!=</span> <span class="dv">1</span>) {</span>
+<span id="cb39-65"><a href="topic-05.html#cb39-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;shock should have only one row&quot;</span>)</span>
+<span id="cb39-66"><a href="topic-05.html#cb39-66" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-67"><a href="topic-05.html#cb39-67" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">ncol</span>(shock_M) <span class="sc">!=</span> K) {</span>
+<span id="cb39-68"><a href="topic-05.html#cb39-68" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;shock should be of same ncol as number of variables&quot;</span>)</span>
+<span id="cb39-69"><a href="topic-05.html#cb39-69" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-70"><a href="topic-05.html#cb39-70" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">nrow</span>(innov) <span class="sc">!=</span> N) {</span>
+<span id="cb39-71"><a href="topic-05.html#cb39-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;innov should be of same length as n.ahead + 1&quot;</span>)</span>
+<span id="cb39-72"><a href="topic-05.html#cb39-72" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-73"><a href="topic-05.html#cb39-73" aria-hidden="true" tabindex="-1"></a>  innov_1 <span class="ot">&lt;-</span> <span class="fu">rbind</span>(shock_M, innov[<span class="sc">-</span><span class="dv">1</span>, , <span class="at">drop =</span> <span class="cn">FALSE</span>])</span>
+<span id="cb39-74"><a href="topic-05.html#cb39-74" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (shock_both) {</span>
+<span id="cb39-75"><a href="topic-05.html#cb39-75" aria-hidden="true" tabindex="-1"></a>    innov_1 <span class="ot">&lt;-</span> innov <span class="sc">+</span> <span class="fu">rbind</span>(shock_M, <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> n.ahead, <span class="at">ncol =</span> K))</span>
+<span id="cb39-76"><a href="topic-05.html#cb39-76" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-77"><a href="topic-05.html#cb39-77" aria-hidden="true" tabindex="-1"></a>  innov_2 <span class="ot">&lt;-</span> innov</span>
+<span id="cb39-78"><a href="topic-05.html#cb39-78" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sim_1 &lt;- model.gen(model = model, B = B, lag = lag, include = include, </span></span>
+<span id="cb39-79"><a href="topic-05.html#cb39-79" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                    nthresh = nthresh, Thresh = Thresh, beta = beta, starting = hist_M, </span></span>
+<span id="cb39-80"><a href="topic-05.html#cb39-80" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                    innov = innov_1, n = N, returnStarting = TRUE, add.regime = add.regime)</span></span>
+<span id="cb39-81"><a href="topic-05.html#cb39-81" aria-hidden="true" tabindex="-1"></a>  sim_1 <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">model.gen</span>(<span class="at">model =</span> model, <span class="at">B =</span> B, <span class="at">lag =</span> lag, <span class="at">include =</span> include, </span>
+<span id="cb39-82"><a href="topic-05.html#cb39-82" aria-hidden="true" tabindex="-1"></a>                     <span class="at">nthresh =</span> nthresh, <span class="at">Thresh =</span> Thresh, <span class="at">beta =</span> beta, <span class="at">starting =</span> hist_M, </span>
+<span id="cb39-83"><a href="topic-05.html#cb39-83" aria-hidden="true" tabindex="-1"></a>                     <span class="at">innov =</span> innov_1, <span class="at">n =</span> N, <span class="at">returnStarting =</span> <span class="cn">TRUE</span>, <span class="at">add.regime =</span> add.regime)</span>
+<span id="cb39-84"><a href="topic-05.html#cb39-84" aria-hidden="true" tabindex="-1"></a>  <span class="co"># sim_2 &lt;- model.gen(model = model, B = B, lag = lag, include = include, </span></span>
+<span id="cb39-85"><a href="topic-05.html#cb39-85" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                    nthresh = nthresh, Thresh = Thresh, beta = beta, starting = hist_M, </span></span>
+<span id="cb39-86"><a href="topic-05.html#cb39-86" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                    innov = innov_2, n = N, returnStarting = TRUE, add.regime = add.regime)</span></span>
+<span id="cb39-87"><a href="topic-05.html#cb39-87" aria-hidden="true" tabindex="-1"></a>  sim_2 <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">model.gen</span>(<span class="at">model =</span> model, <span class="at">B =</span> B, <span class="at">lag =</span> lag, <span class="at">include =</span> include, </span>
+<span id="cb39-88"><a href="topic-05.html#cb39-88" aria-hidden="true" tabindex="-1"></a>                     <span class="at">nthresh =</span> nthresh, <span class="at">Thresh =</span> Thresh, <span class="at">beta =</span> beta, <span class="at">starting =</span> hist_M, </span>
+<span id="cb39-89"><a href="topic-05.html#cb39-89" aria-hidden="true" tabindex="-1"></a>                     <span class="at">innov =</span> innov_2, <span class="at">n =</span> N, <span class="at">returnStarting =</span> <span class="cn">TRUE</span>, <span class="at">add.regime =</span> add.regime)</span>
+<span id="cb39-90"><a href="topic-05.html#cb39-90" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb39-91"><a href="topic-05.html#cb39-91" aria-hidden="true" tabindex="-1"></a>  n.aheads_all <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span>n_start<span class="sc">:</span><span class="dv">0</span>, <span class="fu">seq_len</span>(n.ahead))</span>
+<span id="cb39-92"><a href="topic-05.html#cb39-92" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (K <span class="sc">&gt;</span> <span class="dv">1</span>) {</span>
+<span id="cb39-93"><a href="topic-05.html#cb39-93" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">var =</span> <span class="fu">rep</span>(series, <span class="at">each =</span> <span class="fu">nrow</span>(sim_1)), <span class="at">n.ahead =</span> n.aheads_all, <span class="at">sim_1 =</span> <span class="fu">unlist</span>(sim_1), <span class="at">sim_2 =</span> <span class="fu">unlist</span>(sim_2))</span>
+<span id="cb39-94"><a href="topic-05.html#cb39-94" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames</span>(df) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(df))</span>
+<span id="cb39-95"><a href="topic-05.html#cb39-95" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb39-96"><a href="topic-05.html#cb39-96" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">var =</span> series, <span class="at">n.ahead =</span> n.aheads_all, <span class="at">sim_1 =</span> sim_1<span class="sc">$</span>res, <span class="at">sim_2 =</span> sim_2<span class="sc">$</span>res)</span>
+<span id="cb39-97"><a href="topic-05.html#cb39-97" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-98"><a href="topic-05.html#cb39-98" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (add.regime) {</span>
+<span id="cb39-99"><a href="topic-05.html#cb39-99" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> df[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span>
+<span id="cb39-100"><a href="topic-05.html#cb39-100" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;n.ahead&quot;</span>, <span class="st">&quot;sim_1&quot;</span>, <span class="st">&quot;regime_1&quot;</span>, <span class="st">&quot;sim_2&quot;</span>)</span>
+<span id="cb39-101"><a href="topic-05.html#cb39-101" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-102"><a href="topic-05.html#cb39-102" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span>returnStarting) {</span>
+<span id="cb39-103"><a href="topic-05.html#cb39-103" aria-hidden="true" tabindex="-1"></a>    df <span class="ot">&lt;-</span> <span class="fu">subset</span>(df, n.ahead <span class="sc">&gt;=</span> <span class="dv">0</span>)</span>
+<span id="cb39-104"><a href="topic-05.html#cb39-104" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb39-105"><a href="topic-05.html#cb39-105" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb39-106"><a href="topic-05.html#cb39-106" aria-hidden="true" tabindex="-1"></a>  df</span></code></pre></div>
+<pre><code>##          var n.ahead    sim_1    sim_2
+## 3   long.run       0 9.197031 9.464327
+## 4   long.run       1 8.898894 9.185726
+## 5   long.run       2 8.836150 9.127755
+## 6   long.run       3 8.697946 8.992235
+## 7   long.run       4 8.665609 8.962129
+## 8   long.run       5 8.557435 8.855936
+## 9   long.run       6 8.381104 8.681379
+## 10  long.run       7 8.319928 8.621796
+## 11  long.run       8 8.036332 8.339629
+## 12  long.run       9 7.586294 7.890872
+## 13  long.run      10 7.646679 7.952406
+## 16 short.run       0 7.689293 8.106952
+## 17 short.run       1 6.944679 7.456274
+## 18 short.run       2 7.047379 7.549121
+## 19 short.run       3 6.976456 7.459606
+## 20 short.run       4 7.565632 8.030996
+## 21 short.run       5 7.237260 7.686543
+## 22 short.run       6 6.906369 7.341211
+## 23 short.run       7 6.727155 7.149041
+## 24 short.run       8 6.632981 7.043244
+## 25 short.run       9 5.937837 6.337673
+## 26 short.run      10 5.666728 6.057210</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="topic-05.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="topic-05.html#cb42-1" aria-hidden="true" tabindex="-1"></a>tsDyn_model_gen_fun <span class="ot">&lt;-</span> <span class="cf">function</span> (<span class="at">model =</span> <span class="fu">c</span>(<span class="st">&quot;setar&quot;</span>, <span class="st">&quot;TVAR&quot;</span>, <span class="st">&quot;TVECM&quot;</span>), B, <span class="at">n =</span> <span class="dv">200</span>, <span class="at">lag =</span> <span class="dv">1</span>, </span>
+<span id="cb42-2"><a href="topic-05.html#cb42-2" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">include =</span> <span class="fu">c</span>(<span class="st">&quot;const&quot;</span>, <span class="st">&quot;trend&quot;</span>, <span class="st">&quot;none&quot;</span>, <span class="st">&quot;both&quot;</span>), <span class="at">nthresh =</span> <span class="dv">0</span>, </span>
+<span id="cb42-3"><a href="topic-05.html#cb42-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">thDelay =</span> <span class="dv">0</span>, Thresh, <span class="at">trendStart =</span> <span class="dv">1</span>, <span class="at">starting =</span> <span class="cn">NULL</span>, innov, </span>
+<span id="cb42-4"><a href="topic-05.html#cb42-4" aria-hidden="true" tabindex="-1"></a>                                 exo, <span class="at">round_digits =</span> <span class="dv">10</span>, <span class="at">returnStarting =</span> <span class="cn">FALSE</span>, <span class="at">add.regime =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb42-5"><a href="topic-05.html#cb42-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">show.parMat =</span> <span class="cn">FALSE</span>, <span class="at">thVar =</span> <span class="cn">NULL</span>, <span class="at">mTh =</span> <span class="dv">1</span>, beta, ...) {</span>
+<span id="cb42-6"><a href="topic-05.html#cb42-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb42-7"><a href="topic-05.html#cb42-7" aria-hidden="true" tabindex="-1"></a>  model <span class="ot">&lt;-</span> model</span>
+<span id="cb42-8"><a href="topic-05.html#cb42-8" aria-hidden="true" tabindex="-1"></a>  B <span class="ot">&lt;-</span> B</span>
+<span id="cb42-9"><a href="topic-05.html#cb42-9" aria-hidden="true" tabindex="-1"></a>  lag <span class="ot">&lt;-</span> lag</span>
+<span id="cb42-10"><a href="topic-05.html#cb42-10" aria-hidden="true" tabindex="-1"></a>  include <span class="ot">&lt;-</span> include</span>
+<span id="cb42-11"><a href="topic-05.html#cb42-11" aria-hidden="true" tabindex="-1"></a>  nthresh <span class="ot">&lt;-</span> nthresh</span>
+<span id="cb42-12"><a href="topic-05.html#cb42-12" aria-hidden="true" tabindex="-1"></a>  Thresh <span class="ot">&lt;-</span> Thresh</span>
+<span id="cb42-13"><a href="topic-05.html#cb42-13" aria-hidden="true" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> beta</span>
+<span id="cb42-14"><a href="topic-05.html#cb42-14" aria-hidden="true" tabindex="-1"></a>  starting <span class="ot">&lt;-</span> hist_M</span>
+<span id="cb42-15"><a href="topic-05.html#cb42-15" aria-hidden="true" tabindex="-1"></a>  innov <span class="ot">&lt;-</span> innov_1</span>
+<span id="cb42-16"><a href="topic-05.html#cb42-16" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> N</span>
+<span id="cb42-17"><a href="topic-05.html#cb42-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb42-18"><a href="topic-05.html#cb42-18" aria-hidden="true" tabindex="-1"></a>  thDelay <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb42-19"><a href="topic-05.html#cb42-19" aria-hidden="true" tabindex="-1"></a>  trendStart <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb42-20"><a href="topic-05.html#cb42-20" aria-hidden="true" tabindex="-1"></a>  exo <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb42-21"><a href="topic-05.html#cb42-21" aria-hidden="true" tabindex="-1"></a>  round_digits <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb42-22"><a href="topic-05.html#cb42-22" aria-hidden="true" tabindex="-1"></a>  returnStarting <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb42-23"><a href="topic-05.html#cb42-23" aria-hidden="true" tabindex="-1"></a>  add.regime <span class="ot">&lt;-</span> add.regime</span>
+<span id="cb42-24"><a href="topic-05.html#cb42-24" aria-hidden="true" tabindex="-1"></a>  show.parMat <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb42-25"><a href="topic-05.html#cb42-25" aria-hidden="true" tabindex="-1"></a>  thVar <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb42-26"><a href="topic-05.html#cb42-26" aria-hidden="true" tabindex="-1"></a>  mTh <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb42-27"><a href="topic-05.html#cb42-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb42-28"><a href="topic-05.html#cb42-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb42-29"><a href="topic-05.html#cb42-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb42-30"><a href="topic-05.html#cb42-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># model &lt;- match.arg(model)</span></span>
+<span id="cb42-31"><a href="topic-05.html#cb42-31" aria-hidden="true" tabindex="-1"></a>  model <span class="ot">&lt;-</span> model</span>
+<span id="cb42-32"><a href="topic-05.html#cb42-32" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (model <span class="sc">==</span> <span class="st">&quot;setar&quot;</span>) {</span>
+<span id="cb42-33"><a href="topic-05.html#cb42-33" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">setar.gen</span>(<span class="at">B =</span> B, <span class="at">n =</span> n, <span class="at">lag =</span> lag, <span class="at">include =</span> include, </span>
+<span id="cb42-34"><a href="topic-05.html#cb42-34" aria-hidden="true" tabindex="-1"></a>                             <span class="at">nthresh =</span> nthresh, <span class="at">Thresh =</span> Thresh, <span class="at">thDelay =</span> thDelay, </span>
+<span id="cb42-35"><a href="topic-05.html#cb42-35" aria-hidden="true" tabindex="-1"></a>                             <span class="at">starting =</span> <span class="fu">as.numeric</span>(starting[, <span class="dv">1</span>]), <span class="at">innov =</span> innov, </span>
+<span id="cb42-36"><a href="topic-05.html#cb42-36" aria-hidden="true" tabindex="-1"></a>                             <span class="at">exo =</span> exo, <span class="at">trendStart =</span> trendStart, <span class="at">round_digits =</span> round_digits, </span>
+<span id="cb42-37"><a href="topic-05.html#cb42-37" aria-hidden="true" tabindex="-1"></a>                             <span class="at">returnStarting =</span> returnStarting, <span class="at">add.regime =</span> add.regime, </span>
+<span id="cb42-38"><a href="topic-05.html#cb42-38" aria-hidden="true" tabindex="-1"></a>                             <span class="at">show.parMat =</span> show.parMat, ...)</span>
+<span id="cb42-39"><a href="topic-05.html#cb42-39" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (model <span class="sc">==</span> <span class="st">&quot;TVAR&quot;</span>) {</span>
+<span id="cb42-40"><a href="topic-05.html#cb42-40" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">TVAR.gen</span>(<span class="at">B =</span> B, <span class="at">n =</span> n, <span class="at">lag =</span> lag, <span class="at">include =</span> include, </span>
+<span id="cb42-41"><a href="topic-05.html#cb42-41" aria-hidden="true" tabindex="-1"></a>                            <span class="at">nthresh =</span> nthresh, <span class="at">Thresh =</span> Thresh, <span class="at">thDelay =</span> thDelay, </span>
+<span id="cb42-42"><a href="topic-05.html#cb42-42" aria-hidden="true" tabindex="-1"></a>                            <span class="at">starting =</span> starting, <span class="at">innov =</span> innov, <span class="at">thVar =</span> thVar, </span>
+<span id="cb42-43"><a href="topic-05.html#cb42-43" aria-hidden="true" tabindex="-1"></a>                            <span class="at">mTh =</span> mTh, <span class="at">trendStart =</span> trendStart, <span class="at">round_digits =</span> round_digits, </span>
+<span id="cb42-44"><a href="topic-05.html#cb42-44" aria-hidden="true" tabindex="-1"></a>                            <span class="at">returnStarting =</span> returnStarting, <span class="at">add.regime =</span> add.regime, </span>
+<span id="cb42-45"><a href="topic-05.html#cb42-45" aria-hidden="true" tabindex="-1"></a>                            <span class="at">show.parMat =</span> show.parMat, ...)</span>
+<span id="cb42-46"><a href="topic-05.html#cb42-46" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (model <span class="sc">==</span> <span class="st">&quot;TVECM&quot;</span>) {</span>
+<span id="cb42-47"><a href="topic-05.html#cb42-47" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">TVECM.gen</span>(<span class="at">B =</span> B, <span class="at">n =</span> n, <span class="at">lag =</span> lag, <span class="at">include =</span> include, </span>
+<span id="cb42-48"><a href="topic-05.html#cb42-48" aria-hidden="true" tabindex="-1"></a>                             <span class="at">beta =</span> beta, <span class="at">nthresh =</span> nthresh, <span class="at">Thresh =</span> Thresh, </span>
+<span id="cb42-49"><a href="topic-05.html#cb42-49" aria-hidden="true" tabindex="-1"></a>                             <span class="at">starting =</span> starting, <span class="at">innov =</span> innov, <span class="at">round_digits =</span> round_digits, </span>
+<span id="cb42-50"><a href="topic-05.html#cb42-50" aria-hidden="true" tabindex="-1"></a>                             <span class="at">returnStarting =</span> returnStarting, <span class="at">show.parMat =</span> show.parMat, ...)</span>
+<span id="cb42-51"><a href="topic-05.html#cb42-51" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb42-52"><a href="topic-05.html#cb42-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(res)</span>
+<span id="cb42-53"><a href="topic-05.html#cb42-53" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="topic-05.html#cb43-1" aria-hidden="true" tabindex="-1"></a>tsDyn_TVECM_gen_fun <span class="ot">&lt;-</span> <span class="cf">function</span> (B, beta, <span class="at">n =</span> <span class="dv">200</span>, <span class="at">lag =</span> <span class="dv">1</span>,</span>
+<span id="cb43-2"><a href="topic-05.html#cb43-2" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">include =</span> <span class="fu">c</span>(<span class="st">&quot;const&quot;</span>, <span class="st">&quot;trend&quot;</span>, <span class="st">&quot;none&quot;</span>, <span class="st">&quot;both&quot;</span>), <span class="at">nthresh =</span> <span class="dv">1</span>, Thresh,</span>
+<span id="cb43-3"><a href="topic-05.html#cb43-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">starting =</span> <span class="cn">NULL</span>, innov, <span class="at">returnStarting =</span> <span class="cn">FALSE</span>, <span class="at">show.parMat =</span> <span class="cn">FALSE</span>, <span class="at">round_digits =</span> <span class="dv">4</span>) {</span>
+<span id="cb43-4"><a href="topic-05.html#cb43-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-5"><a href="topic-05.html#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># inputs</span></span>
+<span id="cb43-6"><a href="topic-05.html#cb43-6" aria-hidden="true" tabindex="-1"></a>  B <span class="ot">&lt;-</span> B</span>
+<span id="cb43-7"><a href="topic-05.html#cb43-7" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> n</span>
+<span id="cb43-8"><a href="topic-05.html#cb43-8" aria-hidden="true" tabindex="-1"></a>  lag <span class="ot">&lt;-</span> lag</span>
+<span id="cb43-9"><a href="topic-05.html#cb43-9" aria-hidden="true" tabindex="-1"></a>  include <span class="ot">&lt;-</span> include</span>
+<span id="cb43-10"><a href="topic-05.html#cb43-10" aria-hidden="true" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> beta</span>
+<span id="cb43-11"><a href="topic-05.html#cb43-11" aria-hidden="true" tabindex="-1"></a>  nthresh <span class="ot">&lt;-</span> nthresh</span>
+<span id="cb43-12"><a href="topic-05.html#cb43-12" aria-hidden="true" tabindex="-1"></a>  Thresh <span class="ot">&lt;-</span> Thresh</span>
+<span id="cb43-13"><a href="topic-05.html#cb43-13" aria-hidden="true" tabindex="-1"></a>  starting <span class="ot">&lt;-</span> starting</span>
+<span id="cb43-14"><a href="topic-05.html#cb43-14" aria-hidden="true" tabindex="-1"></a>  innov <span class="ot">&lt;-</span> innov</span>
+<span id="cb43-15"><a href="topic-05.html#cb43-15" aria-hidden="true" tabindex="-1"></a>  round_digits <span class="ot">&lt;-</span> round_digits</span>
+<span id="cb43-16"><a href="topic-05.html#cb43-16" aria-hidden="true" tabindex="-1"></a>  returnStarting <span class="ot">&lt;-</span> returnStarting</span>
+<span id="cb43-17"><a href="topic-05.html#cb43-17" aria-hidden="true" tabindex="-1"></a>  show.parMat <span class="ot">&lt;-</span> show.parMat</span>
+<span id="cb43-18"><a href="topic-05.html#cb43-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-19"><a href="topic-05.html#cb43-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-20"><a href="topic-05.html#cb43-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-21"><a href="topic-05.html#cb43-21" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> lag</span>
+<span id="cb43-22"><a href="topic-05.html#cb43-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># include &lt;- match.arg(include)</span></span>
+<span id="cb43-23"><a href="topic-05.html#cb43-23" aria-hidden="true" tabindex="-1"></a>  include <span class="ot">&lt;-</span> include</span>
+<span id="cb43-24"><a href="topic-05.html#cb43-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span>nthresh <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>)) {</span>
+<span id="cb43-25"><a href="topic-05.html#cb43-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;Arg nthresh should  be either 0, 1 or 2&quot;</span>)</span>
+<span id="cb43-26"><a href="topic-05.html#cb43-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-27"><a href="topic-05.html#cb43-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">missing</span>(beta)) {</span>
+<span id="cb43-28"><a href="topic-05.html#cb43-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">&quot;please provide arg beta (cointegrating value)&quot;</span>)</span>
+<span id="cb43-29"><a href="topic-05.html#cb43-29" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-30"><a href="topic-05.html#cb43-30" aria-hidden="true" tabindex="-1"></a>  ninc <span class="ot">&lt;-</span> <span class="cf">switch</span>(include, <span class="at">none =</span> <span class="dv">0</span>, <span class="at">const =</span> <span class="dv">1</span>, <span class="at">trend =</span> <span class="dv">1</span>, <span class="at">both =</span> <span class="dv">2</span>)</span>
+<span id="cb43-31"><a href="topic-05.html#cb43-31" aria-hidden="true" tabindex="-1"></a>  incVal <span class="ot">&lt;-</span> <span class="cf">switch</span>(include, <span class="at">none =</span> <span class="cn">NULL</span>, <span class="at">const =</span> <span class="st">&quot;const&quot;</span>, <span class="at">trend =</span> <span class="st">&quot;trend&quot;</span>, <span class="at">both =</span> <span class="fu">c</span>(<span class="st">&quot;const&quot;</span>, <span class="st">&quot;trend&quot;</span>))</span>
+<span id="cb43-32"><a href="topic-05.html#cb43-32" aria-hidden="true" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="fu">nrow</span>(B)</span>
+<span id="cb43-33"><a href="topic-05.html#cb43-33" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.vector</span>(beta)) {</span>
+<span id="cb43-34"><a href="topic-05.html#cb43-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">length</span>(beta) <span class="sc">==</span> k <span class="sc">-</span> <span class="dv">1</span>) {</span>
+<span id="cb43-35"><a href="topic-05.html#cb43-35" aria-hidden="true" tabindex="-1"></a>      beta <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span>beta)</span>
+<span id="cb43-36"><a href="topic-05.html#cb43-36" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb43-37"><a href="topic-05.html#cb43-37" aria-hidden="true" tabindex="-1"></a>    tBETA <span class="ot">&lt;-</span> <span class="fu">matrix</span>(beta, <span class="at">nrow =</span> <span class="dv">1</span>)</span>
+<span id="cb43-38"><a href="topic-05.html#cb43-38" aria-hidden="true" tabindex="-1"></a>    r <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb43-39"><a href="topic-05.html#cb43-39" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb43-40"><a href="topic-05.html#cb43-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">nrow</span>(beta) <span class="sc">!=</span> k) {</span>
+<span id="cb43-41"><a href="topic-05.html#cb43-41" aria-hidden="true" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;beta should have k rows and r cols&quot;</span>)</span>
+<span id="cb43-42"><a href="topic-05.html#cb43-42" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb43-43"><a href="topic-05.html#cb43-43" aria-hidden="true" tabindex="-1"></a>    r <span class="ot">&lt;-</span> <span class="fu">ncol</span>(beta)</span>
+<span id="cb43-44"><a href="topic-05.html#cb43-44" aria-hidden="true" tabindex="-1"></a>    tBETA <span class="ot">&lt;-</span> <span class="fu">t</span>(beta)</span>
+<span id="cb43-45"><a href="topic-05.html#cb43-45" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-46"><a href="topic-05.html#cb43-46" aria-hidden="true" tabindex="-1"></a>  esp <span class="ot">&lt;-</span> p <span class="sc">*</span> k <span class="sc">+</span> r <span class="sc">+</span> ninc</span>
+<span id="cb43-47"><a href="topic-05.html#cb43-47" aria-hidden="true" tabindex="-1"></a>  pa <span class="ot">&lt;-</span> <span class="cf">switch</span>(<span class="fu">as.character</span>(nthresh), <span class="st">`</span><span class="at">0</span><span class="st">`</span> <span class="ot">=</span> <span class="st">&quot;&quot;</span>, <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;_low&quot;</span>, <span class="st">&quot;_upr&quot;</span>), <span class="st">`</span><span class="at">2</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;_low&quot;</span>, <span class="st">&quot;_mid&quot;</span>, <span class="st">&quot;_upr&quot;</span>))</span>
+<span id="cb43-48"><a href="topic-05.html#cb43-48" aria-hidden="true" tabindex="-1"></a>  lags <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="fu">outer</span>(<span class="st">&quot;L{x&quot;</span>, <span class="dv">1</span><span class="sc">:</span>k, paste, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>))</span>
+<span id="cb43-49"><a href="topic-05.html#cb43-49" aria-hidden="true" tabindex="-1"></a>  lags2 <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="fu">rep</span>(lags, <span class="at">times =</span> p), <span class="st">&quot;}{&quot;</span>, <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>p, <span class="at">each =</span> p), <span class="st">&quot;}&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb43-50"><a href="topic-05.html#cb43-50" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (esp <span class="sc">*</span> (nthresh <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">!=</span> <span class="fu">ncol</span>(B)) {</span>
+<span id="cb43-51"><a href="topic-05.html#cb43-51" aria-hidden="true" tabindex="-1"></a>    colnames_Matrix_input <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="fu">outer</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;ECT&quot;</span>, r), incVal, lags2), pa, paste, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>))</span>
+<span id="cb43-52"><a href="topic-05.html#cb43-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;Matrix B badly specified: should have &quot;</span>, esp <span class="sc">*</span> (nthresh <span class="sc">+</span> <span class="dv">1</span>), <span class="st">&quot;columns, but has&quot;</span>, <span class="fu">ncol</span>(B), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb43-53"><a href="topic-05.html#cb43-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">nrow =</span> k, <span class="at">ncol =</span> esp <span class="sc">*</span> (nthresh <span class="sc">+</span> <span class="dv">1</span>), <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">paste</span>(<span class="st">&quot;Equ x&quot;</span>, <span class="dv">1</span><span class="sc">:</span>k, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>), colnames_Matrix_input)))</span>
+<span id="cb43-54"><a href="topic-05.html#cb43-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>()</span>
+<span id="cb43-55"><a href="topic-05.html#cb43-55" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-56"><a href="topic-05.html#cb43-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames</span>(B) <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;Equ x&quot;</span>, <span class="dv">1</span><span class="sc">:</span>k, <span class="st">&quot;:&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb43-57"><a href="topic-05.html#cb43-57" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(starting)) {</span>
+<span id="cb43-58"><a href="topic-05.html#cb43-58" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.matrix</span>(starting)) {</span>
+<span id="cb43-59"><a href="topic-05.html#cb43-59" aria-hidden="true" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;Provide &#39;starting&#39; as matrix&quot;</span>)</span>
+<span id="cb43-60"><a href="topic-05.html#cb43-60" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb43-61"><a href="topic-05.html#cb43-61" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">all</span>(<span class="fu">dim</span>(starting) <span class="sc">==</span> <span class="fu">c</span>(p <span class="sc">+</span> <span class="dv">1</span>, k))) {</span>
+<span id="cb43-62"><a href="topic-05.html#cb43-62" aria-hidden="true" tabindex="-1"></a>      <span class="fu">stop</span>(<span class="st">&quot;Bad specification of starting values. Should have nrow = lag +1 and ncol = number of variables&quot;</span>)</span>
+<span id="cb43-63"><a href="topic-05.html#cb43-63" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb43-64"><a href="topic-05.html#cb43-64" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-65"><a href="topic-05.html#cb43-65" aria-hidden="true" tabindex="-1"></a>  Bmat <span class="ot">&lt;-</span> B</span>
+<span id="cb43-66"><a href="topic-05.html#cb43-66" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (include <span class="sc">!=</span> <span class="st">&quot;both&quot;</span>) {</span>
+<span id="cb43-67"><a href="topic-05.html#cb43-67" aria-hidden="true" tabindex="-1"></a>    aa1 <span class="ot">&lt;-</span> r <span class="sc">+</span> <span class="cf">switch</span>(include, <span class="at">none =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">const =</span> <span class="dv">2</span>, <span class="at">trend =</span> <span class="dv">1</span>, <span class="at">both =</span> <span class="cn">NULL</span>)</span>
+<span id="cb43-68"><a href="topic-05.html#cb43-68" aria-hidden="true" tabindex="-1"></a>    aa <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">rep</span>(aa1, <span class="at">each =</span> nthresh <span class="sc">+</span> <span class="dv">1</span>) <span class="sc">+</span> (<span class="dv">0</span><span class="sc">:</span>nthresh) <span class="sc">*</span> (p <span class="sc">*</span> k <span class="sc">+</span> <span class="fu">max</span>(aa1)))</span>
+<span id="cb43-69"><a href="topic-05.html#cb43-69" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bmat &lt;- myInsertCol(Bmat, c = aa, 0)</span></span>
+<span id="cb43-70"><a href="topic-05.html#cb43-70" aria-hidden="true" tabindex="-1"></a>    Bmat <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">myInsertCol</span>(Bmat, <span class="at">c =</span> aa, <span class="dv">0</span>)</span>
+<span id="cb43-71"><a href="topic-05.html#cb43-71" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-72"><a href="topic-05.html#cb43-72" aria-hidden="true" tabindex="-1"></a>  nparBmat <span class="ot">&lt;-</span> p <span class="sc">*</span> k <span class="sc">+</span> <span class="dv">2</span> <span class="sc">+</span> r</span>
+<span id="cb43-73"><a href="topic-05.html#cb43-73" aria-hidden="true" tabindex="-1"></a>  Yb <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> n <span class="sc">+</span> p <span class="sc">+</span> <span class="dv">1</span>, <span class="at">ncol =</span> k)</span>
+<span id="cb43-74"><a href="topic-05.html#cb43-74" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(starting)) {</span>
+<span id="cb43-75"><a href="topic-05.html#cb43-75" aria-hidden="true" tabindex="-1"></a>    Yb[<span class="dv">1</span><span class="sc">:</span>(p <span class="sc">+</span> <span class="dv">1</span>), ] <span class="ot">&lt;-</span> starting</span>
+<span id="cb43-76"><a href="topic-05.html#cb43-76" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-77"><a href="topic-05.html#cb43-77" aria-hidden="true" tabindex="-1"></a>  trend <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="cn">NA</span>, p <span class="sc">+</span> <span class="dv">1</span>), <span class="fu">seq_len</span>(n))</span>
+<span id="cb43-78"><a href="topic-05.html#cb43-78" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-79"><a href="topic-05.html#cb43-79" aria-hidden="true" tabindex="-1"></a>  <span class="co"># start generation of Yb</span></span>
+<span id="cb43-80"><a href="topic-05.html#cb43-80" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-81"><a href="topic-05.html#cb43-81" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (nthresh <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb43-82"><a href="topic-05.html#cb43-82" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> (p <span class="sc">+</span> <span class="dv">2</span>)<span class="sc">:</span>(n <span class="sc">+</span> p <span class="sc">+</span> <span class="dv">1</span>)) {</span>
+<span id="cb43-83"><a href="topic-05.html#cb43-83" aria-hidden="true" tabindex="-1"></a>      ECT <span class="ot">&lt;-</span> Bmat[, <span class="dv">1</span><span class="sc">:</span>r] <span class="sc">%*%</span> tBETA <span class="sc">%*%</span> <span class="fu">matrix</span>(Yb[i <span class="sc">-</span> <span class="dv">1</span>, ], <span class="at">ncol =</span> <span class="dv">1</span>)</span>
+<span id="cb43-84"><a href="topic-05.html#cb43-84" aria-hidden="true" tabindex="-1"></a>      Yb[i, ] <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(<span class="fu">cbind</span>(Yb[i <span class="sc">-</span> <span class="dv">1</span>, ], Bmat[, r <span class="sc">+</span> <span class="dv">1</span>], Bmat[, r <span class="sc">+</span> <span class="dv">2</span>] <span class="sc">*</span> trend[i], ECT, Bmat[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>(r <span class="sc">+</span> <span class="dv">2</span>))] <span class="sc">%*%</span> <span class="fu">matrix</span>(<span class="fu">t</span>(Yb[i <span class="sc">-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>p), ] <span class="sc">-</span> Yb[i <span class="sc">-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span>(p <span class="sc">+</span> <span class="dv">1</span>)), ]), <span class="at">ncol =</span> <span class="dv">1</span>), innov[i <span class="sc">-</span> p <span class="sc">-</span> <span class="dv">1</span>, ]))</span>
+<span id="cb43-85"><a href="topic-05.html#cb43-85" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb43-86"><a href="topic-05.html#cb43-86" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (nthresh <span class="sc">==</span> <span class="dv">1</span>) {</span>
+<span id="cb43-87"><a href="topic-05.html#cb43-87" aria-hidden="true" tabindex="-1"></a>    BD <span class="ot">&lt;-</span> Bmat[, <span class="fu">seq_len</span>(nparBmat)]</span>
+<span id="cb43-88"><a href="topic-05.html#cb43-88" aria-hidden="true" tabindex="-1"></a>    BU <span class="ot">&lt;-</span> Bmat[, <span class="sc">-</span><span class="fu">seq_len</span>(nparBmat)]</span>
+<span id="cb43-89"><a href="topic-05.html#cb43-89" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> (p <span class="sc">+</span> <span class="dv">2</span>)<span class="sc">:</span>(n <span class="sc">+</span> p <span class="sc">+</span> <span class="dv">1</span>)) {</span>
+<span id="cb43-90"><a href="topic-05.html#cb43-90" aria-hidden="true" tabindex="-1"></a>      ECT <span class="ot">&lt;-</span> Yb[i <span class="sc">-</span> <span class="dv">1</span>, , drop <span class="ot">=</span> <span class="cn">FALSE</span>] <span class="sc">%*%</span> <span class="fu">t</span>(tBETA)</span>
+<span id="cb43-91"><a href="topic-05.html#cb43-91" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">round</span>(ECT, round_digits) <span class="sc">&lt;=</span> Thresh) {</span>
+<span id="cb43-92"><a href="topic-05.html#cb43-92" aria-hidden="true" tabindex="-1"></a>        B_here <span class="ot">&lt;-</span> BD</span>
+<span id="cb43-93"><a href="topic-05.html#cb43-93" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
+<span id="cb43-94"><a href="topic-05.html#cb43-94" aria-hidden="true" tabindex="-1"></a>        B_here <span class="ot">&lt;-</span> BU</span>
+<span id="cb43-95"><a href="topic-05.html#cb43-95" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb43-96"><a href="topic-05.html#cb43-96" aria-hidden="true" tabindex="-1"></a>      Yb[i, ] <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(<span class="fu">cbind</span>(Yb[i <span class="sc">-</span> <span class="dv">1</span>, ], B_here[, <span class="dv">1</span>] <span class="sc">*</span> <span class="fu">as.vector</span>(ECT), B_here[, <span class="dv">2</span>], B_here[, <span class="dv">3</span>] <span class="sc">*</span> trend[i], B_here[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)] <span class="sc">%*%</span> <span class="fu">matrix</span>(<span class="fu">t</span>(Yb[i <span class="sc">-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>p), ] <span class="sc">-</span> Yb[i <span class="sc">-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span>(p <span class="sc">+</span> <span class="dv">1</span>)), ]), <span class="at">ncol =</span> <span class="dv">1</span>), innov[i <span class="sc">-</span> p <span class="sc">-</span> <span class="dv">1</span>, ]))</span>
+<span id="cb43-97"><a href="topic-05.html#cb43-97" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb43-98"><a href="topic-05.html#cb43-98" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (nthresh <span class="sc">==</span> <span class="dv">2</span>) {</span>
+<span id="cb43-99"><a href="topic-05.html#cb43-99" aria-hidden="true" tabindex="-1"></a>    BD <span class="ot">&lt;-</span> Bmat[, <span class="fu">seq_len</span>(nparBmat)]</span>
+<span id="cb43-100"><a href="topic-05.html#cb43-100" aria-hidden="true" tabindex="-1"></a>    BM <span class="ot">&lt;-</span> Bmat[, <span class="fu">seq_len</span>(nparBmat) <span class="sc">+</span> nparBmat]</span>
+<span id="cb43-101"><a href="topic-05.html#cb43-101" aria-hidden="true" tabindex="-1"></a>    BU <span class="ot">&lt;-</span> Bmat[, <span class="fu">seq_len</span>(nparBmat) <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> nparBmat]</span>
+<span id="cb43-102"><a href="topic-05.html#cb43-102" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> (p <span class="sc">+</span> <span class="dv">2</span>)<span class="sc">:</span>(n <span class="sc">+</span> p <span class="sc">+</span> <span class="dv">1</span>)) {</span>
+<span id="cb43-103"><a href="topic-05.html#cb43-103" aria-hidden="true" tabindex="-1"></a>      ECT <span class="ot">&lt;-</span> Yb[i <span class="sc">-</span> <span class="dv">1</span>, , drop <span class="ot">=</span> <span class="cn">FALSE</span>] <span class="sc">%*%</span> <span class="fu">t</span>(tBETA)</span>
+<span id="cb43-104"><a href="topic-05.html#cb43-104" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">round</span>(ECT, round_digits) <span class="sc">&lt;=</span> Thresh[<span class="dv">1</span>]) {</span>
+<span id="cb43-105"><a href="topic-05.html#cb43-105" aria-hidden="true" tabindex="-1"></a>        B_here <span class="ot">&lt;-</span> BD</span>
+<span id="cb43-106"><a href="topic-05.html#cb43-106" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> <span class="cf">if</span> (<span class="fu">round</span>(ECT, round_digits) <span class="sc">&gt;</span> Thresh[<span class="dv">2</span>]) {</span>
+<span id="cb43-107"><a href="topic-05.html#cb43-107" aria-hidden="true" tabindex="-1"></a>        B_here <span class="ot">&lt;-</span> BU</span>
+<span id="cb43-108"><a href="topic-05.html#cb43-108" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
+<span id="cb43-109"><a href="topic-05.html#cb43-109" aria-hidden="true" tabindex="-1"></a>        B_here <span class="ot">&lt;-</span> BM</span>
+<span id="cb43-110"><a href="topic-05.html#cb43-110" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb43-111"><a href="topic-05.html#cb43-111" aria-hidden="true" tabindex="-1"></a>      Yb[i, ] <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(<span class="fu">cbind</span>(Yb[i <span class="sc">-</span> <span class="dv">1</span>, ], B_here[, <span class="dv">1</span>] <span class="sc">*</span> <span class="fu">as.vector</span>(ECT), B_here[, <span class="dv">2</span>], B_here[, <span class="dv">3</span>] <span class="sc">*</span> trend[i], B_here[, <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)] <span class="sc">%*%</span> <span class="fu">matrix</span>(<span class="fu">t</span>(Yb[i <span class="sc">-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>p), ] <span class="sc">-</span> Yb[i <span class="sc">-</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span>(p <span class="sc">+</span> <span class="dv">1</span>)), ]), <span class="at">ncol =</span> <span class="dv">1</span>), innov[i <span class="sc">-</span> p <span class="sc">-</span> <span class="dv">1</span>, ]))</span>
+<span id="cb43-112"><a href="topic-05.html#cb43-112" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb43-113"><a href="topic-05.html#cb43-113" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-114"><a href="topic-05.html#cb43-114" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (show.parMat) {</span>
+<span id="cb43-115"><a href="topic-05.html#cb43-115" aria-hidden="true" tabindex="-1"></a>    colnames_Matrix_system <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="fu">outer</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">&quot;ECT&quot;</span>, r), <span class="st">&quot;Const&quot;</span>, <span class="st">&quot;Trend&quot;</span>, lags2), pa, paste, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>))</span>
+<span id="cb43-116"><a href="topic-05.html#cb43-116" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(Bmat) <span class="ot">&lt;-</span> colnames_Matrix_system</span>
+<span id="cb43-117"><a href="topic-05.html#cb43-117" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(Bmat)</span>
+<span id="cb43-118"><a href="topic-05.html#cb43-118" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-119"><a href="topic-05.html#cb43-119" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span>returnStarting) {</span>
+<span id="cb43-120"><a href="topic-05.html#cb43-120" aria-hidden="true" tabindex="-1"></a>    Yb <span class="ot">&lt;-</span> Yb[<span class="sc">-</span><span class="fu">seq_len</span>(p <span class="sc">+</span> <span class="dv">1</span>), ]</span>
+<span id="cb43-121"><a href="topic-05.html#cb43-121" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb43-122"><a href="topic-05.html#cb43-122" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb43-123"><a href="topic-05.html#cb43-123" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(Yb)</span>
+<span id="cb43-124"><a href="topic-05.html#cb43-124" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb43-125"><a href="topic-05.html#cb43-125" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Strategies to hijack <code>tsDyn:::GIRF</code> function</p>
+<ul>
+<li>edit <code>tsDyn::TVECM</code> function for known breaks to create ingredients of <code>tsDyn:::GIRF</code> function.</li>
+</ul>
+</div>
+<div id="tvecm-model-estimation" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> TVECM model estimation<a href="topic-05.html#tvecm-model-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="topic-05.html#cb44-1" aria-hidden="true" tabindex="-1"></a>tvec <span class="ot">&lt;-</span> tsDyn<span class="sc">::</span><span class="fu">TVECM</span>(tsDyn<span class="sc">::</span>zeroyldMeta[, <span class="fu">c</span>(<span class="st">&quot;long.run&quot;</span>, <span class="st">&quot;short.run&quot;</span>)], <span class="at">lag =</span> <span class="dv">2</span>, <span class="at">ngridTh =</span> <span class="dv">300</span>, <span class="at">beta =</span> <span class="fu">list</span>(<span class="at">exact =</span> <span class="dv">1</span>))</span></code></pre></div>
+<pre><code>## 2 (0.7%) points of the grid lead to regimes with percentage of observations &lt; trim and were not computed</code></pre>
+<p><img src="topics-in-statistics-and-econometrics_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+<div id="tvecm-model-orthngalized-irf-analysis" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> TVECM model orthngalized IRF analysis<a href="topic-05.html#tvecm-model-orthngalized-irf-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="topic-05.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># don&#39;t run</span></span>
+<span id="cb46-2"><a href="topic-05.html#cb46-2" aria-hidden="true" tabindex="-1"></a>irf.tvec <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">irf.VECM</span>(tvec, <span class="at">ortho =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="topic-05.html#cb47-1" aria-hidden="true" tabindex="-1"></a>irf.tvec <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">irf.TVECM</span>(tvec, <span class="at">ortho =</span> <span class="cn">TRUE</span>, <span class="at">boot =</span> <span class="cn">FALSE</span>, <span class="at">n.ahead =</span> <span class="dv">10</span>)</span>
+<span id="cb47-2"><a href="topic-05.html#cb47-2" aria-hidden="true" tabindex="-1"></a>irf.tvec<span class="sc">$</span>irf<span class="sc">$</span>short.run</span></code></pre></div>
+<pre><code>##            long.run     short.run
+##  [1,]  0.0000000000  0.3201782612
+##  [2,] -0.0417116461  0.0295448213
+##  [3,] -0.0152852188 -0.0548594485
+##  [4,]  0.0516574379 -0.0003151505
+##  [5,]  0.0413890468  0.0635663107
+##  [6,] -0.0065558061 -0.0062368076
+##  [7,]  0.0001577064 -0.0244389162
+##  [8,]  0.0313667356  0.0328783020
+##  [9,]  0.0221484845  0.0458458385
+## [10,]  0.0003683447 -0.0005472588
+## [11,]  0.0100973499 -0.0066522541</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="topic-05.html#cb49-1" aria-hidden="true" tabindex="-1"></a>irf.tvec<span class="sc">$</span>irf<span class="sc">$</span>long.run</span></code></pre></div>
+<pre><code>##         long.run   short.run
+##  [1,] 0.29654579  0.37579964
+##  [2,] 0.25826203  0.48847064
+##  [3,] 0.07754857  0.05482439
+##  [4,] 0.14984722 -0.01328498
+##  [5,] 0.28559826  0.28278939
+##  [6,] 0.21498971  0.31928930
+##  [7,] 0.11600731  0.10205934
+##  [8,] 0.17582624  0.10356710
+##  [9,] 0.24355831  0.26466235
+## [10,] 0.19303490  0.24664211
+## [11,] 0.14810080  0.12696172</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="topic-05.html#cb51-1" aria-hidden="true" tabindex="-1"></a>irf.l.tvec <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">irf.TVECM</span>(tvec, <span class="at">ortho =</span> <span class="cn">TRUE</span>, <span class="at">regime =</span> <span class="st">&quot;L&quot;</span>, <span class="at">boot =</span> <span class="cn">FALSE</span>, <span class="at">n.ahead =</span> <span class="dv">10</span>)</span>
+<span id="cb51-2"><a href="topic-05.html#cb51-2" aria-hidden="true" tabindex="-1"></a>irf.l.tvec<span class="sc">$</span>irf<span class="sc">$</span>short.run</span></code></pre></div>
+<pre><code>##            long.run     short.run
+##  [1,]  0.0000000000  0.3201782612
+##  [2,] -0.0417116461  0.0295448213
+##  [3,] -0.0152852188 -0.0548594485
+##  [4,]  0.0516574379 -0.0003151505
+##  [5,]  0.0413890468  0.0635663107
+##  [6,] -0.0065558061 -0.0062368076
+##  [7,]  0.0001577064 -0.0244389162
+##  [8,]  0.0313667356  0.0328783020
+##  [9,]  0.0221484845  0.0458458385
+## [10,]  0.0003683447 -0.0005472588
+## [11,]  0.0100973499 -0.0066522541</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="topic-05.html#cb53-1" aria-hidden="true" tabindex="-1"></a>irf.l.tvec<span class="sc">$</span>irf<span class="sc">$</span>long.run</span></code></pre></div>
+<pre><code>##         long.run   short.run
+##  [1,] 0.29654579  0.37579964
+##  [2,] 0.25826203  0.48847064
+##  [3,] 0.07754857  0.05482439
+##  [4,] 0.14984722 -0.01328498
+##  [5,] 0.28559826  0.28278939
+##  [6,] 0.21498971  0.31928930
+##  [7,] 0.11600731  0.10205934
+##  [8,] 0.17582624  0.10356710
+##  [9,] 0.24355831  0.26466235
+## [10,] 0.19303490  0.24664211
+## [11,] 0.14810080  0.12696172</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="topic-05.html#cb55-1" aria-hidden="true" tabindex="-1"></a>irf.h.tvec <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">irf.TVECM</span>(tvec, <span class="at">ortho =</span> <span class="cn">TRUE</span>, <span class="at">regime =</span> <span class="st">&quot;H&quot;</span>, <span class="at">boot =</span> <span class="cn">FALSE</span>, <span class="at">n.ahead =</span> <span class="dv">10</span>)</span>
+<span id="cb55-2"><a href="topic-05.html#cb55-2" aria-hidden="true" tabindex="-1"></a>irf.h.tvec<span class="sc">$</span>irf<span class="sc">$</span>short.run</span></code></pre></div>
+<pre><code>##         long.run short.run
+##  [1,] 0.00000000 0.3201783
+##  [2,] 0.02892842 0.3592035
+##  [3,] 0.02935621 0.3401690
+##  [4,] 0.03117986 0.3238179
+##  [5,] 0.03377063 0.3089948
+##  [6,] 0.03620496 0.2953376
+##  [7,] 0.03851678 0.2825830
+##  [8,] 0.04069657 0.2705763
+##  [9,] 0.04274829 0.2592656
+## [10,] 0.04468054 0.2486118
+## [11,] 0.04650045 0.2385771</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="topic-05.html#cb57-1" aria-hidden="true" tabindex="-1"></a>irf.h.tvec<span class="sc">$</span>irf<span class="sc">$</span>long.run</span></code></pre></div>
+<pre><code>##        long.run short.run
+##  [1,] 0.2965458 0.3757996
+##  [2,] 0.3172186 0.4793394
+##  [3,] 0.3221100 0.5025273
+##  [4,] 0.3242745 0.4960566
+##  [5,] 0.3254243 0.4868761
+##  [6,] 0.3267788 0.4786850
+##  [7,] 0.3281280 0.4711548
+##  [8,] 0.3294040 0.4641105
+##  [9,] 0.3306066 0.4574831
+## [10,] 0.3317391 0.4512405
+## [11,] 0.3328055 0.4453604</code></pre>
+</div>
+<div id="tvecm-model-generalized-irf-analysis" class="section level2 hasAnchor" number="7.7">
+<h2><span class="header-section-number">7.7</span> TVECM model generalized IRF analysis<a href="topic-05.html#tvecm-model-generalized-irf-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="topic-04.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/mmoessler/topics-in-statistics-and-econometrics/blob/main/06-topic-05.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

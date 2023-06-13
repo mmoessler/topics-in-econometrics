@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Topic 02 | Topics in Statistics and Econometrics</title>
   <meta name="description" content="This book contains some thoughts on selected topics in statistics and econometrics" />
-  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Topic 02 | Topics in Statistics and Econometrics" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Markus Mößler" />
 
 
-<meta name="date" content="2023-04-03" />
+<meta name="date" content="2023-05-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -166,8 +166,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="topic-03.html"><a href="topic-03.html#statistical-model-1"><i class="fa fa-check"></i><b>5.1</b> Statistical Model</a></li>
 <li class="chapter" data-level="5.2" data-path="topic-03.html"><a href="topic-03.html#estimation"><i class="fa fa-check"></i><b>5.2</b> Estimation</a></li>
-<li class="chapter" data-level="5.3" data-path="topic-03.html"><a href="topic-03.html#sample-distribution"><i class="fa fa-check"></i><b>5.3</b> Sample Distribution</a></li>
+<li class="chapter" data-level="5.3" data-path="topic-03.html"><a href="topic-03.html#sample-distribution"><i class="fa fa-check"></i><b>5.3</b> Sample Distribution</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="topic-03.html"><a href="topic-03.html#case-1"><i class="fa fa-check"></i><b>5.3.1</b> Case 1</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="topic-04.html"><a href="topic-04.html"><i class="fa fa-check"></i><b>6</b> Topic 04</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -547,15 +551,15 @@ V_{\beta} = Q^{-1} \Omega Q^{-1}
 <span id="cb37-7"><a href="topic-02.html#cb37-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">kernel =</span> <span class="fu">c</span>(<span class="st">&quot;Quadratic Spectral&quot;</span>, <span class="st">&quot;Truncated&quot;</span>, <span class="st">&quot;Bartlett&quot;</span>, <span class="st">&quot;Parzen&quot;</span>, <span class="st">&quot;Tukey-Hanning&quot;</span>),</span>
 <span id="cb37-8"><a href="topic-02.html#cb37-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">approx =</span> <span class="fu">c</span>(<span class="st">&quot;AR(1)&quot;</span>, <span class="st">&quot;ARMA(1,1)&quot;</span>), <span class="at">weights =</span> <span class="cn">NULL</span>, <span class="at">prewhite =</span> <span class="dv">1</span>, <span class="at">ar.method =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> <span class="fu">list</span>(), ...) {</span>
 <span id="cb37-9"><a href="topic-02.html#cb37-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb37-10"><a href="topic-02.html#cb37-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # inputs</span></span>
-<span id="cb37-11"><a href="topic-02.html#cb37-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># x &lt;- lm.res.02</span></span>
-<span id="cb37-12"><a href="topic-02.html#cb37-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># order.by &lt;- NULL</span></span>
-<span id="cb37-13"><a href="topic-02.html#cb37-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># kernel &lt;- c(&quot;Quadratic Spectral&quot;)</span></span>
-<span id="cb37-14"><a href="topic-02.html#cb37-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># approx &lt;- c(&quot;AR(1)&quot;)</span></span>
-<span id="cb37-15"><a href="topic-02.html#cb37-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># weights &lt;- NULL</span></span>
-<span id="cb37-16"><a href="topic-02.html#cb37-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># prewhite &lt;- 1</span></span>
-<span id="cb37-17"><a href="topic-02.html#cb37-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ar.method &lt;- &quot;ols&quot;</span></span>
-<span id="cb37-18"><a href="topic-02.html#cb37-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># data = list()</span></span>
+<span id="cb37-10"><a href="topic-02.html#cb37-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># inputs</span></span>
+<span id="cb37-11"><a href="topic-02.html#cb37-11" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> lm.res<span class="fl">.02</span></span>
+<span id="cb37-12"><a href="topic-02.html#cb37-12" aria-hidden="true" tabindex="-1"></a>  order.by <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb37-13"><a href="topic-02.html#cb37-13" aria-hidden="true" tabindex="-1"></a>  kernel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Quadratic Spectral&quot;</span>)</span>
+<span id="cb37-14"><a href="topic-02.html#cb37-14" aria-hidden="true" tabindex="-1"></a>  approx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;AR(1)&quot;</span>)</span>
+<span id="cb37-15"><a href="topic-02.html#cb37-15" aria-hidden="true" tabindex="-1"></a>  weights <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb37-16"><a href="topic-02.html#cb37-16" aria-hidden="true" tabindex="-1"></a>  prewhite <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb37-17"><a href="topic-02.html#cb37-17" aria-hidden="true" tabindex="-1"></a>  ar.method <span class="ot">&lt;-</span> <span class="st">&quot;ols&quot;</span></span>
+<span id="cb37-18"><a href="topic-02.html#cb37-18" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">=</span> <span class="fu">list</span>()</span>
 <span id="cb37-19"><a href="topic-02.html#cb37-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-20"><a href="topic-02.html#cb37-20" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb37-21"><a href="topic-02.html#cb37-21" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -837,11 +841,11 @@ V_{\beta} = Q^{-1} \Omega Q^{-1}
 <span id="cb37-297"><a href="topic-02.html#cb37-297" aria-hidden="true" tabindex="-1"></a>                  <span class="at">adjust =</span> <span class="cn">TRUE</span>, <span class="at">diagnostics =</span> <span class="cn">FALSE</span>, <span class="at">ar.method =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> <span class="fu">list</span>())</span>
 <span id="cb37-298"><a href="topic-02.html#cb37-298" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-299"><a href="topic-02.html#cb37-299" aria-hidden="true" tabindex="-1"></a>sandwich<span class="sc">::</span><span class="fu">sandwich</span>(lm.res<span class="fl">.02</span>, <span class="at">meat. =</span> tmp)</span></code></pre></div>
-<pre><code>##               :x1           :x2           :x1           :x2
-## :x1  7.115423e-04 -4.098181e-05  3.964139e-04 -3.206683e-05
-## :x2 -4.098181e-05  5.293391e-04 -3.926845e-05  4.129204e-04
-## :x1  3.964139e-04 -3.926845e-05  3.940324e-04 -1.316265e-05
-## :x2 -3.206683e-05  4.129204e-04 -1.316265e-05  5.160808e-04</code></pre>
+<pre><code>##               :x1           :x2           :x1          :x2
+## :x1  3.338048e-04 -7.011226e-06  2.193828e-04 3.111540e-06
+## :x2 -7.011226e-06  6.468170e-04 -2.118039e-06 4.611313e-04
+## :x1  2.193828e-04 -2.118039e-06  2.452446e-04 1.272432e-05
+## :x2  3.111540e-06  4.611313e-04  1.272432e-05 5.340884e-04</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="topic-02.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vcovHC</span>(lm.res<span class="fl">.02</span>)</span></code></pre></div>
 <pre><code>##               :x1           :x2          :x1          :x2
 ## :x1  1.665635e-04 -1.242717e-07 1.187889e-04 1.351467e-06
