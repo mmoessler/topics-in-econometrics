@@ -26,6 +26,8 @@ knitr::opts_chunk$set(
 
 ```
 
+<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+
 ## Motivation
 
 Comparison of the analysis of multivariate time series using the `urca` in combination with the `vars` package and the `tsDyn` package
@@ -60,6 +62,10 @@ vecm.urca@V
 
 Compare non-orthogonalized IRFs first
 
+<!-- .................................................. -->
+<button type="button" class="collButtonCl"> <span style="font-size: 14pt;">`tsdyn`</span> </button>
+<div class="collContentCl">
+
 ```{r}
 
 irf.tsdyn <- tsDyn:::irf.VECM(vecm.tsdyn, ortho = FALSE, boot = FALSE)
@@ -68,6 +74,9 @@ irf.tsdyn$irf$short.run
 irf.tsdyn$irf$long.run
 
 ```
+
+</div>
+<!-- .................................................. -->
 
 ```{r}
 
@@ -836,3 +845,7 @@ irf.h.tvec$irf$long.run
 ## TVECM model generalized IRF analysis
 
 
+
+
+
+<script src="script.js"></script>
