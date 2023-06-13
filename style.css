@@ -12,3 +12,34 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+
+
+/* collapsible button */
+.collButtonCl {
+  margin-top: 5px;
+  margin-bottom: 5px; 
+  background-color: white;
+  color: #333333;
+  font-style: italic;
+  cursor: pointer;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid;
+  border-color: #cccccc;
+  text-align: left;
+  outline: none;
+  font-family: Helvetica;
+  font-size: 16pt;
+}
+
+/* collapsible content */
+.collContentCl {
+  display: none;
+  /* background-color: #EAECEE; */
+  background-color: #ffffff;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
