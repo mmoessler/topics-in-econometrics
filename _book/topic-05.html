@@ -53,6 +53,24 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
+//..............................
+// handling of collapsibles
+// see: https://www.w3schools.com/howto/howto_js_collapsible.asp
+var coll = document.getElementsByClassName("collButtonCl");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        content.style.display = "none";
+        } else {
+        content.style.display = "block";
+        }
+    });
+}
+
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
@@ -202,6 +220,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="topic-05" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">7</span> Topic 05<a href="topic-05.html#topic-05" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 <div id="motivation-2" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Motivation<a href="topic-05.html#motivation-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Comparison of the analysis of multivariate time series using the <code>urca</code> in combination with the <code>vars</code> package and the <code>tsDyn</code> package</p>
@@ -242,6 +261,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="linear-vecm-model-orthogonalized-irf-analysis" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">7.3</span> Linear VECM model orthogonalized IRF analysis<a href="topic-05.html#linear-vecm-model-orthogonalized-irf-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Compare non-orthogonalized IRFs first</p>
+<!-- .................................................. -->
+<button type="button" class="collButtonCl">
+<span style="font-size: 14pt;"><code>tsdyn</code></span>
+</button>
+<div class="collContentCl">
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="topic-05.html#cb6-1" aria-hidden="true" tabindex="-1"></a>irf.tsdyn <span class="ot">&lt;-</span> tsDyn<span class="sc">:::</span><span class="fu">irf.VECM</span>(vecm.tsdyn, <span class="at">ortho =</span> <span class="cn">FALSE</span>, <span class="at">boot =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb6-2"><a href="topic-05.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="topic-05.html#cb6-3" aria-hidden="true" tabindex="-1"></a>irf.tsdyn<span class="sc">$</span>irf<span class="sc">$</span>short.run</span></code></pre></div>
@@ -270,6 +294,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  [9,] 1.009859 0.7231626
 ## [10,] 1.006869 0.7474948
 ## [11,] 1.004186 0.7693232</code></pre>
+</div>
+<!-- .................................................. -->
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="topic-05.html#cb10-1" aria-hidden="true" tabindex="-1"></a>v2v.vars <span class="ot">&lt;-</span> vars<span class="sc">::</span><span class="fu">vec2var</span>(vecm.urca, <span class="at">r =</span> <span class="dv">1</span>)</span>
 <span id="cb10-2"><a href="topic-05.html#cb10-2" aria-hidden="true" tabindex="-1"></a>v2v.vars <span class="ot">&lt;-</span> vars<span class="sc">::</span><span class="fu">irf</span>(v2v.vars, <span class="at">ortho =</span> <span class="cn">FALSE</span>, <span class="at">boot =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb10-3"><a href="topic-05.html#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -371,7 +397,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##         n.shock = n.shock, R = R, hist_li = hist_li, shock_li = shock_li, 
 ##         ...)
 ## }
-## &lt;bytecode: 0x00000179e0a1dfb8&gt;
+## &lt;bytecode: 0x0000018743d12d18&gt;
 ## &lt;environment: namespace:tsDyn&gt;</code></pre>
 <p>Step x: Call function <code>tsDyn:::GIRF.setar()</code></p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="topic-05.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tsDyn_GIRF_setar_fun no 01 ----</span></span>
@@ -1617,6 +1643,7 @@ relations 2, = P’X, is given by</p>
 </div>
 <div id="tvecm-model-generalized-irf-analysis" class="section level2 hasAnchor" number="7.7">
 <h2><span class="header-section-number">7.7</span> TVECM model generalized IRF analysis<a href="topic-05.html#tvecm-model-generalized-irf-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<script src="script.js"></script>
 
 </div>
 </div>
