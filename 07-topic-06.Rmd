@@ -1,0 +1,62 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Topic 05
+
+```{r,include=FALSE}
+
+library(knitr)
+knitr::opts_chunk$set(
+  include = TRUE,
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  eval = TRUE,
+  cache.path = "./cache-files"
+  # fig.height = 8,
+  # fig.width = 10,
+  # fig.align = 'center'
+  )
+# options(scipen=1)
+# options(width=9999)
+# # See: https://stackoverflow.com/questions/36230790/missing-horizontal-scroll-bar-in-r-markdown-html-code-chunks-and-output
+
+```
+
+<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+
+## Motivation
+
+Specification of time series models with structural braks
+
+## Specification
+
+\begin{align}
+R_{0t} = \alpha \tilde{\beta}' \begin{pmatrix}
+R_{1t}^{(0)} \\
+\vdots \\
+R_{1t}^{(\hat{m})}
+\end{pmatrix} + e_t,
+\end{align}
+
+where
+
+\begin{align}
+\tilde{\beta}' = (\beta_0', \dots, \beta_{\hat{m}}')'
+\end{align}
+
+and
+
+\begin{align}
+R_{1t}^{(j)} = R_{1t} \mathds{1}_{\{\hat{t}_j < t \leq \hat{t}_{j+1} \}} \;\;\; \text{for} \;\;\; 0 \leq j \leq \hat{m}
+\end{align}
+
+This means we aggregate the parameter changes to obtain parameters for each regime.
+
+
+
+
+<script src="script.js"></script>
