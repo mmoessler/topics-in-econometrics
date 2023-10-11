@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 
 ## Statistical Model
 
-Statistical model for each observations $i$ (same $k$ regressors across $m$ equations),
+Statistical model for each observations $i$ (same number of $k$ regressors across $m$ equations),
 
 \begin{align*}
 \underset{\left(m \times 1\right)}{y_{i}} &= \underset{\left(m\times mk\right)}{\overline{X}_{i}} \underset{\left(mk \times 1\right)}{\beta} + \underset{\left(m \times 1\right)}{e_{i}}, \\
