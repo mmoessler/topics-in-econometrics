@@ -32,3 +32,6 @@ linear-vecm-model-generalized-irf-analysis
 tvecm-model-estimation
 tvecm-model-orthngalized-irf-analysis
 tvecm-model-generalized-irf-analysis
+topic-05-1
+motivation-3
+specification
